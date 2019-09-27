@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+	<OutOfAmmo>{PAWN_nameDef} has run out of {0}!</OutOfAmmo>
+</LanguageData>
