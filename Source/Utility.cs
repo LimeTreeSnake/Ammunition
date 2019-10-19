@@ -47,7 +47,7 @@ namespace Ammunition {
                         return ThingDefOf.PrimitiveAmmunitionCase;
                     }
                     else if (shooter.projectile.damageDef == DamageDefOf.Bullet || shooter.projectile.damageDef == DamageDefOf.Bomb || shooter.projectile.damageDef.defName.Contains("ullet")) {
-                        if (shooter.defName.Contains("harge"))
+                        if (shooter.defName.Contains("harge") || shooter.defName.Contains("aser"))
                             return ThingDefOf.BatteryAmmunitionCharge;
                         return ThingDefOf.IndustrialAmmunitionCase;
                     }
@@ -76,13 +76,13 @@ namespace Ammunition {
 
             if (thing != null) {
                 if (MassUtility.CountToPickUpUntilOverEncumbered(pawn, thing) > SettingsHelper.LatestVersion.LeastAmmoFetch) {
-                    Job job = new Job(JobDefOf.FetchAmmunitionCase, thing);
+                    Job job = new Job(JobDefOf.FetchAmmunitionCase, thing, pawn.Position);
                     return pawn.jobs.TryTakeOrderedJob(job);
                 }
             }
             return false;
         }
-        public static bool TryFire(Verb verb, out ThingDef requiredAmmo, bool npc = false) {
+        public static bool TryFire(Verb verb, out ThingDef requiredAmmo) {
             bool failed = false;
             ThingDef ammo = WeaponCheck(verb.CasterPawn);
             if (ammo != null) {
@@ -93,14 +93,11 @@ namespace Ammunition {
                         ammunition[0].Destroy();
                 }
                 else {
-                    failed = true;
-                    if (SettingsHelper.LatestVersion.DropWeapon || npc) {
-                        if (!FetchAmmo(verb.CasterPawn, ammo)) {
-                            verb.CasterPawn.equipment.TryDropEquipment(verb.EquipmentSource, out ThingWithComps dropped, verb.CasterPawn.Position, true);
-                        }
-                    }
-                    if (!npc)
+                    failed = true; if (!FetchAmmo(verb.CasterPawn, ammo)) {
+                        verb.CasterPawn.equipment.Remove(verb.EquipmentSource);
+                        verb.CasterPawn.inventory.innerContainer.TryAdd(verb.EquipmentSource);
                         Messages.Message("OutOfAmmo".Translate(ammo.label, verb.CasterPawn.Named("PAWN")), MessageTypeDefOf.NegativeEvent);
+                    }
                 }
             }
             requiredAmmo = ammo;

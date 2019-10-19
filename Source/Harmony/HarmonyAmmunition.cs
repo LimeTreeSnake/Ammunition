@@ -22,7 +22,7 @@ namespace Ammunition {
         #region Ticks
         public static void TickRare_PostFix(Pawn __instance) {
             if (__instance.Spawned && __instance.IsFreeColonist) {
-                if (SettingsHelper.LatestVersion.FetchAmmo && Utility.AmmoCheck(__instance, out ThingDef ammo)) {
+                if (SettingsHelper.LatestVersion.FetchAmmo && __instance.jobs.posture == 0 && !__instance.jobs.curJob.def.alwaysShowWeapon && Utility.AmmoCheck(__instance, out ThingDef ammo)) {
                     Utility.FetchAmmo(__instance, ammo);
                 }
             }
@@ -38,7 +38,7 @@ namespace Ammunition {
                     return !Utility.TryFire(__instance, out ThingDef thing);
                 }
                 else if (SettingsHelper.LatestVersion.NPCNeedAmmo) {
-                    return !Utility.TryFire(__instance, out ThingDef thing, true);
+                    return !Utility.TryFire(__instance, out ThingDef thing);
                 }
             }
             return true;

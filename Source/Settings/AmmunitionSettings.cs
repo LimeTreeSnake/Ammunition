@@ -8,7 +8,6 @@ namespace Ammunition {
         private static readonly bool needAmmo = true;
         private static readonly bool npcNeedAmmo = false;
         private static readonly bool fetchAmmo = false;
-        private static readonly bool dropWeapon = true;
         private static readonly int desiredAmmo = 25;
         private static readonly int leastAmmoFetch = 3;
         private static readonly int npcMinAmmo = 15;
@@ -18,7 +17,6 @@ namespace Ammunition {
         public bool NeedAmmo = needAmmo;
         public bool NPCNeedAmmo = npcNeedAmmo;
         public bool FetchAmmo = fetchAmmo;
-        public bool DropWeapon = dropWeapon;
         public int DesiredAmmo = desiredAmmo;
         public int LeastAmmoFetch = leastAmmoFetch;
         public int NPCMinAmmo = npcMinAmmo;
@@ -28,7 +26,6 @@ namespace Ammunition {
             Scribe_Values.Look(ref NeedAmmo, "NeedAmmo", needAmmo);
             Scribe_Values.Look(ref NPCNeedAmmo, "NPCNeedAmmo", npcNeedAmmo);
             Scribe_Values.Look(ref FetchAmmo, "FetchAmmo", fetchAmmo);
-            Scribe_Values.Look(ref DropWeapon, "DropWeapon", dropWeapon);
             Scribe_Values.Look(ref DesiredAmmo, "DesiredAmmo", desiredAmmo);
             Scribe_Values.Look(ref LeastAmmoFetch, "LeastAmmoFetch", leastAmmoFetch);
             Scribe_Values.Look(ref NPCMinAmmo, "NPCMinAmmo", npcMinAmmo);
@@ -39,7 +36,6 @@ namespace Ammunition {
             NeedAmmo = needAmmo;
             NPCNeedAmmo = npcNeedAmmo;
             FetchAmmo = fetchAmmo;
-            DropWeapon = dropWeapon;
             DesiredAmmo = desiredAmmo;
             LeastAmmoFetch = leastAmmoFetch;
             NPCMinAmmo = npcMinAmmo;
@@ -86,7 +82,6 @@ namespace Ammunition {
                 list.Label(string.Format("Least ammo to fetch. {0}", ammunitionSettings.LeastAmmoFetch));
                 ammunitionSettings.LeastAmmoFetch = (int)Mathf.Round(list.Slider(ammunitionSettings.LeastAmmoFetch, 1, 10));
             }
-            list.CheckboxLabeled("Drop weapons when out of ammo.", ref ammunitionSettings.DropWeapon);
             list.CheckboxLabeled("NPC needs ammo.", ref ammunitionSettings.NPCNeedAmmo);
             list.Label(string.Format("NPC's spawn if appliable with a minumum of {0} ammo.", ammunitionSettings.NPCMinAmmo));
             ammunitionSettings.NPCMinAmmo = (int)Mathf.Round(list.Slider(ammunitionSettings.NPCMinAmmo, 1, 100));

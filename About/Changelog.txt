@@ -1,2 +1,9 @@
+2019-10-19
+-Added check for named laser weapons to not use industrial ammo.
+-Instead of dropping weapons, they are added to the inventory. Dunno why I thought dropping weapons was the best way...
+-New art by OskarPotocki
+-Pawns return to their original position when fetching ammo if in combat or drafted.
+-Pawns should not try to fetch new ammo when hunting or whenever their weapon is brought forth.
+
 2019-10-18
 -Initial Release

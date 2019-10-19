@@ -20,9 +20,8 @@
     <label>primitive ammo</label>
     <description>Primitive ammunition often using manpower to fire a projectile.</description>
     <graphicData>
-      <texPath>Item/PrimitiveAmmunitionCase</texPath>
-      <graphicClass>Graphic_Single</graphicClass>
-      <drawSize>1</drawSize>
+      <texPath>Item/AmmoPrimitive</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
     </graphicData>
     <thingCategories>
       <li>Ammunition</li>
@@ -42,9 +41,8 @@
     <label>industrial ammo</label>
     <description>Ammunition that uses an explosive primer that will push out projectiles at incredible speeds.</description>
     <graphicData>
-      <texPath>Item/IndustrialAmmunitionCase</texPath>
-      <graphicClass>Graphic_Single</graphicClass>
-      <drawSize>1</drawSize>
+      <texPath>Item/AmmoIndustrial</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
     </graphicData>
     <thingCategories>
       <li>Ammunition</li>
@@ -77,9 +75,8 @@
     <label>chemical canister</label>
     <description>A chemical canister that uses a highly flammable liquid that will burn poor victims into crisp.</description>
     <graphicData>
-      <texPath>Item/ChemicalAmmunitionCanister</texPath>
-      <graphicClass>Graphic_Single</graphicClass>
-      <drawSize>1</drawSize>
+      <texPath>Item/AmmoChemical</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
     </graphicData>
     <thingCategories>
       <li>Ammunition</li>
@@ -112,9 +109,8 @@
     <label>nitrogen canister</label>
     <description>A liquid nitrogen canister that houses a liquid and keeping it at a extremely low temperature.</description>
     <graphicData>
-      <texPath>Item/NitrogenAmmunitionCanister</texPath>
-      <graphicClass>Graphic_Single</graphicClass>
-      <drawSize>1</drawSize>
+      <texPath>Item/AmmoNitrogen</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
     </graphicData>
     <thingCategories>
       <li>Ammunition</li>
@@ -135,9 +131,8 @@
     <label>battery charge</label>
     <description>A weaponized battery that holds enough power to cause some serious damage.</description>
     <graphicData>
-      <texPath>Item/BatteryAmmunitionCharge</texPath>
-      <graphicClass>Graphic_Single</graphicClass>
-      <drawSize>1</drawSize>
+      <texPath>Item/AmmoBattery</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
     </graphicData>
     <thingCategories>
       <li>Ammunition</li>

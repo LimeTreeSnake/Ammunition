@@ -39,6 +39,10 @@ namespace Ammunition {
             yield return go;
             Toil take = Toils_Take.TakeToInventory(TargetIndex.A, () => num);
             yield return take;
+            if (pawn.IsFighting() || pawn.Drafted) {
+                Toil go2 = Toils_Goto.Goto(TargetIndex.B, PathEndMode.OnCell);
+                yield return go2;
+            }
             yield break;
         }
     }
