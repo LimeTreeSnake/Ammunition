@@ -153,5 +153,6 @@
       <defName>Ammunition</defName>
       <label>ammunition</label>
       <parent>Manufactured</parent>
+      <iconPath>Item/AmmoIndustrial/AmmoIndustrial_c</iconPath>
     </ThingCategoryDef>
 </Defs>

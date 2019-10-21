@@ -30,12 +30,11 @@ namespace Ammunition {
         #endregion Ticks
         #region Functionality
 
-
-        [HarmonyPriority(Priority.Last)]
+        [HarmonyPriority(200)]
         public static bool WarmupComplete_Ranged_PreFix(Verb_LaunchProjectile __instance) {
             if (Utility.Eligable(__instance) && SettingsHelper.LatestVersion.NeedAmmo) {
                 if (__instance.CasterPawn.IsColonistPlayerControlled) {
-                    return !Utility.TryFire(__instance, out ThingDef thing);
+                     return !Utility.TryFire(__instance, out ThingDef thing);
                 }
                 else if (SettingsHelper.LatestVersion.NPCNeedAmmo) {
                     return !Utility.TryFire(__instance, out ThingDef thing);

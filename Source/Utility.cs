@@ -36,29 +36,46 @@ namespace Ammunition {
             return needAmmo;
         }
         public static ThingDef WeaponCheck(Pawn pawn) {
-            if (pawn.equipment != null && pawn.equipment.Primary != null) {
-                VerbProperties prop = pawn.equipment.Primary.def.Verbs.FirstOrDefault(x => x.verbClass.Name == "Verb_Shoot");
+            if (pawn.equipment != null && pawn.equipment.Primary != null && !SettingsHelper.LatestVersion.WeaponExclusion.Contains(pawn.equipment.Primary.def.defName)) {
+                VerbProperties prop = pawn.equipment.Primary.def.Verbs.FirstOrDefault(x => x.verbClass.Name.Contains("Verb_Shoot") && !x.verbClass.Name.Contains("OneUse"));
                 ThingDef shooter = null;
                 if (prop != null) {
                     shooter = prop.defaultProjectile;
                 }
                 if (shooter != null) {
-                    if (shooter.projectile.damageDef == DamageDefOf.Arrow || shooter.projectile.damageDef == DamageDefOf.Blunt || shooter.projectile.damageDef == DamageDefOf.Crush || shooter.projectile.damageDef == DamageDefOf.Cut || shooter.projectile.damageDef == DamageDefOf.Scratch || shooter.projectile.damageDef == DamageDefOf.Stab || shooter.projectile.damageDef.defName.Contains("angedStab") || shooter.projectile.damageDef.defName.Contains("lunt") || shooter.projectile.damageDef.defName.Contains("rrow") || shooter.projectile.damageDef.defName.Contains("axe")) {
+                    if (shooter.projectile.damageDef == DamageDefOf.Arrow || shooter.projectile.damageDef == DamageDefOf.Blunt || shooter.projectile.damageDef == DamageDefOf.Crush || shooter.projectile.damageDef == DamageDefOf.Cut || shooter.projectile.damageDef == DamageDefOf.Scratch || shooter.projectile.damageDef == DamageDefOf.Stab) {
                         return ThingDefOf.PrimitiveAmmunitionCase;
                     }
-                    else if (shooter.projectile.damageDef == DamageDefOf.Bullet || shooter.projectile.damageDef == DamageDefOf.Bomb || shooter.projectile.damageDef.defName.Contains("ullet")) {
-                        if (shooter.defName.Contains("harge") || shooter.defName.Contains("aser"))
+                    else if (shooter.projectile.damageDef == DamageDefOf.Flame || shooter.projectile.damageDef == DamageDefOf.Burn) {
+                        return ThingDefOf.ChemicalAmmunitionCanister;
+                    }
+                    else if (shooter.projectile.damageDef == DamageDefOf.Stun || shooter.projectile.damageDef == DamageDefOf.EMP) {
+                        return ThingDefOf.BatteryAmmunitionCharge;
+                    }
+                    else if (shooter.projectile.damageDef == DamageDefOf.Frostbite) {
+                        return ThingDefOf.NitrogenAmmunitionCanister;
+                    }
+                    else if (shooter.projectile.damageDef == DamageDefOf.Bullet || shooter.projectile.damageDef == DamageDefOf.Bomb) {
+                        if (shooter.defName.Contains("harge") || shooter.defName.Contains("aser") || shooter.defName.Contains("olarisbloc"))
                             return ThingDefOf.BatteryAmmunitionCharge;
                         return ThingDefOf.IndustrialAmmunitionCase;
                     }
-                    else if (shooter.projectile.damageDef == DamageDefOf.Flame || shooter.projectile.damageDef == DamageDefOf.Burn || shooter.projectile.damageDef.defName.Contains("laze") || shooter.projectile.damageDef.defName.Contains("ire") || shooter.projectile.damageDef.defName.Contains("cind")) {
-                        return ThingDefOf.ChemicalAmmunitionCanister;
-                    }
-                    else if (shooter.projectile.damageDef == DamageDefOf.Stun || shooter.projectile.damageDef == DamageDefOf.EMP || shooter.projectile.damageDef.defName.Contains("lectr") || shooter.projectile.damageDef.defName.Contains("lasma") || shooter.projectile.damageDef.defName.Contains("aser") || shooter.projectile.damageDef.defName.Contains("harge") || shooter.projectile.damageDef.defName.Contains("nergy") || shooter.projectile.damageDef.defName.Contains("hock") || shooter.projectile.damageDef.defName.Contains("ptic")) {
-                        return ThingDefOf.BatteryAmmunitionCharge;
-                    }
-                    else if (shooter.projectile.damageDef == DamageDefOf.Frostbite || shooter.projectile.damageDef.defName.Contains("old") || shooter.projectile.damageDef.defName.Contains("ce")) {
-                        return ThingDefOf.NitrogenAmmunitionCanister;
+                    else {
+                        if (shooter.projectile.damageDef.defName.Contains("angedStab") || shooter.projectile.damageDef.defName.Contains("lunt") || shooter.projectile.damageDef.defName.Contains("rrow") || shooter.projectile.damageDef.defName.Contains("axe")) {
+                            return ThingDefOf.PrimitiveAmmunitionCase;
+                        }
+                        else if (shooter.projectile.damageDef.defName.Contains("laze") || shooter.projectile.damageDef.defName.Contains("ire") || shooter.projectile.damageDef.defName.Contains("cind")) {
+                            return ThingDefOf.ChemicalAmmunitionCanister;
+                        }
+                        else if (shooter.projectile.damageDef.defName.Contains("lectr") || shooter.projectile.damageDef.defName.Contains("lasma") || shooter.projectile.damageDef.defName.Contains("aser") || shooter.projectile.damageDef.defName.Contains("harge") || shooter.projectile.damageDef.defName.Contains("nergy") || shooter.projectile.damageDef.defName.Contains("hock") || shooter.projectile.damageDef.defName.Contains("ptic") || shooter.projectile.damageDef.defName.Contains("auss") || shooter.projectile.damageDef.defName.Contains("last")) {
+                            return ThingDefOf.BatteryAmmunitionCharge;
+                        }
+                        else if (shooter.projectile.damageDef.defName.Contains("old") || shooter.projectile.damageDef.defName.Contains("ce")) {
+                            return ThingDefOf.NitrogenAmmunitionCanister;
+                        }
+                        else if (shooter.projectile.damageDef.defName.Contains("ullet") || shooter.defName.Contains("ullet") || SettingsHelper.LatestVersion.CompatibilityMode) {
+                            return ThingDefOf.IndustrialAmmunitionCase;
+                        }
                     }
                 }
             }
@@ -73,7 +90,6 @@ namespace Ammunition {
                 return true;
             }
             Thing thing = GenClosest.ClosestThing_Global_Reachable(pawn.Position, pawn.Map, pawn.Map.listerThings.ThingsOfDef(ammoType), PathEndMode.OnCell, TraverseParms.For(pawn), 9999f, validator);
-
             if (thing != null) {
                 if (MassUtility.CountToPickUpUntilOverEncumbered(pawn, thing) > SettingsHelper.LatestVersion.LeastAmmoFetch) {
                     Job job = new Job(JobDefOf.FetchAmmunitionCase, thing, pawn.Position);
@@ -93,7 +109,8 @@ namespace Ammunition {
                         ammunition[0].Destroy();
                 }
                 else {
-                    failed = true; if (!FetchAmmo(verb.CasterPawn, ammo)) {
+                    failed = true;
+                    if (!FetchAmmo(verb.CasterPawn, ammo)) {
                         verb.CasterPawn.equipment.Remove(verb.EquipmentSource);
                         verb.CasterPawn.inventory.innerContainer.TryAdd(verb.EquipmentSource);
                         Messages.Message("OutOfAmmo".Translate(ammo.label, verb.CasterPawn.Named("PAWN")), MessageTypeDefOf.NegativeEvent);

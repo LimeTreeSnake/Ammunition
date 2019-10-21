@@ -1,9 +1,17 @@
+2019-10-20
+- Added compatibility mode in mod settings. Any weapon not covered default by this mod uses industrial ammo.
+- Updated graphic UI for Category Def.
+- Fixed issue with pawns trying to find stacks of ammo but returns a stack that contains an amount lower than least wanted.
+- Single Use weapons does not require ammo.
+- Added exclusion list for weapons to use ammo.
+
 2019-10-19
 -Added check for named laser weapons to not use industrial ammo.
 -Instead of dropping weapons, they are added to the inventory. Dunno why I thought dropping weapons was the best way...
 -New art by OskarPotocki
 -Pawns return to their original position when fetching ammo if in combat or drafted.
 -Pawns should not try to fetch new ammo when hunting or whenever their weapon is brought forth.
+-Proper Shotguns Patch
 
 2019-10-18
 -Initial Release

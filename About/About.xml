@@ -8,24 +8,6 @@
 	
 	<description> 
 -License-
-You may use this code as however you want. However, do notify me as I'd love to hear if people find use of my code! :)
-
--Associated Ammunition by DamageDefOf-
-Notice, anything within () is searched words within damage def to try to associate custom damage made by mods I've decided to omit the first capital letter
-
-Primitive Ammunition:
-Arrow, Blunt, Crush, Cut, Scratch, Stab, (arrow), (bolas), (rangedStab), (axe), 
-Industrial Ammunition:
-Billet, (bullet)
-Chemical Ammunition:
-Flame, Burn, (blaze), (fire)
-Nitrogen Ammunition:
-Frostbite, (cold)
-Battery Ammunition:
-Stun, EMP, (electr), (plasma), (laser), (charge), (energy)
-
-
-Should you wish for me to add a damage type definiton for compatibility, message me.
-
+You may use this code as however you want. However, do let me know and give credits due if you do as I'd love to hear about what you've created with it! :)
 	</description>
 </ModMetaData>
