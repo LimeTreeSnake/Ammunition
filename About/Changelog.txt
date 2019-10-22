@@ -2,6 +2,7 @@
 - Fixed freeze after hunting with no ammo.
 - Decreased weight from 0.1 to 0.05
 - Trial nullcheck for mod settings. Possibly will end the issue of mod setting null exception for a lot of people.
+- Is techheddiff removed
 
 2019-10-21
 - Added compatibility mode in mod settings. Any weapon not covered default by this mod uses industrial ammo.
