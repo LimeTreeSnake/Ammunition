@@ -9,7 +9,6 @@
       <DeteriorationRate>1.0</DeteriorationRate>
 	</statBases>
     <tickerType>Normal</tickerType>
-    <isTechHediff>true</isTechHediff>
     <tradeTags>
 	  <li>Ammunition</li>
     </tradeTags>
