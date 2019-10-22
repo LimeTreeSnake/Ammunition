@@ -36,7 +36,7 @@ namespace Ammunition {
             return needAmmo;
         }
         public static ThingDef WeaponCheck(Pawn pawn) {
-            if (pawn.equipment != null && pawn.equipment.Primary != null && !SettingsHelper.LatestVersion.WeaponExclusion.Contains(pawn.equipment.Primary.def.defName)) {
+            if (pawn.equipment != null && pawn.equipment.Primary != null && SettingsHelper.LatestVersion.WeaponExclusion != null && !SettingsHelper.LatestVersion.WeaponExclusion.Contains(pawn.equipment.Primary.def.defName)) {
                 VerbProperties prop = pawn.equipment.Primary.def.Verbs.FirstOrDefault(x => x.verbClass.Name.Contains("Verb_Shoot") && !x.verbClass.Name.Contains("OneUse"));
                 ThingDef shooter = null;
                 if (prop != null) {
@@ -109,6 +109,8 @@ namespace Ammunition {
                         ammunition[0].Destroy();
                 }
                 else {
+                    verb.CasterPawn.jobs.ClearQueuedJobs();
+                    verb.CasterPawn.jobs.EndCurrentJob(JobCondition.InterruptForced, false);
                     failed = true;
                     if (!FetchAmmo(verb.CasterPawn, ammo)) {
                         verb.CasterPawn.equipment.Remove(verb.EquipmentSource);

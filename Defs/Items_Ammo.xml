@@ -29,7 +29,7 @@
     <techLevel>Neolithic</techLevel>
 	<statBases>
       <MarketValue>1</MarketValue>
-      <Mass>0.2</Mass>
+      <Mass>0.1</Mass>
     </statBases>   
     <tradeTags>
 	  <li>AmmunitionPrimitive</li>
@@ -51,7 +51,7 @@
     <stackLimit>500</stackLimit>
 	<statBases>
       <MarketValue>2</MarketValue>
-      <Mass>0.1</Mass>
+      <Mass>0.05</Mass>
     </statBases>
     <tradeTags>
 	  <li>AmmunitionIndustrial</li>
@@ -85,7 +85,7 @@
     <stackLimit>500</stackLimit>
 	<statBases>
       <MarketValue>3</MarketValue>
-      <Mass>0.1</Mass>
+      <Mass>0.05</Mass>
     </statBases>
     <tradeTags>
 	  <li>AmmunitionSpecial</li>
@@ -119,7 +119,7 @@
     <stackLimit>500</stackLimit>
 	<statBases>
       <MarketValue>4</MarketValue>
-      <Mass>0.1</Mass>
+      <Mass>0.05</Mass>
     </statBases>  
     <tradeTags>
 	  <li>AmmunitionSpecial</li>
@@ -141,7 +141,7 @@
     <stackLimit>500</stackLimit>
 	<statBases>
       <MarketValue>5</MarketValue>
-      <Mass>0.1</Mass>
+      <Mass>0.05</Mass>
     </statBases>  
     <tradeTags>
 	  <li>AmmunitionSpecial</li>

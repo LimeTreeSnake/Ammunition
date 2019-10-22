@@ -75,11 +75,11 @@ namespace Ammunition {
     public class ModMain : Mod {
         public static Vector2 scrollPosition = Vector2.zero;
         public static Vector2 scrollPosition2 = Vector2.zero;
-        private AmmunitionSettings ammunitionSettings;
+        private AmmunitionSettings ammunitionSettings = new AmmunitionSettings();
 
         public ModMain(ModContentPack content) : base(content) {
             ammunitionSettings = GetSettings<AmmunitionSettings>();
-            SettingsHelper.LatestVersion = ammunitionSettings;
+            SettingsHelper.LatestVersion = ammunitionSettings != null ? ammunitionSettings : new AmmunitionSettings();
         }
         public override string SettingsCategory() {
             return "Ammunition";
@@ -117,7 +117,7 @@ namespace Ammunition {
             if (ammunitionSettings.AvailableWeapons != null && ammunitionSettings.AvailableWeapons.Count() > 0) {
                 list.Label(string.Format("Exclude weapons from ammunition check."));
                 list.Label(string.Format("({0}) Height.", ammunitionSettings.WeaponViewHeight));
-                ammunitionSettings.WeaponViewHeight = (int)Mathf.Round(list.Slider(ammunitionSettings.WeaponViewHeight, 1, 1000));
+                ammunitionSettings.WeaponViewHeight = (int)Mathf.Round(list.Slider(ammunitionSettings.WeaponViewHeight, 1, 2500));
                 ammunitionSettings.Filter = list.TextEntryLabeled("Filter:", ammunitionSettings.Filter, 1);
                 Listing_Standard list2 = list.BeginSection(ammunitionSettings.WeaponViewHeight);
                 list2.ColumnWidth = (rect2.width - 50) / 3;

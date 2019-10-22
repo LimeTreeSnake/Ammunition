@@ -1,4 +1,9 @@
-2019-10-20
+2019-10-22
+- Fixed freeze after hunting with no ammo.
+- Decreased weight from 0.1 to 0.05
+- Trial nullcheck for mod settings. Possibly will end the issue of mod setting null exception for a lot of people.
+
+2019-10-21
 - Added compatibility mode in mod settings. Any weapon not covered default by this mod uses industrial ammo.
 - Updated graphic UI for Category Def.
 - Fixed issue with pawns trying to find stacks of ammo but returns a stack that contains an amount lower than least wanted.
