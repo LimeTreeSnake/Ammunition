@@ -25,7 +25,7 @@
     <thingCategories>
       <li>Ammunition</li>
     </thingCategories>
-    <techLevel>Primitive</techLevel>
+    <techLevel>Neolithic</techLevel>
 	<statBases>
       <MarketValue>1</MarketValue>
       <Mass>0.1</Mass>
