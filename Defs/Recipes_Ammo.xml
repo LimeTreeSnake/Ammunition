@@ -60,6 +60,45 @@
 	</RecipeDef>
 
 	<RecipeDef>
+		<defName>Make_PreIndustrialAmmo</defName>
+		<label>make pre-industrial ammo</label>
+		<description>Make blackpowder bullets by combining steel and wood.</description>
+		<jobString>Making bullets.</jobString>
+		<workAmount>1200</workAmount>
+		<workSkill>Crafting</workSkill>
+		<workSpeedStat>SmithingSpeed</workSpeedStat>
+		<effectWorking>Smith</effectWorking>
+		<soundWorking>Recipe_Smith</soundWorking>	
+		<recipeUsers>
+			<li>ElectricSmithy</li>
+			<li>FueledSmithy</li>
+		</recipeUsers>
+		<researchPrerequisite>Smithing</researchPrerequisite>
+		<allowMixingIngredients>false</allowMixingIngredients>
+		<skillRequirements>
+			<Crafting>5</Crafting>
+		</skillRequirements>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>Steel</li>
+					</thingDefs>
+				</filter>
+				<count>20</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>Steel</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<products>
+			<PreIndustrialAmmunitionCase>50</PreIndustrialAmmunitionCase>
+		</products>
+	</RecipeDef>
+
+	<RecipeDef>
 		<defName>Make_IndustrialAmmo</defName>
 		<label>make industrial ammo</label>
 		<description>Make bullets by combining steel and chemfuel.</description>
@@ -152,6 +191,55 @@
 			<ChemicalAmmunitionCanister>50</ChemicalAmmunitionCanister>
 		</products>
 	</RecipeDef>
+
+
+	<RecipeDef>
+		<defName>Make_AcidCanister</defName>
+		<label>make acid canister</label>
+		<description>Make acid canisters by refining chemfuel.</description>
+		<jobString>Making acid canisters.</jobString>
+		<workAmount>1600</workAmount>
+		<workSkill>Intellectual</workSkill>
+		<workSpeedStat>UnskilledLaborSpeed</workSpeedStat>
+		<effectWorking>Cremate</effectWorking>
+		<soundWorking>Recipe_Cremate</soundWorking>	
+		<recipeUsers>
+			<li>BiofuelRefinery</li>
+		</recipeUsers>
+		<researchPrerequisite>BiofuelRefining</researchPrerequisite>
+		<allowMixingIngredients>false</allowMixingIngredients>
+		<skillRequirements>
+			<Intellectual>5</Intellectual>
+		</skillRequirements>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>Steel</li>
+					</thingDefs>
+				</filter>
+				<count>5</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>Chemfuel</li>
+					</thingDefs>
+				</filter>
+				<count>40</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>Steel</li>
+				<li>Chemfuel</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<products>
+			<AcidAmmunitionCanister>50</AcidAmmunitionCanister>
+		</products>
+	</RecipeDef>
+
 
 	<RecipeDef>
 		<defName>Make_NitrogenCanister</defName>

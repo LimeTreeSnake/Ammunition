@@ -1,29 +1,26 @@
 ﻿using Verse;
 using UnityEngine;
 using System.Collections.Generic;
+using System;
 using System.Linq;
-using RimWorld;
 
 namespace Ammunition {
     internal class AmmunitionSettings : ModSettings {
 
         #region Fields
+        private static readonly List<WeaponAssociation> weaponAssociation = new List<WeaponAssociation>();
         private static readonly bool needAmmo = true;
-        private static readonly bool compatibilityMode = false;
         private static readonly bool npcNeedAmmo = true;
         private static readonly bool fetchAmmo = true;
         private static readonly int desiredAmmo = 25;
         private static readonly int leastAmmoFetch = 3;
         private static readonly int npcMinAmmo = 15;
         private static readonly int npcMaxAmmo = 45;
-
         private static readonly float weaponViewHeight = 300;
-        private static readonly List<string> weaponExclusion = new List<string>();
 
         #endregion Fields
         #region Properties
         public bool NeedAmmo = needAmmo;
-        public bool CompatibilityMode = compatibilityMode;
         public bool NPCNeedAmmo = npcNeedAmmo;
         public bool FetchAmmo = fetchAmmo;
         public int DesiredAmmo = desiredAmmo;
@@ -33,26 +30,23 @@ namespace Ammunition {
         public string Filter { get; set; }
 
         public float WeaponViewHeight = weaponViewHeight;
-        public List<string> WeaponExclusion = weaponExclusion.Count > 0 ? weaponExclusion.ListFullCopy() : new List<string>();
-        public IEnumerable<ThingDef> AvailableWeapons = DefDatabase<ThingDef>.AllDefsListForReading.Where(x => x.IsRangedWeapon && x.equipmentType == EquipmentType.Primary && x.weaponTags != null && x.Verbs.FirstOrDefault(y => y.verbClass.Name.Contains("Verb_Shoot")) != null && x.Verbs.FirstOrDefault(y => !y.verbClass.Name.Contains("Verb_ShootOneUse")) != null && !x.destroyOnDrop);
+        public List<WeaponAssociation> WeaponAssociation = weaponAssociation.Count > 0 ? weaponAssociation : new List<WeaponAssociation>();
         #endregion Properties
         public override void ExposeData() {
             Scribe_Values.Look(ref NeedAmmo, "NeedAmmo", needAmmo);
             Scribe_Values.Look(ref NPCNeedAmmo, "NPCNeedAmmo", npcNeedAmmo);
             Scribe_Values.Look(ref FetchAmmo, "FetchAmmo", fetchAmmo);
-            Scribe_Values.Look(ref CompatibilityMode, "CompatibilityMode", compatibilityMode);
             Scribe_Values.Look(ref DesiredAmmo, "DesiredAmmo", desiredAmmo);
             Scribe_Values.Look(ref LeastAmmoFetch, "LeastAmmoFetch", leastAmmoFetch);
             Scribe_Values.Look(ref NPCMinAmmo, "NPCMinAmmo", npcMinAmmo);
             Scribe_Values.Look(ref NPCMaxAmmo, "NPCMaxAmmo", npcMaxAmmo);
             Scribe_Values.Look(ref WeaponViewHeight, "WeaponViewHeight", weaponViewHeight);
-            Scribe_Collections.Look(ref WeaponExclusion, "WeaponExclusion", LookMode.Value);
+            Scribe_Collections.Look(ref WeaponAssociation, "WeaponAssociation", LookMode.Deep);
         }
 
         public void Reset() {
             Filter = "";
             NeedAmmo = needAmmo;
-            CompatibilityMode = compatibilityMode;
             NPCNeedAmmo = npcNeedAmmo;
             FetchAmmo = fetchAmmo;
             DesiredAmmo = desiredAmmo;
@@ -60,7 +54,8 @@ namespace Ammunition {
             NPCMinAmmo = npcMinAmmo;
             NPCMaxAmmo = npcMaxAmmo;
             WeaponViewHeight = weaponViewHeight;
-            WeaponExclusion = weaponExclusion.Count > 0 ? weaponExclusion.ListFullCopy() : new List<string>();
+            WeaponAssociation.Clear();
+            Utility.CheckWeaponAssociation();
         }
 
     }
@@ -76,6 +71,8 @@ namespace Ammunition {
         public static Vector2 scrollPosition = Vector2.zero;
         public static Vector2 scrollPosition2 = Vector2.zero;
         private AmmunitionSettings ammunitionSettings = new AmmunitionSettings();
+
+        public TextAnchor Anchor { get; private set; }
 
         public ModMain(ModContentPack content) : base(content) {
             ammunitionSettings = GetSettings<AmmunitionSettings>();
@@ -98,7 +95,6 @@ namespace Ammunition {
                 ammunitionSettings.Reset();
             };
             list.CheckboxLabeled("Is ammo required to fire weapons?", ref ammunitionSettings.NeedAmmo);
-            list.CheckboxLabeled("Mod Compatibility Mode", ref ammunitionSettings.CompatibilityMode, "Any weapon not covered by this mod should default to use Industrial Ammo.");
             list.CheckboxLabeled("Should a pawn actively search for ammo?", ref ammunitionSettings.FetchAmmo);
             if (ammunitionSettings.FetchAmmo) {
                 list.Label(string.Format("Desired carried ammo. {0}", ammunitionSettings.DesiredAmmo));
@@ -114,23 +110,29 @@ namespace Ammunition {
                 ammunitionSettings.NPCMaxAmmo = (int)Mathf.Round(list.Slider(ammunitionSettings.NPCMaxAmmo, ammunitionSettings.NPCMinAmmo, 200));
             }
             list.GapLine();
-            if (ammunitionSettings.AvailableWeapons != null && ammunitionSettings.AvailableWeapons.Count() > 0) {
-                list.Label(string.Format("Exclude weapons from ammunition check."));
+            if (ammunitionSettings.WeaponAssociation != null) {
+                list.Label(string.Format("Ammunition used for weapons."));
                 list.Label(string.Format("({0}) Height.", ammunitionSettings.WeaponViewHeight));
                 ammunitionSettings.WeaponViewHeight = (int)Mathf.Round(list.Slider(ammunitionSettings.WeaponViewHeight, 1, 2500));
                 ammunitionSettings.Filter = list.TextEntryLabeled("Filter:", ammunitionSettings.Filter, 1);
                 Listing_Standard list2 = list.BeginSection(ammunitionSettings.WeaponViewHeight);
                 list2.ColumnWidth = (rect2.width - 50) / 3;
-                foreach (ThingDef def in ammunitionSettings.AvailableWeapons) {
-                    if (def.defName.ToUpper().Contains(ammunitionSettings.Filter.ToUpper())) {
-                        bool contains = ammunitionSettings.WeaponExclusion.Contains(def.defName);
-                        list2.CheckboxLabeled(def.defName, ref contains);
-                        if (contains == false && ammunitionSettings.WeaponExclusion.Contains(def.defName)) {
-                            ammunitionSettings.WeaponExclusion.Remove(def.defName);
+                foreach (WeaponAssociation association in ammunitionSettings.WeaponAssociation) {
+                    if (association.WeaponDef.ToUpper().Contains(ammunitionSettings.Filter.ToUpper())) {
+                        float lineHeight = Text.LineHeight;
+                        Rect innerRect = list2.GetRect(lineHeight);
+                        TextAnchor anchor = Text.Anchor;
+                        Text.Anchor = TextAnchor.MiddleLeft;
+                        Widgets.Label(innerRect, association.WeaponLabel);
+                        if (Widgets.ButtonInvisible(innerRect)) {
+                            association.Ammo++;
+                            if (association.Ammo > ammoType.battery) {
+                                association.Ammo = 0;
+                            }
                         }
-                        else if (contains == true && !ammunitionSettings.WeaponExclusion.Contains(def.defName)) {
-                            ammunitionSettings.WeaponExclusion.Add(def.defName);
-                        }
+                        Rect position = new Rect(innerRect.x + list2.ColumnWidth- 24f, innerRect.y, 24f, 24f);
+                        Widgets.DrawTextureFitted(position, Utility.ImageAssociation(association), 1);
+                        Text.Anchor = anchor;
                     }
                 }
                 list.EndSection(list2);

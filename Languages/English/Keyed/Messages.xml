@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <LanguageData>
 	<OutOfAmmo>{PAWN_nameDef} has run out of {0}!</OutOfAmmo>
+	<AmmoGizmoDescription>How much ammunition is available and the desired count. Click to have the pawn fetch ammo if the current ammo is lower than the desired count.</AmmoGizmoDescription>
 </LanguageData>

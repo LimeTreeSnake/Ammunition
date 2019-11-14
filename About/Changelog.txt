@@ -1,3 +1,11 @@
+2019-11-14
+- Firefighting should not be cut short due to fetching ammo and should be a tad smoother.
+- A new mod setting system for ammo selection for weapons.
+- Pre Industrial Ammunition
+- Acid ammunition
+- Enemies won't try to find weapons to use if they don't have ammo for it.
+- Gizmo for ammo
+
 2019-10-22
 - Fixed freeze after hunting with no ammo.
 - Decreased weight from 0.1 to 0.05

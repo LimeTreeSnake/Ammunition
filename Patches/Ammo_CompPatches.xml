@@ -1,0 +1,11 @@
+<Patch>
+    <Operation Class="PatchOperationAdd">
+		<xpath>*/*[category="Pawn"]/comps</xpath>
+		<value>
+			<li>
+				<compClass>Ammunition.Ammunition_Comp</compClass>
+			</li>
+		</value>
+	</Operation>
+
+</Patch>

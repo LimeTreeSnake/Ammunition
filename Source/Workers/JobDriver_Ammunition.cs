@@ -20,7 +20,7 @@ namespace Ammunition {
             this.FailOnDestroyedOrNull(TargetIndex.A);
             this.FailOnForbidden(TargetIndex.A);
 
-            int ammocount = Utility.AmmoCount(pawn, Utility.WeaponCheck(pawn));
+            int ammocount = Utility.AmmoCount(pawn, Utility.WeaponAmmunition(pawn.equipment.Primary.def));
             this.FailOn(() => ammocount >= SettingsHelper.LatestVersion.DesiredAmmo);
             int max = MassUtility.CountToPickUpUntilOverEncumbered(pawn, job.targetA.Thing);
             int num = 0;
