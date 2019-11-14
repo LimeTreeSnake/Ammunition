@@ -4,7 +4,8 @@
 - Pre Industrial Ammunition
 - Acid ammunition
 - Enemies won't try to find weapons to use if they don't have ammo for it.
-- Gizmo for ammo
+- Updated bone support kudos DR_Zhivago
+- Hotfix 1: Include Ammunition Status in nullcheck
 
 2019-10-22
 - Fixed freeze after hunting with no ammo.

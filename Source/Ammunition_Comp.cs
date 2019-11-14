@@ -28,18 +28,19 @@ namespace Ammunition {
                 if (pawn.equipment.AllEquipmentListForReading.Count > 0) {
                     foreach (Thing thing in pawn.equipment.AllEquipmentListForReading) {
                         WeaponAssociation associate = SettingsHelper.LatestVersion.WeaponAssociation.FirstOrDefault(x => x.WeaponDef == thing.def.defName && x.Ammo != 0);
-                        int current = Utility.AmmunitionStatus(pawn, associate);
-                        if (associate != null)
+                        if (associate != null) {
+                            int current = Utility.AmmunitionStatus(pawn, associate);
                             yield return new Command_Action {
                                 icon = Utility.ImageAssociation(associate),
                                 defaultLabel = current + "/" + SettingsHelper.LatestVersion.DesiredAmmo,
                                 defaultDesc = "AmmoGizmoDescription".Translate(),
                                 action = delegate {
-                                    if(current < SettingsHelper.LatestVersion.DesiredAmmo) {
+                                    if (current < SettingsHelper.LatestVersion.DesiredAmmo) {
                                         Utility.FetchAmmo(pawn, Utility.AmmunitionFinder(associate.Ammo));
                                     }
                                 }
                             };
+                        }
                     }
                 }
             }

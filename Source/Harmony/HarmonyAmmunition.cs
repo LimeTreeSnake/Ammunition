@@ -18,7 +18,6 @@ namespace Ammunition {
             #endregion Ticks
 
             #region Functionality
-            harmonyInstance.Patch(AccessTools.Method(typeof(Pawn), "GetGizmos"), null, new HarmonyMethod(typeof(HarmonyAmmunition).GetMethod("GetGizmos_PostFix")));
             harmonyInstance.Patch(AccessTools.Method(typeof(JobGiver_PickUpOpportunisticWeapon), "TryGiveJob"), null, new HarmonyMethod(typeof(HarmonyAmmunition).GetMethod("TryGiveJob_PostFix")));
             harmonyInstance.Patch(AccessTools.Method(typeof(Verb_LaunchProjectile), "WarmupComplete"), new HarmonyMethod(typeof(HarmonyAmmunition).GetMethod("WarmupComplete_Ranged_PreFix")), null);
             harmonyInstance.Patch(typeof(PawnGenerator).GetMethods().FirstOrDefault(x => x.Name == "GeneratePawn" && x.GetParameters().Count() == 1), null, new HarmonyMethod(typeof(HarmonyAmmunition).GetMethod("GeneratePawn_PostFix")));
@@ -67,16 +66,6 @@ namespace Ammunition {
                     ammo.stackCount = Rand.Range(25, 75);
                     __result.inventory.innerContainer.TryAdd(ammo);
                 }
-            }
-        }
-        public static void GetGizmos_PostFix(ref IEnumerable<Gizmo> __result, ref Pawn __instance) {
-            try {
-                if (__instance != null) {
-
-                }
-            }
-            catch (Exception ex) {
-                Log.Message(ex.Message);
             }
         }
         public static void TryGiveJob_PostFix(Pawn pawn, Job __result) {
