@@ -55,6 +55,7 @@ namespace Ammunition {
             NPCMinAmmo = npcMinAmmo;
             NPCMaxAmmo = npcMaxAmmo;
             WeaponViewHeight = weaponViewHeight;
+            AssociationDictionary = new Dictionary<string, ammoType>();
             Utility.CheckWeaponAssociation();
         }
 

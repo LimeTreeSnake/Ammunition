@@ -8,6 +8,7 @@
 - Hotfix 1: Include Ammunition Status in nullcheck
 - Fix 2: Trial fix nullcheck.
 - Changed list to dictionary. 
+- Default button now works correctly again after the switch to dictionary.
 
 2019-10-22
 - Fixed freeze after hunting with no ammo.
