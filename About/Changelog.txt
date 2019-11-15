@@ -6,6 +6,7 @@
 - Enemies won't try to find weapons to use if they don't have ammo for it.
 - Updated bone support kudos DR_Zhivago
 - Hotfix 1: Include Ammunition Status in nullcheck
+- Fix 2: Trial fix nullcheck.
 
 2019-10-22
 - Fixed freeze after hunting with no ammo.

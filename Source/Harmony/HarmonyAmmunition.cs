@@ -23,8 +23,6 @@ namespace Ammunition {
             harmonyInstance.Patch(typeof(PawnGenerator).GetMethods().FirstOrDefault(x => x.Name == "GeneratePawn" && x.GetParameters().Count() == 1), null, new HarmonyMethod(typeof(HarmonyAmmunition).GetMethod("GeneratePawn_PostFix")));
             #endregion Functionality
 
-            Utility.CleanUpList();
-            Utility.CheckWeaponAssociation();
             foreach (ThingDef def in Utility.AvailableWeapons) {
                 def.comps.Add(new CompProps_Ammunition());
             };

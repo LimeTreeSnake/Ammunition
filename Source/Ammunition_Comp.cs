@@ -7,7 +7,6 @@ namespace Ammunition {
     public class Ammunition_Comp : ThingComp {
         #region Fields
         private int desiredCount = SettingsHelper.LatestVersion.DesiredAmmo;
-
         #endregion Fields
 
         #region Properties

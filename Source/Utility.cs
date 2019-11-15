@@ -88,6 +88,7 @@ namespace Ammunition {
             return failed;
         }
         public static void CheckWeaponAssociation() {
+            CleanUpList();
             foreach (ThingDef def in AvailableWeapons) {
                 AddWeaponAssociation(def);
             }
@@ -233,27 +234,27 @@ namespace Ammunition {
             }
             return Widgets.CheckboxOffTex;
         }
-
         public static int AmmunitionStatus(Pawn pawn, WeaponAssociation associate) {
             int current = 0;
             IEnumerable<Thing> list = pawn.inventory.innerContainer.Where(x => x.def.defName == WeaponAmmunition(associate.WeaponDef).defName);
-            foreach(Thing thing in list) {
+            foreach (Thing thing in list) {
                 current += thing.stackCount;
             }
             return current;
         }
-
         public static void CleanUpList() {
-            List<WeaponAssociation> removal = new List<WeaponAssociation>();
-            foreach (WeaponAssociation association in SettingsHelper.LatestVersion.WeaponAssociation) {
-                ThingDef def = AvailableWeapons.FirstOrDefault(x => x.defName == association.WeaponDef);
-                if (def == null) {
-                    removal.Add(association);
+            if (SettingsHelper.LatestVersion.WeaponAssociation != null && SettingsHelper.LatestVersion.WeaponAssociation.Count > 0) {
+                List<WeaponAssociation> removal = new List<WeaponAssociation>();
+                foreach (WeaponAssociation association in SettingsHelper.LatestVersion.WeaponAssociation) {
+                    ThingDef def = AvailableWeapons.FirstOrDefault(x => x.defName == association.WeaponDef);
+                    if (def == null) {
+                        removal.Add(association);
+                    }
                 }
-            }
-            if (removal.Count > 0) {
-                foreach (WeaponAssociation association in removal) {
-                    SettingsHelper.LatestVersion.WeaponAssociation.Remove(association);
+                if (removal.Count > 0) {
+                    foreach (WeaponAssociation association in removal) {
+                        SettingsHelper.LatestVersion.WeaponAssociation.Remove(association);
+                    }
                 }
             }
         }

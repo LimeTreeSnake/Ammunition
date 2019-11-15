@@ -77,6 +77,7 @@ namespace Ammunition {
         public ModMain(ModContentPack content) : base(content) {
             ammunitionSettings = GetSettings<AmmunitionSettings>();
             SettingsHelper.LatestVersion = ammunitionSettings != null ? ammunitionSettings : new AmmunitionSettings();
+            Utility.CheckWeaponAssociation();
         }
         public override string SettingsCategory() {
             return "Ammunition";
