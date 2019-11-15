@@ -26,6 +26,7 @@ namespace Ammunition {
             foreach (ThingDef def in Utility.AvailableWeapons) {
                 def.comps.Add(new CompProps_Ammunition());
             };
+            Utility.CheckWeaponAssociation();
         }
 
         #region Ticks
