@@ -5,10 +5,11 @@ using System;
 using System.Linq;
 
 namespace Ammunition {
+    public enum ammoType { none = 0, primitive = 1, preindustrial, industrial, chemical, acid, nitrogen, battery };
     internal class AmmunitionSettings : ModSettings {
 
         #region Fields
-        private static readonly List<WeaponAssociation> weaponAssociation = new List<WeaponAssociation>();
+        private static readonly Dictionary<string, ammoType> associationDictionary = new Dictionary<string, ammoType>();
         private static readonly bool needAmmo = true;
         private static readonly bool npcNeedAmmo = true;
         private static readonly bool fetchAmmo = true;
@@ -30,7 +31,7 @@ namespace Ammunition {
         public string Filter { get; set; }
 
         public float WeaponViewHeight = weaponViewHeight;
-        public List<WeaponAssociation> WeaponAssociation = weaponAssociation.Count > 0 ? weaponAssociation : new List<WeaponAssociation>();
+        public Dictionary<string, ammoType> AssociationDictionary = associationDictionary ?? new Dictionary<string, ammoType>();
         #endregion Properties
         public override void ExposeData() {
             Scribe_Values.Look(ref NeedAmmo, "NeedAmmo", needAmmo);
@@ -41,7 +42,7 @@ namespace Ammunition {
             Scribe_Values.Look(ref NPCMinAmmo, "NPCMinAmmo", npcMinAmmo);
             Scribe_Values.Look(ref NPCMaxAmmo, "NPCMaxAmmo", npcMaxAmmo);
             Scribe_Values.Look(ref WeaponViewHeight, "WeaponViewHeight", weaponViewHeight);
-            Scribe_Collections.Look(ref WeaponAssociation, "WeaponAssociation", LookMode.Deep);
+            Scribe_Collections.Look(ref AssociationDictionary, "AssociationDictionary", LookMode.Value);
         }
 
         public void Reset() {
@@ -54,7 +55,6 @@ namespace Ammunition {
             NPCMinAmmo = npcMinAmmo;
             NPCMaxAmmo = npcMaxAmmo;
             WeaponViewHeight = weaponViewHeight;
-            WeaponAssociation.Clear();
             Utility.CheckWeaponAssociation();
         }
 
@@ -67,14 +67,14 @@ namespace Ammunition {
     }
 
 
-    public class ModMain : Mod {
+    public class Ammunition : Mod {
         public static Vector2 scrollPosition = Vector2.zero;
         public static Vector2 scrollPosition2 = Vector2.zero;
         private AmmunitionSettings ammunitionSettings = new AmmunitionSettings();
 
         public TextAnchor Anchor { get; private set; }
 
-        public ModMain(ModContentPack content) : base(content) {
+        public Ammunition(ModContentPack content) : base(content) {
             ammunitionSettings = GetSettings<AmmunitionSettings>();
             SettingsHelper.LatestVersion = ammunitionSettings != null ? ammunitionSettings : new AmmunitionSettings();
         }
@@ -110,28 +110,30 @@ namespace Ammunition {
                 ammunitionSettings.NPCMaxAmmo = (int)Mathf.Round(list.Slider(ammunitionSettings.NPCMaxAmmo, ammunitionSettings.NPCMinAmmo, 200));
             }
             list.GapLine();
-            if (ammunitionSettings.WeaponAssociation != null) {
+            if (ammunitionSettings.AssociationDictionary != null) {
                 list.Label(string.Format("Ammunition used for weapons."));
                 list.Label(string.Format("({0}) Height.", ammunitionSettings.WeaponViewHeight));
                 ammunitionSettings.WeaponViewHeight = (int)Mathf.Round(list.Slider(ammunitionSettings.WeaponViewHeight, 1, 2500));
                 ammunitionSettings.Filter = list.TextEntryLabeled("Filter:", ammunitionSettings.Filter, 1);
                 Listing_Standard list2 = list.BeginSection(ammunitionSettings.WeaponViewHeight);
                 list2.ColumnWidth = (rect2.width - 50) / 3;
-                foreach (WeaponAssociation association in ammunitionSettings.WeaponAssociation) {
-                    if (association.WeaponDef.ToUpper().Contains(ammunitionSettings.Filter.ToUpper())) {
+                foreach (ThingDef weapon in Utility.AvailableWeapons) {
+
+                    if (SettingsHelper.LatestVersion.AssociationDictionary.ContainsKey(weapon.defName) &&
+                        weapon.defName.ToUpper().Contains(ammunitionSettings.Filter.ToUpper())) {
                         float lineHeight = Text.LineHeight;
                         Rect innerRect = list2.GetRect(lineHeight);
                         TextAnchor anchor = Text.Anchor;
                         Text.Anchor = TextAnchor.MiddleLeft;
-                        Widgets.Label(innerRect, association.WeaponLabel);
+                        Widgets.Label(innerRect, weapon.label);
                         if (Widgets.ButtonInvisible(innerRect)) {
-                            association.Ammo++;
-                            if (association.Ammo > ammoType.battery) {
-                                association.Ammo = 0;
+                            SettingsHelper.LatestVersion.AssociationDictionary[weapon.defName]++;
+                            if (SettingsHelper.LatestVersion.AssociationDictionary[weapon.defName] > ammoType.battery) {
+                                SettingsHelper.LatestVersion.AssociationDictionary[weapon.defName] = 0;
                             }
                         }
-                        Rect position = new Rect(innerRect.x + list2.ColumnWidth- 24f, innerRect.y, 24f, 24f);
-                        Widgets.DrawTextureFitted(position, Utility.ImageAssociation(association), 1);
+                        Rect position = new Rect(innerRect.x + list2.ColumnWidth - 24f, innerRect.y, 24f, 24f);
+                        Widgets.DrawTextureFitted(position, Utility.ImageAssociation(SettingsHelper.LatestVersion.AssociationDictionary[weapon.defName]), 1);
                         Text.Anchor = anchor;
                     }
                 }

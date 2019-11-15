@@ -88,40 +88,30 @@ namespace Ammunition {
             return failed;
         }
         public static void CheckWeaponAssociation() {
-            CleanUpList();
             foreach (ThingDef def in AvailableWeapons) {
                 AddWeaponAssociation(def);
             }
         }
         public static void AddWeaponAssociation(ThingDef weapon) {
-            WeaponAssociation weaponassociation = SettingsHelper.LatestVersion.WeaponAssociation.FirstOrDefault(x => x.WeaponDef == weapon.defName);
-            if (weaponassociation == null || weaponassociation.WeaponDef == "" || weaponassociation.WeaponLabel == "") {
-                if (weapon != null)
-                    SettingsHelper.LatestVersion.WeaponAssociation.Remove(weaponassociation);
-                weaponassociation = new WeaponAssociation {
-                    WeaponDef = weapon.defName,
-                    WeaponLabel = weapon.label
-                };
+            if (!SettingsHelper.LatestVersion.AssociationDictionary.ContainsKey(weapon.defName)) {
                 if (weapon.HasModExtension<AmmoExtension>()) {
-                    weaponassociation.Ammo = weapon.GetModExtension<AmmoExtension>().ammo;
-                    SettingsHelper.LatestVersion.WeaponAssociation.Add(weaponassociation);
+                    SettingsHelper.LatestVersion.AssociationDictionary.Add(weapon.defName, weapon.GetModExtension<AmmoExtension>().ammo);
                 }
                 else {
-                    weaponassociation.Ammo = WeaponTranslationCheck(weapon);
-                    SettingsHelper.LatestVersion.WeaponAssociation.Add(weaponassociation);
+                    SettingsHelper.LatestVersion.AssociationDictionary.Add(weapon.defName, WeaponTranslationCheck(weapon));
                 }
             }
         }
         public static ThingDef WeaponAmmunition(ThingDef weapon) {
-            WeaponAssociation associated = SettingsHelper.LatestVersion.WeaponAssociation.FirstOrDefault(x => x.WeaponDef == weapon.defName);
-            if (associated != null)
-                return AmmunitionFinder(associated.Ammo);
+            if (SettingsHelper.LatestVersion.AssociationDictionary.ContainsKey(weapon.defName)) {
+                return AmmunitionFinder(SettingsHelper.LatestVersion.AssociationDictionary[weapon.defName]);
+            }
             return null;
         }
         public static ThingDef WeaponAmmunition(string weapon) {
-            WeaponAssociation associated = SettingsHelper.LatestVersion.WeaponAssociation.FirstOrDefault(x => x.WeaponDef == weapon);
-            if (associated != null)
-                return AmmunitionFinder(associated.Ammo);
+            if (SettingsHelper.LatestVersion.AssociationDictionary.ContainsKey(weapon)) {
+                return AmmunitionFinder(SettingsHelper.LatestVersion.AssociationDictionary[weapon]);
+            }
             return null;
         }
         public static ThingDef AmmunitionFinder(ammoType ammo) {
@@ -215,8 +205,8 @@ namespace Ammunition {
             return 0;
 
         }
-        public static Texture2D ImageAssociation(WeaponAssociation associate) {
-            switch (associate.Ammo) {
+        public static Texture2D ImageAssociation(ammoType ammo) {
+            switch (ammo) {
                 case ammoType.primitive:
                     return Primitive;
                 case ammoType.preindustrial:
@@ -234,29 +224,13 @@ namespace Ammunition {
             }
             return Widgets.CheckboxOffTex;
         }
-        public static int AmmunitionStatus(Pawn pawn, WeaponAssociation associate) {
+        public static int AmmunitionStatus(Pawn pawn, ThingDef ammo) {
             int current = 0;
-            IEnumerable<Thing> list = pawn.inventory.innerContainer.Where(x => x.def.defName == WeaponAmmunition(associate.WeaponDef).defName);
+            IEnumerable<Thing> list = pawn.inventory.innerContainer.Where(x => x.def.defName == ammo.defName);
             foreach (Thing thing in list) {
                 current += thing.stackCount;
             }
             return current;
-        }
-        public static void CleanUpList() {
-            if (SettingsHelper.LatestVersion.WeaponAssociation != null && SettingsHelper.LatestVersion.WeaponAssociation.Count > 0) {
-                List<WeaponAssociation> removal = new List<WeaponAssociation>();
-                foreach (WeaponAssociation association in SettingsHelper.LatestVersion.WeaponAssociation) {
-                    ThingDef def = AvailableWeapons.FirstOrDefault(x => x.defName == association.WeaponDef);
-                    if (def == null) {
-                        removal.Add(association);
-                    }
-                }
-                if (removal.Count > 0) {
-                    foreach (WeaponAssociation association in removal) {
-                        SettingsHelper.LatestVersion.WeaponAssociation.Remove(association);
-                    }
-                }
-            }
         }
     }
 }

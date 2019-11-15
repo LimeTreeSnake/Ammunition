@@ -51,7 +51,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Ammunition_Comp.cs" />
-    <Compile Include="WeaponAssociation.cs" />
     <Compile Include="AmmunitionDef.cs" />
     <Compile Include="Harmony\HarmonyAmmunition.cs" />
     <Compile Include="Settings\AmmunitionSettings.cs" />
