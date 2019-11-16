@@ -27,7 +27,7 @@ namespace Ammunition {
                 if (pawn.equipment.AllEquipmentListForReading.Count > 0) {
                     foreach (Thing thing in pawn.equipment.AllEquipmentListForReading) {
                         if (SettingsHelper.LatestVersion.AssociationDictionary.ContainsKey(thing.def.defName)) {
-                            int current = Utility.AmmunitionStatus(pawn, thing.def);
+                            int current = Utility.AmmunitionStatus(pawn, Utility.AmmunitionFinder(SettingsHelper.LatestVersion.AssociationDictionary[thing.def.defName]));
                             yield return new Command_Action {
                                 icon = Utility.ImageAssociation(SettingsHelper.LatestVersion.AssociationDictionary[thing.def.defName]),
                                 defaultLabel = current + "/" + SettingsHelper.LatestVersion.DesiredAmmo,
