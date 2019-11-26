@@ -3,3 +3,10 @@ C:\Users\Rikki\Desktop\Git\Ammunition\Source\obj\Debug\Ammunition.csproj.CoreCom
 C:\Users\Rikki\Desktop\Git\Ammunition\Source\obj\Debug\Ammunition.csproj.CopyComplete
 C:\Users\Rikki\Desktop\Git\Ammunition\Source\obj\Debug\Ammunition.dll
 C:\Users\Rikki\Desktop\Git\Ammunition\Source\obj\Debug\Ammunition.csprojAssemblyReference.cache
+C:\Users\Rikard Stranne\Documents\GIT\Ammunition-master\Assemblies\Ammunition.dll
+C:\Users\Rikard Stranne\Documents\GIT\Ammunition-master\Source\obj\Debug\Ammunition.csprojAssemblyReference.cache
+C:\Users\Rikard Stranne\Documents\GIT\Ammunition-master\Source\obj\Debug\Ammunition.csproj.CopyComplete
+C:\Users\Rikard Stranne\Documents\GIT\Ammunition-master\Source\obj\Debug\Ammunition.dll
+C:\Users\Rikard Stranne\Documents\GIT\Ammunition\Assemblies\Ammunition.dll
+C:\Users\Rikard Stranne\Documents\GIT\Ammunition\Source\obj\Debug\Ammunition.csproj.CopyComplete
+C:\Users\Rikard Stranne\Documents\GIT\Ammunition\Source\obj\Debug\Ammunition.dll

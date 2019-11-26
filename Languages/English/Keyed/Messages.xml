@@ -2,4 +2,7 @@
 <LanguageData>
 	<OutOfAmmo>{PAWN_nameDef} has run out of {0}!</OutOfAmmo>
 	<AmmoGizmoDescription>How much ammunition is available and the desired count. Click to have the pawn fetch ammo if the current ammo is lower than the desired count.</AmmoGizmoDescription>
-</LanguageData>
+	<Fetch>Fetch ammo</Fetch>	
+	<NoFetch>Don't Fetch ammo</NoFetch>
+	<FetchDescription>Whether a pawn should try to fetch ammo by themselves.</FetchDescription>
+	</LanguageData>

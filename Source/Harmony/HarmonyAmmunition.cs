@@ -6,9 +6,11 @@ using System.Linq;
 using Verse;
 using Verse.AI;
 
-namespace Ammunition {
+namespace Ammunition
+{
     [StaticConstructorOnStartup]
-    internal static class HarmonyAmmunition {
+    internal static class HarmonyAmmunition
+    {
         static HarmonyAmmunition() {
 
             HarmonyInstance harmonyInstance = HarmonyInstance.Create("rimworld.limetreesnake.ammunition");
@@ -21,6 +23,7 @@ namespace Ammunition {
             harmonyInstance.Patch(AccessTools.Method(typeof(JobGiver_PickUpOpportunisticWeapon), "TryGiveJob"), null, new HarmonyMethod(typeof(HarmonyAmmunition).GetMethod("TryGiveJob_PostFix")));
             harmonyInstance.Patch(AccessTools.Method(typeof(Verb_LaunchProjectile), "WarmupComplete"), new HarmonyMethod(typeof(HarmonyAmmunition).GetMethod("WarmupComplete_Ranged_PreFix")), null);
             harmonyInstance.Patch(typeof(PawnGenerator).GetMethods().FirstOrDefault(x => x.Name == "GeneratePawn" && x.GetParameters().Count() == 1), null, new HarmonyMethod(typeof(HarmonyAmmunition).GetMethod("GeneratePawn_PostFix")));
+            harmonyInstance.Patch(AccessTools.Method(typeof(PawnGenerator), "RedressPawn"), null, new HarmonyMethod(typeof(HarmonyAmmunition).GetMethod("RedressPawn_PostFix")));
             #endregion Functionality
 
             foreach (ThingDef def in Utility.AvailableWeapons) {
@@ -32,7 +35,7 @@ namespace Ammunition {
         #region Ticks
         public static void TickRare_PostFix(Pawn __instance) {
             if (__instance.Spawned && __instance.IsFreeColonist) {
-                if (SettingsHelper.LatestVersion.FetchAmmo && __instance.jobs.curJob.def.casualInterruptible && !__instance.jobs.curJob.playerForced && !__instance.IsFighting() && !PawnUtility.WillSoonHaveBasicNeed(__instance)) {
+                if (ThingCompUtility.TryGetComp<Ammunition_Comp>(__instance).FetchAmmo && __instance.jobs.curJob.def.casualInterruptible && !__instance.jobs.curJob.playerForced && !__instance.IsFighting() && !(__instance.jobs.curJob.def == RimWorld.JobDefOf.Hunt) && !PawnUtility.WillSoonHaveBasicNeed(__instance)) {
                     Utility.AmmoCheck(__instance, out List<ThingDef> ammo);
                     if (ammo.Count > 0) {
                         foreach (ThingDef a in ammo) {
@@ -81,6 +84,19 @@ namespace Ammunition {
             }
             catch (Exception ex) {
                 Log.Message(ex.Message);
+            }
+        }
+
+        public static void RedressPawn_PostFix(Pawn pawn) {
+            if (pawn != null && pawn.equipment != null && pawn.equipment.Primary != null) {
+                ThingDef ammodef = Utility.WeaponAmmunition(pawn.equipment.Primary.def);
+                if (ammodef != null) {
+                    if (pawn.inventory.innerContainer.FirstOrDefault(x => x.def == ammodef && x.stackCount < SettingsHelper.LatestVersion.NPCMinAmmo) != null) {
+                        Thing ammo = ThingMaker.MakeThing(ammodef);
+                        ammo.stackCount = Rand.Range(SettingsHelper.LatestVersion.NPCMinAmmo, SettingsHelper.LatestVersion.NPCMaxAmmo);
+                        pawn.inventory.innerContainer.TryAdd(ammo);
+                    }
+                }
             }
         }
         #endregion Functionality

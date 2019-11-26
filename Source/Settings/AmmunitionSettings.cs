@@ -4,9 +4,11 @@ using System.Collections.Generic;
 using System;
 using System.Linq;
 
-namespace Ammunition {
+namespace Ammunition
+{
     public enum ammoType { none = 0, primitive = 1, preindustrial, industrial, chemical, acid, nitrogen, battery };
-    internal class AmmunitionSettings : ModSettings {
+    internal class AmmunitionSettings : ModSettings
+    {
 
         #region Fields
         private static readonly Dictionary<string, ammoType> associationDictionary = new Dictionary<string, ammoType>();
@@ -36,7 +38,6 @@ namespace Ammunition {
         public override void ExposeData() {
             Scribe_Values.Look(ref NeedAmmo, "NeedAmmo", needAmmo);
             Scribe_Values.Look(ref NPCNeedAmmo, "NPCNeedAmmo", npcNeedAmmo);
-            Scribe_Values.Look(ref FetchAmmo, "FetchAmmo", fetchAmmo);
             Scribe_Values.Look(ref DesiredAmmo, "DesiredAmmo", desiredAmmo);
             Scribe_Values.Look(ref LeastAmmoFetch, "LeastAmmoFetch", leastAmmoFetch);
             Scribe_Values.Look(ref NPCMinAmmo, "NPCMinAmmo", npcMinAmmo);
@@ -60,7 +61,8 @@ namespace Ammunition {
         }
 
     }
-    internal static class SettingsHelper {
+    internal static class SettingsHelper
+    {
         public static AmmunitionSettings LatestVersion;
         public static void Reset() {
             LatestVersion.Reset();
@@ -68,7 +70,8 @@ namespace Ammunition {
     }
 
 
-    public class Ammunition : Mod {
+    public class Ammunition : Mod
+    {
         public static Vector2 scrollPosition = Vector2.zero;
         public static Vector2 scrollPosition2 = Vector2.zero;
         private AmmunitionSettings ammunitionSettings = new AmmunitionSettings();
@@ -96,18 +99,15 @@ namespace Ammunition {
                 ammunitionSettings.Reset();
             };
             list.CheckboxLabeled("Is ammo required to fire weapons?", ref ammunitionSettings.NeedAmmo);
-            list.CheckboxLabeled("Should a pawn actively search for ammo?", ref ammunitionSettings.FetchAmmo);
-            if (ammunitionSettings.FetchAmmo) {
-                list.Label(string.Format("Desired carried ammo. {0}", ammunitionSettings.DesiredAmmo));
-                ammunitionSettings.DesiredAmmo = (int)Mathf.Round(list.Slider(ammunitionSettings.DesiredAmmo, 1, 100));
-                list.Label(string.Format("Least ammo to fetch. {0}", ammunitionSettings.LeastAmmoFetch));
-                ammunitionSettings.LeastAmmoFetch = (int)Mathf.Round(list.Slider(ammunitionSettings.LeastAmmoFetch, 1, 10));
-            }
+            list.Label(string.Format("Desired carried ammo. {0}", ammunitionSettings.DesiredAmmo));
+            ammunitionSettings.DesiredAmmo = (int)Mathf.Round(list.Slider(ammunitionSettings.DesiredAmmo, 1, 100));
+            list.Label(string.Format("Least ammo to fetch. {0}", ammunitionSettings.LeastAmmoFetch));
+            ammunitionSettings.LeastAmmoFetch = (int)Mathf.Round(list.Slider(ammunitionSettings.LeastAmmoFetch, 1, 10));
             list.CheckboxLabeled("NPC needs ammo.", ref ammunitionSettings.NPCNeedAmmo);
             if (ammunitionSettings.NPCNeedAmmo) {
-                list.Label(string.Format("NPC's spawn if appliable with a minumum of {0} ammo.", ammunitionSettings.NPCMinAmmo));
+                list.Label(string.Format("NPC's spawn if appliable with a minumum of {0} ammo up to the maximum set in the following option.", ammunitionSettings.NPCMinAmmo));
                 ammunitionSettings.NPCMinAmmo = (int)Mathf.Round(list.Slider(ammunitionSettings.NPCMinAmmo, 1, 100));
-                list.Label(string.Format("NPC's spawn if appliable with a maxmimum of {0} ammo.", ammunitionSettings.NPCMaxAmmo));
+                list.Label(string.Format("NPC's spawn/respawn if appliable with maxmimum {0} of extra ammo.", ammunitionSettings.NPCMaxAmmo));
                 ammunitionSettings.NPCMaxAmmo = (int)Mathf.Round(list.Slider(ammunitionSettings.NPCMaxAmmo, ammunitionSettings.NPCMinAmmo, 200));
             }
             list.GapLine();

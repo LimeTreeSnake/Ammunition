@@ -1,3 +1,9 @@
+2019-11-26
+- Removed option for fetching ammo in mod settings.
+- Added Gizmo for pawns to allow fetching ammo automagically or not.
+- Redressed pawns should now get some of that juicy ammo if applicable.
+- Pawns should be less likely to randomly fetch ammo when hunting.
+
 2019-11-14
 - Firefighting should not be cut short due to fetching ammo and should be a tad smoother.
 - A new mod setting system for ammo selection for weapons.
