@@ -46,7 +46,7 @@ namespace Ammunition
                             };
                         }
                     }
-                    if (pawn.equipment.AllEquipmentListForReading.FirstOrDefault(x => x.def.IsRangedWeapon) != null)
+                    if (pawn.equipment.AllEquipmentListForReading.FirstOrDefault(x => (x.def.IsRangedWeapon && SettingsHelper.LatestVersion.AssociationDictionary.ContainsKey(x.def.defName))) != null)
                         yield return new Command_Action {
                             icon = fetchAmmo ?
                             ContentFinder<Texture2D>.Get("Designations/Hunt", true) :
