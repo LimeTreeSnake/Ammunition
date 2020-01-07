@@ -13,19 +13,9 @@
                 <success>Always</success>
                 <operations>
                     <li Class="PatchOperationAdd">
-                        <xpath>Defs/RecipeDef[defName="Make_PrimitiveAmmo"]/ingredients//disallowedThingDefs</xpath>
+                        <xpath>Defs/RecipeDef[defName="Make_PrimitiveAmmo"]/ingredients//thingDefs</xpath>
                         <value>
-                            <li>Bonecrete</li>
-                            <li>BonePlastic</li>
-                            <li>BoneChina</li>
-                        </value>
-                    </li>
-                    <li Class="PatchOperationAdd">
-                        <xpath>Defs/RecipeDef[defName="Make_PrimitiveAmmo"]/fixedIngredientFilter/disallowedThingDefs</xpath>
-                        <value>
-                            <li>Bonecrete</li>
-                            <li>BonePlastic</li>
-                            <li>BoneChina</li>
+                            <li>BoneItem</li>
                         </value>
                     </li>
                 </operations>

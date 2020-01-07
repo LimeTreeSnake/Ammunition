@@ -9,10 +9,7 @@ namespace Ammunition {
     public class JobDriver_FetchAmmunitionCase : JobDriver {
 
         public override bool TryMakePreToilReservations(bool errorOnFailed) {
-            Pawn pawn = base.pawn;
-            LocalTargetInfo targetA = base.job.targetA;
-            Job job = base.job;
-            return pawn.Reserve(targetA, job, 1, -1, null, errorOnFailed);
+            return true;
         }
 
         protected override IEnumerable<Toil> MakeNewToils() {
@@ -30,10 +27,6 @@ namespace Ammunition {
             else {
                 num = Mathf.Min(Mathf.Min(SettingsHelper.LatestVersion.DesiredAmmo - ammocount, job.targetA.Thing.stackCount), max);
             }
-
-
-            Toil reserveTargetA = Toils_Reserve.Reserve(TargetIndex.A);
-            yield return reserveTargetA;
             Toil go = Toils_Goto.Goto(TargetIndex.A, PathEndMode.Touch);
             yield return go;
             Toil take = Toils_Take.TakeToInventory(TargetIndex.A, () => num);

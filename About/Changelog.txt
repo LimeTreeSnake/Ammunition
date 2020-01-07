@@ -1,3 +1,8 @@
+2019-12-xx
+- Check ammo on spawn instead of gen.
+- Pawn no longer reserve ammo when fetching.
+- Ranged Weapons without ammo no longer remove Gizmos.
+
 2019-11-26
 - Removed option for fetching ammo in mod settings.
 - Added Gizmo for pawns to allow fetching ammo automagically or not.

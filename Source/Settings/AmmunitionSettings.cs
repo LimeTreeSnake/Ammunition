@@ -87,6 +87,8 @@ namespace Ammunition
         }
 
         public override void DoSettingsWindowContents(Rect inRect) {
+            try {
+
             inRect.yMin += 20;
             inRect.yMax -= 20;
             Listing_Standard list = new Listing_Standard();
@@ -119,7 +121,6 @@ namespace Ammunition
                 Listing_Standard list2 = list.BeginSection(ammunitionSettings.WeaponViewHeight);
                 list2.ColumnWidth = (rect2.width - 50) / 3;
                 foreach (ThingDef weapon in Utility.AvailableWeapons) {
-
                     if (SettingsHelper.LatestVersion.AssociationDictionary.ContainsKey(weapon.defName) &&
                         weapon.defName.ToUpper().Contains(ammunitionSettings.Filter.ToUpper())) {
                         float lineHeight = Text.LineHeight;
@@ -140,10 +141,14 @@ namespace Ammunition
                 }
                 list.EndSection(list2);
             }
-
             list.End();
             Widgets.EndScrollView();
             ammunitionSettings.Write();
+            }
+            catch (Exception ex) {
+                Log.Warning(ex.Message + "- Something went wrong, resetting mod settings.");
+                SettingsHelper.LatestVersion.Reset();
+            }
         }
     }
 }

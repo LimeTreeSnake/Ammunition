@@ -14,14 +14,20 @@ namespace Ammunition {
         private static Texture2D Chemical => ContentFinder<Texture2D>.Get("UI/Icons/Chemical", true);
         private static Texture2D Industrial => ContentFinder<Texture2D>.Get("UI/Icons/Industrial", true);
         private static Texture2D Nitrogen => ContentFinder<Texture2D>.Get("UI/Icons/Nitrogen", true);
-        private static Texture2D PreIndustrial => ContentFinder<Texture2D>.Get("UI/Icons/PreIndustrial", true);
+        private static Texture2D Preindustrial => ContentFinder<Texture2D>.Get("UI/Icons/Preindustrial", true);
         private static Texture2D Primitive => ContentFinder<Texture2D>.Get("UI/Icons/Primitive", true);
 
         public static IEnumerable<ThingDef> AvailableWeapons = DefDatabase<ThingDef>.AllDefsListForReading.Where(x => x.IsRangedWeapon && x.equipmentType == EquipmentType.Primary && x.weaponTags != null && x.Verbs.FirstOrDefault(y => y.verbClass.Name.Contains("Verb_Shoot")) != null && x.Verbs.FirstOrDefault(y => !y.verbClass.Name.Contains("Verb_ShootOneUse")) != null && !x.destroyOnDrop);
 
 
-        public static bool Eligable(Verb __instance) {
-            if (__instance.CasterIsPawn && !__instance.CasterPawn.AnimalOrWildMan() && !__instance.caster.def.IsBuildingArtificial && __instance.CasterPawn.equipment != null && __instance.CasterPawn.equipment.Primary != null) {
+        public static bool Eligable(Verb verb) {
+            if (verb.CasterIsPawn && Eligable(verb.CasterPawn)) {
+                return true;
+            }
+            return false;
+        }
+        public static bool Eligable(Pawn pawn) {
+            if (!pawn.AnimalOrWildMan() && !pawn.def.IsBuildingArtificial && pawn.equipment != null && pawn.equipment.Primary != null) {
                 return true;
             }
             return false;
@@ -108,12 +114,6 @@ namespace Ammunition {
             }
             return null;
         }
-        public static ThingDef WeaponAmmunition(string weapon) {
-            if (SettingsHelper.LatestVersion.AssociationDictionary.ContainsKey(weapon)) {
-                return AmmunitionFinder(SettingsHelper.LatestVersion.AssociationDictionary[weapon]);
-            }
-            return null;
-        }
         public static ThingDef AmmunitionFinder(ammoType ammo) {
             switch (ammo) {
                 case ammoType.primitive:
@@ -130,8 +130,9 @@ namespace Ammunition {
                     return ThingDefOf.NitrogenAmmunitionCanister;
                 case ammoType.battery:
                     return ThingDefOf.BatteryAmmunitionCharge;
+                default:
+                    return null;
             }
-            return null;
         }
         public static ammoType AmmunitionFinder(ThingDef ammo) {
 
@@ -210,7 +211,7 @@ namespace Ammunition {
                 case ammoType.primitive:
                     return Primitive;
                 case ammoType.preindustrial:
-                    return PreIndustrial;
+                    return Preindustrial;
                 case ammoType.industrial:
                     return Industrial;
                 case ammoType.chemical:
@@ -221,8 +222,9 @@ namespace Ammunition {
                     return Nitrogen;
                 case ammoType.battery:
                     return Battery;
+                default:
+                    return Widgets.CheckboxOffTex;
             }
-            return Widgets.CheckboxOffTex;
         }
         public static int AmmunitionStatus(Pawn pawn, ThingDef ammo) {
             int current = 0;

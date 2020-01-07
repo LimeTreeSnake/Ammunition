@@ -4,10 +4,8 @@ using Verse;
 using System.Linq;
 using UnityEngine;
 
-namespace Ammunition
-{
-    public class Ammunition_Comp : ThingComp
-    {
+namespace Ammunition {
+    public class Ammunition_Comp : ThingComp {
         #region Fields
         private int desiredCount = SettingsHelper.LatestVersion.DesiredAmmo;
         private bool fetchAmmo = true;
@@ -15,10 +13,16 @@ namespace Ammunition
 
         #region Properties
         public int DesiredCount {
-            get { return desiredCount; }
-            set { desiredCount = value; }
+            get {
+                return desiredCount;
+            }
+            set {
+                desiredCount = value;
+            }
         }
-        public bool FetchAmmo { get => fetchAmmo; set => fetchAmmo = value; }
+        public bool FetchAmmo {
+            get => fetchAmmo; set => fetchAmmo = value;
+        }
         #endregion Properties
 
         #region Methods
@@ -32,21 +36,22 @@ namespace Ammunition
                 Pawn pawn = (Pawn)parent;
                 if (pawn.equipment.AllEquipmentListForReading.Count > 0) {
                     foreach (Thing thing in pawn.equipment.AllEquipmentListForReading) {
-                        if (SettingsHelper.LatestVersion.AssociationDictionary.ContainsKey(thing.def.defName)) {
-                            int current = Utility.AmmunitionStatus(pawn, Utility.AmmunitionFinder(SettingsHelper.LatestVersion.AssociationDictionary[thing.def.defName]));
+                        if (SettingsHelper.LatestVersion.AssociationDictionary.TryGetValue(thing.def.defName, out ammoType ammo) && ammo != ammoType.none) {
+                            int current = Utility.AmmunitionStatus(pawn, Utility.AmmunitionFinder(ammo));
                             yield return new Command_Action {
-                                icon = Utility.ImageAssociation(SettingsHelper.LatestVersion.AssociationDictionary[thing.def.defName]),
+                                icon = Utility.ImageAssociation(ammo),
                                 defaultLabel = current + "/" + SettingsHelper.LatestVersion.DesiredAmmo,
                                 defaultDesc = "AmmoGizmoDescription".Translate(),
                                 action = delegate {
                                     if (current < SettingsHelper.LatestVersion.DesiredAmmo) {
-                                        Utility.FetchAmmo(pawn, Utility.AmmunitionFinder(SettingsHelper.LatestVersion.AssociationDictionary[thing.def.defName]));
+                                        Utility.FetchAmmo(pawn, Utility.AmmunitionFinder(ammo));
                                     }
                                 }
                             };
+
                         }
                     }
-                    if (pawn.equipment.AllEquipmentListForReading.FirstOrDefault(x => (x.def.IsRangedWeapon && SettingsHelper.LatestVersion.AssociationDictionary.ContainsKey(x.def.defName))) != null)
+                    if (pawn.equipment.AllEquipmentListForReading.FirstOrDefault(x => x.def.IsRangedWeapon && SettingsHelper.LatestVersion.AssociationDictionary.TryGetValue(x.def.defName, out ammoType ammo) && ammo != ammoType.none) != null)
                         yield return new Command_Action {
                             icon = fetchAmmo ?
                             ContentFinder<Texture2D>.Get("Designations/Hunt", true) :
@@ -64,8 +69,7 @@ namespace Ammunition
         #endregion Methods
     }
 
-    public class CompProps_Ammunition : CompProperties
-    {
+    public class CompProps_Ammunition : CompProperties {
         public CompProps_Ammunition() {
             compClass = typeof(Ammunition_Comp);
         }

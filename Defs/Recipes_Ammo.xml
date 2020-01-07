@@ -23,14 +23,12 @@
 		<ingredients>
 			<li>
 				<filter>
+					<thingDefs>
+						<li>Steel</li>
+					</thingDefs>
 					<categories>
-						<li>ResourcesRaw</li>
+						<li>StoneBlocks</li>
 					</categories>
-					<disallowedCategories>
-						<li>PlantMatter</li>
-					</disallowedCategories>
-					<disallowedThingDefs />
-					<!--Leaving this field blank will allow modders to simply add to a list and specify their own items as not usable, if desired-->
 				</filter>
 				<count>10</count>
 			</li>
@@ -44,15 +42,13 @@
 			</li>
 		</ingredients>
 		<fixedIngredientFilter>
+			<thingDefs>
+				<li>Steel</li>
+			</thingDefs>
 			<categories>
-				<li>ResourcesRaw</li>
+				<li>StoneBlocks</li>
 				<li>Textiles</li>
 			</categories>
-			<disallowedCategories>
-				<li>PlantMatter</li>
-			</disallowedCategories>
-			<disallowedThingDefs />
-			<!--Leaving this field blank will allow modders to simply add to a list and specify their own items as not usable, if desired-->
 		</fixedIngredientFilter>
 		<products>
 			<PrimitiveAmmunitionCase>50</PrimitiveAmmunitionCase>
