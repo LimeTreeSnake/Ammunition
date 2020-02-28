@@ -7,17 +7,16 @@ using Verse.AI;
 
 namespace Ammunition.Utility {
     public static class Utility {
-        public static IEnumerable<ThingDef> Weapons => DefDatabase<ThingDef>.AllDefsListForReading.Where(x => x.IsRangedWeapon && x.equipmentType == EquipmentType.Primary && x.weaponTags != null && x.Verbs.FirstOrDefault(y => y.verbClass.Name.Contains("Verb_Shoot")) != null && x.Verbs.FirstOrDefault(y => !y.verbClass.Name.Contains("Verb_ShootOneUse")) != null && !x.destroyOnDrop);
+        public static IEnumerable<ThingDef> Weapons => DefDatabase<ThingDef>.AllDefsListForReading.Where(x => x.IsRangedWeapon && x.equipmentType == EquipmentType.Primary && x.weaponTags != null && x.Verbs.FirstOrDefault(y => (y.verbClass.Name.Contains("Verb_Shoot")) || y.verbClass.Name.Contains("Verb_LaunchProjectile")) != null && x.Verbs.FirstOrDefault(y => !y.verbClass.Name.Contains("Verb_ShootOneUse")) != null && !x.destroyOnDrop);
         public static IEnumerable<ThingDef> Ammo => DefDatabase<ThingDef>.AllDefs.Where(x => x.GetCompProperties<CompProps_Ammunition>() != null);
         public static IEnumerable<ThingDef> Mags => DefDatabase<ThingDef>.AllDefs.Where(x => x.GetCompProperties<CompProps_Magazine>() != null);
         public static bool Fire(Thing thing, Pawn pawn) {
-            Settings.SettingsHelper.LatestVersion.AssociationDictionary.TryGetValue(thing.def.defName, out string ammo);
-            Log.Message("FIRE " + thing.def.defName + " " + ammo);
+            Settings.SettingsHelper.LatestVersion.AssociationDictionary.TryGetValue(thing.def.defName.ToLower(), out string ammo);
             if (ammo != null) {
-                Apparel apparel = pawn.apparel.WornApparel.FirstOrDefault(x => Mags.FirstOrDefault(y => y.defName == x.def.defName) != null);
+                Apparel apparel = pawn.apparel.WornApparel.FirstOrDefault(x => Mags.FirstOrDefault(y => y.defName.ToLower() == x.def.defName.ToLower()) != null);
                 if (apparel != null) {
                     MagazineComponent mag = apparel.GetComp<MagazineComponent>();
-                    if (mag != null && mag.Props.AmmoDef == ammo) {
+                    if (mag != null && mag.Props.AmmoDef.ToLower() == ammo) {
                         if (mag.Count > 0) {
                             mag.Count--;
                             return true;
@@ -33,49 +32,49 @@ namespace Ammunition.Utility {
         }
         public static void AmmoCheck() {
             foreach (ThingDef def in Weapons) {
-                if (!Settings.SettingsHelper.LatestVersion.AssociationDictionary.ContainsKey(def.defName)) {
+                if (!Settings.SettingsHelper.LatestVersion.AssociationDictionary.ContainsKey(def.defName.ToLower())) {
                     string defOf = null;
                     foreach (ThingDef ammos in Ammo) {
-                        if (ammos.GetCompProperties<CompProps_Ammunition>().defs.Contains(def.defName)) {
-                            defOf = ammos.defName;
+                        if (ammos.GetCompProperties<CompProps_Ammunition>().defs.FirstOrDefault(x => x.ToLower() == def.defName.ToLower()) != null) {
+                            defOf = ammos.defName.ToLower();
                         }
                     }
                     if (defOf == null)
                         switch (def.techLevel) {
                             case TechLevel.Neolithic:
-                                defOf = Defs.ThingDefOf.AmmoPrimitive.defName;
+                                defOf = Defs.ThingDefOf.AmmoPrimitive.defName.ToLower();
                                 break;
                             case TechLevel.Medieval:
-                                defOf = Defs.ThingDefOf.AmmoPrimitive.defName;
+                                defOf = Defs.ThingDefOf.AmmoPrimitive.defName.ToLower();
                                 break;
                             case TechLevel.Industrial:
-                                defOf = Defs.ThingDefOf.AmmoIndustrial.defName;
+                                defOf = Defs.ThingDefOf.AmmoIndustrial.defName.ToLower();
                                 break;
                             case TechLevel.Spacer:
-                                defOf = Defs.ThingDefOf.AmmoCharge.defName;
+                                defOf = Defs.ThingDefOf.AmmoCharge.defName.ToLower();
                                 break;
                             case TechLevel.Ultra:
-                                defOf = Defs.ThingDefOf.AmmoCharge.defName;
+                                defOf = Defs.ThingDefOf.AmmoCharge.defName.ToLower();
                                 break;
                             case TechLevel.Archotech:
-                                defOf = Defs.ThingDefOf.AmmoCharge.defName;
+                                defOf = Defs.ThingDefOf.AmmoCharge.defName.ToLower();
                                 break;
                             default:
-                                defOf = Defs.ThingDefOf.AmmoIndustrial.defName;
+                                defOf = Defs.ThingDefOf.AmmoIndustrial.defName.ToLower();
                                 break;
                         }
                     if (defOf != null)
-                        Settings.SettingsHelper.LatestVersion.AssociationDictionary.Add(def.defName, defOf);
+                        Settings.SettingsHelper.LatestVersion.AssociationDictionary.Add(def.defName.ToLower(), defOf);
                 }
             }
         }
         public static void GetMagAndAmmo(Apparel apparel, out MagazineComponent mag, out ThingDef ammo) {
             mag = apparel.GetComp<MagazineComponent>();
-            string def = mag.Props.AmmoDef;
-            ammo = Ammo.FirstOrDefault(x => x.defName == def);
+            string def = mag.Props.AmmoDef.ToLower();
+            ammo = Ammo.FirstOrDefault(x => x.defName.ToLower() == def.ToLower());
         }
         public static void DropAmmo(MagazineComponent mag, IntVec3 pos) {
-            DebugThingPlaceHelper.DebugSpawn(Ammo.FirstOrDefault(x => x.defName == mag.Props.AmmoDef), pos, mag.Count);
+            DebugThingPlaceHelper.DebugSpawn(Ammo.FirstOrDefault(x => x.defName.ToLower() == mag.Props.AmmoDef.ToLower()), pos, mag.Count);
             mag.Count = 0;
         }
         public static bool FetchAmmo(Pawn pawn, Apparel apparel, MagazineComponent mag, int radius) {
@@ -85,28 +84,28 @@ namespace Ammunition.Utility {
                 }
                 return true;
             }
-            ThingDef def = Ammo.FirstOrDefault(x => x.defName == mag.Props.AmmoDef);
-            Thing thing = GenClosest.ClosestThing_Global_Reachable(
+            ThingDef ammoDef = Ammo.FirstOrDefault(x => x.defName.ToLower() == mag.Props.AmmoDef.ToLower());
+            Thing ammo = GenClosest.ClosestThing_Global_Reachable(
                 pawn.Position,
                 pawn.Map,
-                pawn.Map.listerThings.ThingsOfDef(def),
+                pawn.Map.listerThings.ThingsOfDef(ammoDef),
                 PathEndMode.OnCell,
                 TraverseParms.For(pawn),
                 radius,
                 validator);
-            if (thing != null) {
-                Job job = new Job(Defs.JobDefOf.JobDriver_FetchAmmo, thing, pawn.Position, apparel);
+            if (ammo != null) {
+                Job job = new Job(Defs.JobDefOf.JobDriver_FetchAmmo, ammo, pawn.Position, apparel);
                 return pawn.jobs.TryTakeOrderedJob(job);
             }
             return false;
         }
         public static void EquipPawn(Pawn pawn, Thing thing) {
-            Settings.SettingsHelper.LatestVersion.AssociationDictionary.TryGetValue(thing.def.defName, out string ammo);
+            Settings.SettingsHelper.LatestVersion.AssociationDictionary.TryGetValue(thing.def.defName.ToLower(), out string ammo);
             if (ammo != null) {
-                Apparel apparel = pawn.apparel.WornApparel.FirstOrDefault(x => Mags.FirstOrDefault(y => y.defName == x.def.defName) != null);
+                Apparel apparel = pawn.apparel.WornApparel.FirstOrDefault(x => Mags.FirstOrDefault(y => y.defName.ToLower() == x.def.defName.ToLower()) != null);
                 if (apparel != null) {
                     MagazineComponent mag = apparel.TryGetComp<MagazineComponent>();
-                    if (mag.Props.AmmoDef == ammo) {
+                    if (mag.Props.AmmoDef.ToLower() == ammo.ToLower()) {
                         mag.Count = Rand.Range(1, mag.Props.AmmoCapacity);
                         return;
                     }
@@ -119,8 +118,6 @@ namespace Ammunition.Utility {
                     MagazineComponent mag = apparel.TryGetComp<MagazineComponent>();
                     mag.Count = Rand.Range(1, mag.Props.AmmoCapacity);
                 }
-
-
             }
         }
     }

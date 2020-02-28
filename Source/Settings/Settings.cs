@@ -54,13 +54,13 @@ namespace Ammunition.Settings {
                 list2.ColumnWidth = (rect2.width - 50) / 4;
                 foreach (ThingDef def in Utility.Utility.Weapons) {
                     if (string.IsNullOrEmpty(filter) || def.label.ToUpper().Contains(filter.ToUpper())) {
-                        bool contains = Excluded.Contains(def.defName);
+                        bool contains = Excluded.Contains(def.defName.ToLower());
                         list2.CheckboxLabeled(def.label, ref contains);
-                        if (contains == false && Excluded.Contains(def.defName)) {
-                            Excluded.Remove(def.defName);
+                        if (contains == false && Excluded.Contains(def.defName.ToLower())) {
+                            Excluded.Remove(def.defName.ToLower());
                         }
-                        else if (contains == true && !Excluded.Contains(def.defName)) {
-                            Excluded.Add(def.defName);
+                        else if (contains == true && !Excluded.Contains(def.defName.ToLower())) {
+                            Excluded.Add(def.defName.ToLower());
                         }
                     }
                 }

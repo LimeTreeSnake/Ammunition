@@ -147,8 +147,8 @@
 			</li>
 			<li Class="Ammunition.Comps.CompProps_Ammunition">
 				<defs> 
-					 <li>weapon_grenadefrag</li> 
-					 <li>weapon_grenademolotov</li>
+					<li>weapon_grenadefrag</li> 
+					<li>weapon_grenademolotov</li>
 					<li>weapon_grenadeemp</li>  
 				</defs> 
 			</li>   
