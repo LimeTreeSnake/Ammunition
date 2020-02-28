@@ -41,11 +41,11 @@ namespace Ammunition.Settings {
                 inRect.yMax -= 20;
                 Listing_Standard list = new Listing_Standard();
                 Rect rect = new Rect(inRect.x, inRect.y, inRect.width, inRect.height);
-                Rect rect2 = new Rect(0f, 0f, inRect.width - 30f, inRect.height * 2 + 600);
+                Rect rect2 = new Rect(0f, 0f, inRect.width - 30f, inRect.height * 2);
                 Widgets.BeginScrollView(rect, ref scrollPosition, rect2, true);
                 list.Begin(rect2);
-                list.Label(Language.Language.AmmoFetchPercent);
-                percent = (byte)Mathf.Round(list.Slider(percent, 0, 100));
+                //list.Label(Language.Language.AmmoFetchPercent);
+                //percent = (byte)Mathf.Round(list.Slider(percent, 0, 100));
 
 
                 list.Label(Language.Language.Exclude);
