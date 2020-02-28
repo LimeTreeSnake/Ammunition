@@ -28,7 +28,7 @@ namespace Ammunition.Harmony {
             }
         }
         public static void RedressPawn_PostFix(Pawn pawn) {
-            if (pawn != null && pawn.equipment != null && pawn.equipment.Primary != null) {
+            if (pawn != null && pawn.equipment != null && pawn.equipment.Primary != null && !Settings.SettingsHelper.LatestVersion.Excluded.Contains(pawn.equipment.Primary.def.defName.ToLower())) {
                 Utility.Utility.EquipPawn(pawn, pawn.equipment.Primary);
             }
         }

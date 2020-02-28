@@ -110,13 +110,15 @@ namespace Ammunition.Utility {
                         return;
                     }
                 }
-                IEnumerable<ThingDef> app = Mags.Where(x => x.GetCompProperties<CompProps_Magazine>().AmmoDef == ammo);
-                ThingDef def = app.RandomElement();
-                apparel = ThingMaker.MakeThing(def, GenStuff.RandomStuffFor(def)) as Apparel;
-                if (apparel != null) {
-                    pawn.apparel.Wear(apparel);
-                    MagazineComponent mag = apparel.TryGetComp<MagazineComponent>();
-                    mag.Count = Rand.Range(1, mag.Props.AmmoCapacity);
+                IEnumerable<ThingDef> app = Mags.Where(x => x.GetCompProperties<CompProps_Magazine>().AmmoDef.ToLower() == ammo.ToLower());
+                if (app != null && app.Count() > 0) {
+                    ThingDef def = app.RandomElement();
+                    apparel = ThingMaker.MakeThing(def, GenStuff.RandomStuffFor(def)) as Apparel;
+                    if (apparel != null) {
+                        pawn.apparel.Wear(apparel);
+                        MagazineComponent mag = apparel.TryGetComp<MagazineComponent>();
+                        mag.Count = Rand.Range(1, mag.Props.AmmoCapacity);
+                    }
                 }
             }
         }
