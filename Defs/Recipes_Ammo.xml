@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
-
 	<RecipeDef>
-		<defName>Make_PrimitiveAmmo</defName>
+		<defName>Make_AmmoPrimitive</defName>
 		<label>make primitive ammo</label>
-		<description>Make primitive ammo by combining textiles and raw resources.</description>
+		<description>Make primitive ammo by combining textiles and some raw resources.</description>
 		<jobString>Making primitive ammo.</jobString>
 		<workAmount>800</workAmount>
 		<workSkill>Crafting</workSkill>
-		<workSpeedStat>SmithingSpeed</workSpeedStat>
+		<workSpeedStat>GeneralLaborSpeed</workSpeedStat>
 		<effectWorking>Smith</effectWorking>
 		<soundWorking>Recipe_Smith</soundWorking>
 		<recipeUsers>
@@ -24,15 +23,14 @@
 			<li>
 				<filter>
 					<categories>
-						<li>ResourcesRaw</li>
+						<li>StoneBlocks</li>
 					</categories>
-					<disallowedCategories>
-						<li>PlantMatter</li>
-					</disallowedCategories>
-					<disallowedThingDefs />
-					<!--Leaving this field blank will allow modders to simply add to a list and specify their own items as not usable, if desired-->
+					<thingDefs>
+						<li>Steel</li>
+						<li>WoodLog</li>
+					</thingDefs>
 				</filter>
-				<count>10</count>
+				<count>25</count>
 			</li>
 			<li>
 				<filter>
@@ -45,67 +43,23 @@
 		</ingredients>
 		<fixedIngredientFilter>
 			<categories>
-				<li>ResourcesRaw</li>
+				<li>StoneBlocks</li>
 				<li>Textiles</li>
 			</categories>
-			<disallowedCategories>
-				<li>PlantMatter</li>
-			</disallowedCategories>
-			<disallowedThingDefs />
-			<!--Leaving this field blank will allow modders to simply add to a list and specify their own items as not usable, if desired-->
 		</fixedIngredientFilter>
 		<products>
-			<PrimitiveAmmunitionCase>50</PrimitiveAmmunitionCase>
+			<AmmoPrimitive>75</AmmoPrimitive>
 		</products>
 	</RecipeDef>
 
 	<RecipeDef>
-		<defName>Make_PreIndustrialAmmo</defName>
-		<label>make pre-industrial ammo</label>
-		<description>Make blackpowder bullets by combining steel and wood.</description>
-		<jobString>Making bullets.</jobString>
-		<workAmount>1200</workAmount>
-		<workSkill>Crafting</workSkill>
-		<workSpeedStat>SmithingSpeed</workSpeedStat>
-		<effectWorking>Smith</effectWorking>
-		<soundWorking>Recipe_Smith</soundWorking>	
-		<recipeUsers>
-			<li>ElectricSmithy</li>
-			<li>FueledSmithy</li>
-		</recipeUsers>
-		<researchPrerequisite>Smithing</researchPrerequisite>
-		<allowMixingIngredients>false</allowMixingIngredients>
-		<skillRequirements>
-			<Crafting>5</Crafting>
-		</skillRequirements>
-		<ingredients>
-			<li>
-				<filter>
-					<thingDefs>
-						<li>Steel</li>
-					</thingDefs>
-				</filter>
-				<count>20</count>
-			</li>
-		</ingredients>
-		<fixedIngredientFilter>
-			<thingDefs>
-				<li>Steel</li>
-			</thingDefs>
-		</fixedIngredientFilter>
-		<products>
-			<PreIndustrialAmmunitionCase>50</PreIndustrialAmmunitionCase>
-		</products>
-	</RecipeDef>
-
-	<RecipeDef>
-		<defName>Make_IndustrialAmmo</defName>
+		<defName>Make_AmmoIndustrial</defName>
 		<label>make industrial ammo</label>
 		<description>Make bullets by combining steel and chemfuel.</description>
 		<jobString>Making bullets.</jobString>
 		<workAmount>1200</workAmount>
 		<workSkill>Crafting</workSkill>
-		<workSpeedStat>SmithingSpeed</workSpeedStat>
+		<workSpeedStat>GeneralLaborSpeed</workSpeedStat>
 		<effectWorking>Smith</effectWorking>
 		<soundWorking>Recipe_Smith</soundWorking>
 		<recipeUsers>
@@ -141,170 +95,18 @@
 			</thingDefs>
 		</fixedIngredientFilter>
 		<products>
-			<IndustrialAmmunitionCase>50</IndustrialAmmunitionCase>
+			<AmmoIndustrial>75</AmmoIndustrial>
 		</products>
 	</RecipeDef>
 
 	<RecipeDef>
-		<defName>Make_ChemicalCanister</defName>
-		<label>make chemical canister</label>
-		<description>Make chemical canisters by refining chemfuel.</description>
-		<jobString>Making chemical canisters.</jobString>
-		<workAmount>1600</workAmount>
-		<workSkill>Intellectual</workSkill>
-		<workSpeedStat>UnskilledLaborSpeed</workSpeedStat>
-		<effectWorking>Cremate</effectWorking>
-		<soundWorking>Recipe_Cremate</soundWorking>
-		<recipeUsers>
-			<li>BiofuelRefinery</li>
-		</recipeUsers>
-		<researchPrerequisite>BiofuelRefining</researchPrerequisite>
-		<allowMixingIngredients>false</allowMixingIngredients>
-		<skillRequirements>
-			<Intellectual>5</Intellectual>
-		</skillRequirements>
-		<ingredients>
-			<li>
-				<filter>
-					<thingDefs>
-						<li>Steel</li>
-					</thingDefs>
-				</filter>
-				<count>5</count>
-			</li>
-			<li>
-				<filter>
-					<thingDefs>
-						<li>Chemfuel</li>
-					</thingDefs>
-				</filter>
-				<count>40</count>
-			</li>
-		</ingredients>
-		<fixedIngredientFilter>
-			<thingDefs>
-				<li>Steel</li>
-				<li>Chemfuel</li>
-			</thingDefs>
-		</fixedIngredientFilter>
-		<products>
-			<ChemicalAmmunitionCanister>50</ChemicalAmmunitionCanister>
-		</products>
-	</RecipeDef>
-
-
-	<RecipeDef>
-		<defName>Make_AcidCanister</defName>
-		<label>make acid canister</label>
-		<description>Make acid canisters by refining chemfuel.</description>
-		<jobString>Making acid canisters.</jobString>
-		<workAmount>1600</workAmount>
-		<workSkill>Intellectual</workSkill>
-		<workSpeedStat>UnskilledLaborSpeed</workSpeedStat>
-		<effectWorking>Cremate</effectWorking>
-		<soundWorking>Recipe_Cremate</soundWorking>	
-		<recipeUsers>
-			<li>BiofuelRefinery</li>
-		</recipeUsers>
-		<researchPrerequisite>BiofuelRefining</researchPrerequisite>
-		<allowMixingIngredients>false</allowMixingIngredients>
-		<skillRequirements>
-			<Intellectual>5</Intellectual>
-		</skillRequirements>
-		<ingredients>
-			<li>
-				<filter>
-					<thingDefs>
-						<li>Steel</li>
-					</thingDefs>
-				</filter>
-				<count>5</count>
-			</li>
-			<li>
-				<filter>
-					<thingDefs>
-						<li>Chemfuel</li>
-					</thingDefs>
-				</filter>
-				<count>40</count>
-			</li>
-		</ingredients>
-		<fixedIngredientFilter>
-			<thingDefs>
-				<li>Steel</li>
-				<li>Chemfuel</li>
-			</thingDefs>
-		</fixedIngredientFilter>
-		<products>
-			<AcidAmmunitionCanister>50</AcidAmmunitionCanister>
-		</products>
-	</RecipeDef>
-
-
-	<RecipeDef>
-		<defName>Make_NitrogenCanister</defName>
-		<label>make nitrogen canister</label>
-		<description>Make nitrogen canisters by refining chemfuel and neutroamine.</description>
-		<jobString>Making nitrogen canisters.</jobString>
-		<workAmount>2000</workAmount>
-		<workSkill>Intellectual</workSkill>
-		<workSpeedStat>UnskilledLaborSpeed</workSpeedStat>
-		<effectWorking>Cremate</effectWorking>
-		<soundWorking>Recipe_Cremate</soundWorking>
-		<recipeUsers>
-			<li>BiofuelRefinery</li>
-		</recipeUsers>
-		<researchPrerequisite>BiofuelRefining</researchPrerequisite>
-		<allowMixingIngredients>false</allowMixingIngredients>
-		<skillRequirements>
-			<Intellectual>8</Intellectual>
-		</skillRequirements>
-		<ingredients>
-			<li>
-				<filter>
-					<thingDefs>
-						<li>Steel</li>
-					</thingDefs>
-				</filter>
-				<count>5</count>
-			</li>
-			<li>
-				<filter>
-					<thingDefs>
-						<li>Chemfuel</li>
-					</thingDefs>
-				</filter>
-				<count>25</count>
-			</li>
-			<li>
-				<filter>
-					<thingDefs>
-						<li>Neutroamine</li>
-					</thingDefs>
-				</filter>
-				<count>10</count>
-			</li>
-		</ingredients>
-		<fixedIngredientFilter>
-			<thingDefs>
-				<li>Steel</li>
-				<li>Chemfuel</li>
-				<li>Neutroamine</li>
-			</thingDefs>
-		</fixedIngredientFilter>
-		<products>
-			<NitrogenAmmunitionCanister>50</NitrogenAmmunitionCanister>
-		</products>
-	</RecipeDef>
-
-	<RecipeDef>
-		<defName>Make_BatteryCharge</defName>
-		<label>make battery charge</label>
-		<description>Make battery charges by refining chemfuel, steel and a component.</description>
-		<jobString>Making battery charges.</jobString>
+		<defName>Make_AmmoCharge</defName>
+		<label>make ammo charge</label>
+		<description>Make ammo charges by refining chemfuel, steel and a component.</description>
+		<jobString>Making ammo charges.</jobString>
 		<workAmount>4000</workAmount>
 		<workSkill>Intellectual</workSkill>
-		<workSpeedStat>SmithingSpeed</workSpeedStat>
+		<workSpeedStat>GeneralLaborSpeed</workSpeedStat>
 		<effectWorking>Smith</effectWorking>
 		<soundWorking>Recipe_Smith</soundWorking>
 		<recipeUsers>
@@ -313,7 +115,7 @@
 		<researchPrerequisite>MultiAnalyzer</researchPrerequisite>
 		<allowMixingIngredients>false</allowMixingIngredients>
 		<skillRequirements>
-			<Intellectual>10</Intellectual>
+			<Intellectual>8</Intellectual>
 		</skillRequirements>
 		<ingredients>
 			<li>
@@ -349,7 +151,54 @@
 			</thingDefs>
 		</fixedIngredientFilter>
 		<products>
-			<BatteryAmmunitionCharge>50</BatteryAmmunitionCharge>
+			<AmmoCharge>75</AmmoCharge>
+		</products>
+	</RecipeDef>
+
+	<RecipeDef>
+		<defName>Make_AmmoBomb</defName>
+		<label>make bombs</label>
+		<description>Make bombs by refining chemfuel and steel .</description>
+		<jobString>Making bombs.</jobString>
+		<workAmount>4000</workAmount>
+		<workSkill>Intellectual</workSkill>
+		<workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+		<effectWorking>Smith</effectWorking>
+		<soundWorking>Recipe_Smith</soundWorking>
+		<recipeUsers>
+			<li>TableMachining</li>
+		</recipeUsers>
+		<researchPrerequisite>MultiAnalyzer</researchPrerequisite>
+		<allowMixingIngredients>false</allowMixingIngredients>
+		<skillRequirements>
+			<Intellectual>4</Intellectual>
+		</skillRequirements>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>Steel</li>
+					</thingDefs>
+				</filter>
+				<count>20</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>Chemfuel</li>
+					</thingDefs>
+				</filter>
+				<count>20</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>Steel</li>
+				<li>Chemfuel</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<products>
+			<AmmoBomb>75</AmmoBomb>
 		</products>
 	</RecipeDef>
 

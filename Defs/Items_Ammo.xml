@@ -1,225 +1,165 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
-  <!--==================== Ammunition ======================== -->
-  <ThingDef Name="AmmunitionBase" ParentName="ResourceBase" Abstract="True">
-  <thingClass>ThingWithComps</thingClass>
-    <statBases>
-      <MaxHitPoints>10</MaxHitPoints>
-      <Flammability>1</Flammability>
-      <DeteriorationRate>1.0</DeteriorationRate>
-	</statBases>
-    <tickerType>Normal</tickerType>
-    <tradeTags>
-	  <li>Ammunition</li>
-    </tradeTags>
-  </ThingDef>
-  
-<ThingDef Name="PrimitiveAmmunitionCase" ParentName="AmmunitionBase" >
-    <defName>PrimitiveAmmunitionCase</defName>
-    <label>primitive ammo</label>
-    <description>Primitive ammunition often using manpower to fire a projectile.</description>
-    <graphicData>
-      <texPath>Item/AmmoPrimitive</texPath>
-      <graphicClass>Graphic_StackCount</graphicClass>
-    </graphicData>
-    <thingCategories>
-      <li>Ammunition</li>
-    </thingCategories>
-    <techLevel>Neolithic</techLevel>
-	<statBases>
-      <MarketValue>1</MarketValue>
-      <Mass>0.1</Mass>
-    </statBases>   
-    <tradeTags>
-	  <li>AmmunitionPrimitive</li>
-    </tradeTags>    
-</ThingDef>
+	<!--==================== Ammunition ======================== -->
+	<ThingDef Name="AmmunitionBase" ParentName="ResourceBase" Abstract="True">
+		<thingClass>ThingWithComps</thingClass>
+		<statBases>
+			<MaxHitPoints>10</MaxHitPoints>
+			<Flammability>1</Flammability>
+			<DeteriorationRate>1.0</DeteriorationRate>
+		</statBases>
+		<tickerType>Normal</tickerType>
+		<tradeTags>
+			<li>Ammunition</li>
+		</tradeTags>
+	</ThingDef>
 
-<ThingDef Name="PreIndustrialAmmunitionCase" ParentName="AmmunitionBase">
-    <defName>PreIndustrialAmmunitionCase</defName>
-    <label>pre-industrial ammo</label>
-    <description>Ammunition that uses blackpowder to fire round balls of death.</description>
-    <graphicData>
-      <texPath>Item/AmmoPreIndustrial</texPath>
-      <graphicClass>Graphic_StackCount</graphicClass>
-    </graphicData>
-    <thingCategories>
-      <li>Ammunition</li>
-    </thingCategories>
-    <techLevel>Industrial</techLevel>
-    <stackLimit>500</stackLimit>
-	<statBases>
-      <MarketValue>2</MarketValue>
-      <Mass>0.05</Mass>
-    </statBases>
-    <tradeTags>
-	  <li>AmmunitionIndustrial</li>
-    </tradeTags> 
-	<comps>
-      <li Class="CompProperties_Explosive">
-        <explosiveRadius>2.0</explosiveRadius>
-        <explosiveDamageType>Bomb</explosiveDamageType>
-        <requiredDamageTypeToExplode>Flame</requiredDamageTypeToExplode>
-		<startWickHitPointsPercent>0.7</startWickHitPointsPercent>
-        <wickTicks>
-          <min>30</min>
-          <max>60</max>
-        </wickTicks>
-      </li>
-    </comps>      
-</ThingDef>
+	<ThingDef Name="AmmoPrimitive" ParentName="AmmunitionBase" >
+		<defName>AmmoPrimitive</defName>
+		<label>primitive ammo</label>
+		<description>Crudely made ammunition from a bygone era. Still has uses for those skilled enough.</description>
+		<graphicData>
+			<texPath>AmmoPrimitive</texPath>
+			<graphicClass>Graphic_StackCount</graphicClass>
+		</graphicData>
+		<thingCategories>
+			<li>Ammunition</li>
+		</thingCategories>
+		<techLevel>Neolithic</techLevel>
+		<statBases>
+			<MarketValue>1</MarketValue>
+			<Mass>0.1</Mass>
+		</statBases>   
+		<tradeTags>
+			<li>AmmoPrimitive</li>
+		</tradeTags>    
+		<comps>
+			<li Class="Ammunition.Comps.CompProps_Ammunition">
+				<defs> 
+				</defs> 
+			</li> 
+		</comps>  
+	</ThingDef>
 
-<ThingDef Name="IndustrialAmmunitionCase" ParentName="AmmunitionBase">
-    <defName>IndustrialAmmunitionCase</defName>
-    <label>industrial ammo</label>
-    <description>Ammunition that uses an explosive primer that will push out projectiles at incredible speeds.</description>
-    <graphicData>
-      <texPath>Item/AmmoIndustrial</texPath>
-      <graphicClass>Graphic_StackCount</graphicClass>
-    </graphicData>
-    <thingCategories>
-      <li>Ammunition</li>
-    </thingCategories>
-    <techLevel>Industrial</techLevel>
-    <stackLimit>500</stackLimit>
-	<statBases>
-      <MarketValue>2</MarketValue>
-      <Mass>0.05</Mass>
-    </statBases>
-    <tradeTags>
-	  <li>AmmunitionIndustrial</li>
-    </tradeTags> 
-	<comps>
-      <li Class="CompProperties_Explosive">
-        <explosiveRadius>2.0</explosiveRadius>
-        <explosiveDamageType>Bomb</explosiveDamageType>
-        <requiredDamageTypeToExplode>Flame</requiredDamageTypeToExplode>
-		<startWickHitPointsPercent>0.7</startWickHitPointsPercent>
-        <wickTicks>
-          <min>30</min>
-          <max>60</max>
-        </wickTicks>
-      </li>
-    </comps>      
-</ThingDef>
+	<ThingDef Name="AmmoIndustrial" ParentName="AmmunitionBase">
+		<defName>AmmoIndustrial</defName>
+		<label>industrial ammo</label>
+		<description>Ammunition that uses an explosive primer that will fire projectiles at incredible speeds.</description>
+		<graphicData>
+			<texPath>AmmoIndustrial</texPath>
+			<graphicClass>Graphic_StackCount</graphicClass>
+		</graphicData>
+		<thingCategories>
+			<li>Ammunition</li>
+		</thingCategories>
+		<techLevel>Industrial</techLevel>
+		<statBases>
+			<MarketValue>2</MarketValue>
+			<Mass>0.05</Mass>
+		</statBases>
+		<tradeTags>
+			<li>AmmoIndustrial</li>
+		</tradeTags> 
+		<comps>
+			<li Class="CompProperties_Explosive">
+				<explosiveRadius>2.0</explosiveRadius>
+				<explosiveDamageType>Burn</explosiveDamageType>
+				<requiredDamageTypeToExplode>Flame</requiredDamageTypeToExplode>
+				<startWickHitPointsPercent>0.7</startWickHitPointsPercent>
+				<wickTicks>
+					<min>30</min>
+					<max>60</max>
+				</wickTicks>
+			</li>
+			<li Class="Ammunition.Comps.CompProps_Ammunition">
+				<defs> 
+				</defs> 
+			</li> 
+		</comps>      
+	</ThingDef>
 
- <ThingDef Name="ChemicalAmmunitionCanister" ParentName="AmmunitionBase">
-    <defName>ChemicalAmmunitionCanister</defName>
-    <label>chemical canister</label>
-    <description>A chemical canister that uses a highly flammable liquid that will burn poor victims into crisp.</description>
-    <graphicData>
-      <texPath>Item/AmmoChemical</texPath>
-      <graphicClass>Graphic_StackCount</graphicClass>
-    </graphicData>
-    <thingCategories>
-      <li>Ammunition</li>
-    </thingCategories>
-    <techLevel>Industrial</techLevel>
-    <stackLimit>500</stackLimit>
-	<statBases>
-      <MarketValue>3</MarketValue>
-      <Mass>0.05</Mass>
-    </statBases>
-    <tradeTags>
-	  <li>AmmunitionSpecial</li>
-    </tradeTags> 
-	<comps>
-      <li Class="CompProperties_Explosive">
-        <explosiveRadius>4.0</explosiveRadius>
-        <explosiveDamageType>Bomb</explosiveDamageType>
-        <requiredDamageTypeToExplode>Flame</requiredDamageTypeToExplode>
-		<startWickHitPointsPercent>0.9</startWickHitPointsPercent>
-        <wickTicks>
-          <min>30</min>
-          <max>75</max>
-        </wickTicks>
-      </li>
-    </comps>     
-</ThingDef>
+	<ThingDef Name="AmmoCharge" ParentName="AmmunitionBase">
+		<defName>AmmoCharge</defName>
+		<label>charge ammo</label>
+		<description>A weaponized charge that holds enough power to cause some serious damage.</description>
+		<graphicData>
+			<texPath>AmmoCharge</texPath>
+			<graphicClass>Graphic_StackCount</graphicClass>
+		</graphicData>
+		<thingCategories>
+			<li>Ammunition</li>
+		</thingCategories>
+		<techLevel>Spacer</techLevel>
+		<statBases>
+			<MarketValue>5</MarketValue>
+			<Mass>0.05</Mass>
+		</statBases>  
+		<tradeTags>
+			<li>AmmoCharge</li>
+		</tradeTags>   
+		<comps>
+			<li Class="CompProperties_Explosive">
+				<explosiveRadius>2.0</explosiveRadius>
+				<explosiveDamageType>EMP</explosiveDamageType>
+				<requiredDamageTypeToExplode>Flame</requiredDamageTypeToExplode>
+				<startWickHitPointsPercent>0.5</startWickHitPointsPercent>
+				<wickTicks>
+					<min>30</min>
+					<max>60</max>
+				</wickTicks>
+			</li>
+			<li Class="Ammunition.Comps.CompProps_Ammunition">
+				<defs> 
+				</defs> 
+			</li> 
+		</comps>   
+	</ThingDef>
 
-<ThingDef Name="AcidAmmunitionCanister" ParentName="AmmunitionBase">
-    <defName>AcidAmmunitionCanister</defName>
-    <label>acidic canister</label>
-    <description>Ammunition meant to disolve things. You know, melt.</description>
-    <graphicData>
-      <texPath>Item/AmmoAcid</texPath>
-      <graphicClass>Graphic_StackCount</graphicClass>
-    </graphicData>
-    <thingCategories>
-      <li>Ammunition</li>
-    </thingCategories>
-    <techLevel>Industrial</techLevel>
-    <stackLimit>500</stackLimit>
-	<statBases>
-      <MarketValue>3</MarketValue>
-      <Mass>0.05</Mass>
-    </statBases>
-    <tradeTags>
-	  <li>AmmunitionSpecial</li>
-    </tradeTags> 
-	<comps>
-      <li Class="CompProperties_Explosive">
-        <explosiveRadius>2.0</explosiveRadius>
-        <explosiveDamageType>Bomb</explosiveDamageType>
-        <requiredDamageTypeToExplode>Flame</requiredDamageTypeToExplode>
-		<startWickHitPointsPercent>0.7</startWickHitPointsPercent>
-        <wickTicks>
-          <min>30</min>
-          <max>60</max>
-        </wickTicks>
-      </li>
-    </comps>      
-</ThingDef>
+	<ThingDef Name="AmmoBomb" ParentName="AmmunitionBase">
+		<defName>AmmoBomb</defName>
+		<label>bomb ammo</label>
+		<description>Everyone likes explosions and this thing here is not any different. It causes serious explosions for all your needs. Highly volatile, thus handle with caution.</description>
+		<graphicData>
+			<texPath>AmmoBomb</texPath>
+			<graphicClass>Graphic_StackCount</graphicClass>
+		</graphicData>
+		<thingCategories>
+			<li>Ammunition</li>
+		</thingCategories>
+		<techLevel>Industrial</techLevel>
+		<statBases>
+			<MarketValue>5</MarketValue>
+			<Mass>1</Mass>
+		</statBases>  
+		<tradeTags>
+			<li>AmmoBomb</li>
+		</tradeTags>   
+		<comps>
+			<li Class="CompProperties_Explosive">
+				<explosiveRadius>5.0</explosiveRadius>
+				<explosiveDamageType>Bomb</explosiveDamageType>
+				<requiredDamageTypeToExplode>Flame</requiredDamageTypeToExplode>
+				<startWickHitPointsPercent>0.9</startWickHitPointsPercent>
+				<wickTicks>
+					<min>30</min>
+					<max>60</max>
+				</wickTicks>
+			</li>
+			<li Class="Ammunition.Comps.CompProps_Ammunition">
+				<defs> 
+					 <li>weapon_grenadefrag</li> 
+					 <li>weapon_grenademolotov</li>
+					<li>weapon_grenadeemp</li>  
+				</defs> 
+			</li>   
+		</comps>   
+	</ThingDef> 
 
-<ThingDef Name="NitrogenAmmunitionCanister" ParentName="AmmunitionBase">
-    <defName>NitrogenAmmunitionCanister</defName>
-    <label>nitrogen canister</label>
-    <description>A liquid nitrogen canister that houses a liquid and keeping it at a extremely low temperature.</description>
-    <graphicData>
-      <texPath>Item/AmmoNitrogen</texPath>
-      <graphicClass>Graphic_StackCount</graphicClass>
-    </graphicData>
-    <thingCategories>
-      <li>Ammunition</li>
-    </thingCategories>
-    <techLevel>Industrial</techLevel>
-    <stackLimit>500</stackLimit>
-	<statBases>
-      <MarketValue>4</MarketValue>
-      <Mass>0.05</Mass>
-    </statBases>  
-    <tradeTags>
-	  <li>AmmunitionSpecial</li>
-    </tradeTags>   
-</ThingDef> 
-  
-<ThingDef Name="BatteryAmmunitionCharge" ParentName="AmmunitionBase">
-    <defName>BatteryAmmunitionCharge</defName>
-    <label>battery charge</label>
-    <description>A weaponized battery that holds enough power to cause some serious damage.</description>
-    <graphicData>
-      <texPath>Item/AmmoBattery</texPath>
-      <graphicClass>Graphic_StackCount</graphicClass>
-    </graphicData>
-    <thingCategories>
-      <li>Ammunition</li>
-    </thingCategories>
-    <techLevel>Industrial</techLevel>
-    <stackLimit>500</stackLimit>
-	<statBases>
-      <MarketValue>5</MarketValue>
-      <Mass>0.05</Mass>
-    </statBases>  
-    <tradeTags>
-	  <li>AmmunitionSpecial</li>
-    </tradeTags>   
-</ThingDef> 
-  
-<!--==================== ThingCategoryDef ======================== -->
-  <ThingCategoryDef>
-      <defName>Ammunition</defName>
-      <label>ammunition</label>
-      <parent>Manufactured</parent>
-      <iconPath>Item/AmmoIndustrial/AmmoIndustrial_c</iconPath>
-    </ThingCategoryDef>
+	<!--==================== ThingCategoryDef ======================== -->
+	<ThingCategoryDef>
+		<defName>Ammunition</defName>
+		<label>ammunition</label>
+		<parent>Manufactured</parent>
+		<iconPath>AmmoIndustrial/AmmoIndustrial_c</iconPath>
+	</ThingCategoryDef>
 </Defs>

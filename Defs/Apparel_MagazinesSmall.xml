@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<!--==================== Small ======================== -->
+	<ThingDef ParentName="ApparelMakeableBase">
+		<defName>Apparel_AmmoPackPrimitiveSmall</defName>
+		<label>small primitive pack</label>
+		<description>A small pack for carrying primitive ammunition.</description>    
+		<thingClass>Ammunition.Things.Magazine</thingClass>
+		<graphicData>
+			<texPath>MagPrimitive/AmmoPackPrimitiveSmall</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<techLevel>Neolithic</techLevel>
+		<statBases>
+			<Mass>2</Mass>
+			<WorkToMake>1000</WorkToMake>
+			<Flammability>0.6</Flammability>
+			<EquipDelay>2</EquipDelay>
+		</statBases>		 
+		<costStuffCount>25</costStuffCount>
+		<stuffCategories>
+			<li>Fabric</li>
+			<li>Leathery</li>
+		</stuffCategories>   
+		<tradeability>Sellable</tradeability>
+		<thingCategories>
+			<li>Apparel</li>
+		</thingCategories>		
+		<apparel>
+			<bodyPartGroups>
+				<li>Waist</li>
+			</bodyPartGroups>
+			<layers>
+				<li>Shell</li>
+			</layers>
+			<tags>
+				<li>Neolithic</li>
+			</tags>
+		</apparel>
+		<recipeMaker>
+			<recipeUsers>
+				<li>ElectricTailoringBench</li>
+				<li>HandTailoringBench</li>
+				<li>CraftingSpot</li>
+			</recipeUsers>
+		</recipeMaker>  
+		<comps>			
+			<li Class="Ammunition.Comps.CompProps_Magazine">
+				<AmmoCapacity>12</AmmoCapacity>
+				<AmmoDef>AmmoPrimitive</AmmoDef>
+				<Icon>MagPrimitive/AmmoPackPrimitiveSmall</Icon>
+			</li>
+		</comps>
+	</ThingDef>
+
+	 <ThingDef ParentName="ApparelMakeableBase">
+		<defName>Apparel_AmmoPackIndustrialSmall</defName>
+		<label>small industrial pack</label>
+		<description>A small pack for carrying industrial ammunition.</description>
+		<thingClass>Ammunition.Things.Magazine</thingClass>
+		<graphicData>
+			<texPath>MagIndustrial/AmmoPackIndustrialSmall</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<techLevel>Industrial</techLevel>   
+		<statBases>
+			<Mass>1</Mass>
+			<WorkToMake>1000</WorkToMake>
+			<Flammability>0.6</Flammability>
+			<EquipDelay>2</EquipDelay>
+		</statBases>		 
+		<costStuffCount>25</costStuffCount>
+		<stuffCategories>
+			<li>Fabric</li>
+			<li>Leathery</li>
+		</stuffCategories>   
+		<tradeability>Sellable</tradeability>
+		<thingCategories>
+			<li>Apparel</li>
+		</thingCategories>		
+		<apparel>
+			<bodyPartGroups>
+				<li>Waist</li>
+			</bodyPartGroups>
+			<layers>
+				<li>Shell</li>
+			</layers>
+			<tags>
+				<li>Industrial</li>
+			</tags>
+		</apparel>
+		<recipeMaker>
+			<recipeUsers>
+				<li>ElectricTailoringBench</li>
+				<li>HandTailoringBench</li>
+			</recipeUsers>
+		</recipeMaker>
+		<comps>			
+			<li Class="Ammunition.Comps.CompProps_Magazine">
+				<AmmoCapacity>14</AmmoCapacity>
+				<AmmoDef>AmmoIndustrial</AmmoDef>
+				<Icon>MagIndustrial/AmmoPackIndustrialSmall</Icon>
+			</li>
+		</comps>
+	</ThingDef>	
+
+	<ThingDef ParentName="ApparelMakeableBase">
+		<defName>Apparel_AmmoPackChargeSmall</defName>
+		<label>small charge pack</label>
+		<description>A small pack for carrying charge ammunition.</description>
+		<thingClass>Ammunition.Things.Magazine</thingClass>
+		<graphicData>
+			<texPath>MagCharge/AmmoPackChargeSmall</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<techLevel>Spacer</techLevel>
+		<statBases>
+			<Mass>1</Mass>
+			<WorkToMake>1000</WorkToMake>
+			<Flammability>0.6</Flammability>
+			<EquipDelay>2</EquipDelay>
+		</statBases>		 
+		<costStuffCount>25</costStuffCount>
+		<stuffCategories>
+			<li>Fabric</li>
+			<li>Leathery</li>
+		</stuffCategories>   
+		<tradeability>Sellable</tradeability>
+		<thingCategories>
+			<li>Apparel</li>
+		</thingCategories>		
+		<apparel>
+			<bodyPartGroups>
+				<li>Waist</li>
+			</bodyPartGroups>
+			<layers>
+				<li>Shell</li>
+			</layers>
+			<tags>
+				<li>Spacer</li>
+			</tags>
+		</apparel>
+		<recipeMaker>
+			<recipeUsers>
+				<li>ElectricTailoringBench</li>
+				<li>HandTailoringBench</li>
+			</recipeUsers>
+		</recipeMaker>
+		<comps>			
+			<li Class="Ammunition.Comps.CompProps_Magazine">
+				<AmmoCapacity>20</AmmoCapacity>
+				<AmmoDef>AmmoCharge</AmmoDef>
+				<Icon>MagCharge/AmmoPackChargeSmall</Icon>
+			</li>
+		</comps>
+	</ThingDef>
+
+	<ThingDef ParentName="ApparelMakeableBase">
+		<defName>Apparel_AmmoPackBombSmall</defName>
+		<label>small bomb pack</label>
+		<description>A small pack for carrying bombs.</description>
+		<thingClass>Ammunition.Things.Magazine</thingClass>
+		<graphicData>
+			<texPath>MagBomb/AmmoPackBombSmall</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<techLevel>Industrial</techLevel> 
+		<statBases>
+			<Mass>2</Mass>
+			<WorkToMake>1000</WorkToMake>
+			<Flammability>0.6</Flammability>
+			<EquipDelay>2</EquipDelay>
+		</statBases>		 
+		<costStuffCount>25</costStuffCount>
+		<stuffCategories>
+			<li>Fabric</li>
+			<li>Leathery</li>
+		</stuffCategories>   
+		<tradeability>Sellable</tradeability>
+		<thingCategories>
+			<li>Apparel</li>
+		</thingCategories>		
+		<apparel>
+			<bodyPartGroups>
+				<li>Waist</li>
+			</bodyPartGroups>
+			<layers>
+				<li>Shell</li>
+			</layers>
+			<tags>
+				<li>Industrial</li>
+			</tags>
+		</apparel>
+		<recipeMaker>
+			<recipeUsers>
+				<li>ElectricTailoringBench</li>
+				<li>HandTailoringBench</li>
+			</recipeUsers>
+		</recipeMaker>
+		<comps>			
+			<li Class="Ammunition.Comps.CompProps_Magazine">
+				<AmmoCapacity>5</AmmoCapacity>
+				<AmmoDef>AmmoBomb</AmmoDef>
+				<Icon>MagBomb/AmmoPackBombSmall</Icon>
+			</li>
+		</comps>
+	</ThingDef> 
+</Defs>

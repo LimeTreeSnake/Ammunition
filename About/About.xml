@@ -1,13 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ModMetaData>
-	<name>Ammunition</name>
+	<name>Ammunition[1.1]</name>
 	<author>LimeTreeSnake</author>
 	<supportedVersions>
-	<li>1.0</li>
+		<li>1.1</li>
 	</supportedVersions>
-	
-	<description> 
--License-
-You may use this code as however you want. However, do let me know and give credits due if you do as I'd love to hear about what you've created with it! :)
+	<packageId>LimeTreeSnake.Community.Ammunition</packageId>	
+	<description>		
+	-License-
+	You may use this code as however you want. 
+	However, do let me know and give credits due if you do as I'd love to hear about what you've created with it!
+	Any art and or sounds however are not wholly under my jurisdiction hence follow other rules.
 	</description>
 </ModMetaData>

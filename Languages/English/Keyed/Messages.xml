@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <LanguageData>
-	<OutOfAmmo>{PAWN_nameDef} has run out of {0}!</OutOfAmmo>
-	<AmmoGizmoDescription>How much ammunition is available and the desired count. Click to have the pawn fetch ammo if the current ammo is lower than the desired count.</AmmoGizmoDescription>
-	<Fetch>Fetch ammo</Fetch>	
-	<NoFetch>Don't Fetch ammo</NoFetch>
-	<FetchDescription>Whether a pawn should try to fetch ammo by themselves.</FetchDescription>
-	</LanguageData>
+	<AmmunitionAssociation>Ammunition association</AmmunitionAssociation>
+	<Filter>Filter</Filter>
+	<Exclude>Exclude</Exclude>
+	<Reload>Reload Magazine</Reload>
+	<OutOfAmmo>{PAWN_nameDef} has run out of ammo!</OutOfAmmo>
+	<ClearAmmo>Unload Ammo: {0}</ClearAmmo>
+	<ClearAmmoDesc>Drops the ammo from the clip</ClearAmmoDesc>
+	<AmmoFetchPercent>At which percent a pawn should try to fetch new ammo by themself.</AmmoFetchPercent>
+</LanguageData>
