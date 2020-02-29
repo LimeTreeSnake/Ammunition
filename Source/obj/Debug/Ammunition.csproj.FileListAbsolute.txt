@@ -1,3 +1,2 @@
 C:\Users\rikar\Desktop\GIT\Ammunition\v1.1\Assemblies\Ammunition.dll
-C:\Users\rikar\Desktop\GIT\Ammunition\Source\obj\Debug\Ammunition.csproj.CopyComplete
 C:\Users\rikar\Desktop\GIT\Ammunition\Source\obj\Debug\Ammunition.dll

@@ -114,7 +114,7 @@ namespace Ammunition.Utility {
                 if (app != null && app.Count() > 0) {
                     ThingDef def = app.RandomElement();
                     apparel = ThingMaker.MakeThing(def, GenStuff.RandomStuffFor(def)) as Apparel;
-                    if (apparel != null) {
+                    if (apparel != null && pawn.apparel.CanWearWithoutDroppingAnything(def)) {
                         pawn.apparel.Wear(apparel);
                         MagazineComponent mag = apparel.TryGetComp<MagazineComponent>();
                         mag.Count = Rand.Range(1, mag.Props.AmmoCapacity);
