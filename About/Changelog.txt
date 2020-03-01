@@ -4,3 +4,7 @@
 2020-02-29 - 1.1.1
 	Pawns don't drop items if not on map.
 	Harmony is now required.
+
+2020-03-01
+	No Magazine Message
+	fix for hunting pawns running out of ammo. 
