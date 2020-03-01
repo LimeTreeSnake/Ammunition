@@ -23,6 +23,11 @@ namespace Ammunition.Utility {
                         }
                     }
                 }
+                else {
+                    Messages.Message(Language.Language.NoMag(pawn, ammo), MessageTypeDefOf.NegativeEvent);
+                }
+                pawn.jobs.ClearQueuedJobs();
+                pawn.jobs.EndCurrentJob(JobCondition.InterruptForced, false);
                 pawn.equipment.Remove((ThingWithComps)thing);
                 pawn.inventory.innerContainer.TryAddOrTransfer(thing);
                 Messages.Message(Language.Language.OutOfAmmo(pawn), MessageTypeDefOf.NegativeEvent);
