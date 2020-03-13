@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+
+<!--Outlander-->
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/TraderKindDef[defName = "Base_Outlander_Standard"]/stockGenerators</xpath>
+		<value>
+			<li Class="StockGenerator_Tag">
+				<tradeTag>Ammunition</tradeTag>
+				<thingDefCountRange>
+					<min>1</min>
+					<max>3</max>
+				</thingDefCountRange>
+				<countRange>
+					<min>60</min>
+					<max>200</max>
+				</countRange>
+			</li>
+		</value>
+	</Operation>	
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/TraderKindDef[defName = "Caravan_Outlander_CombatSupplier"]/stockGenerators</xpath>
+		<value>
+			<li Class="StockGenerator_Tag">
+				<tradeTag>Ammunition</tradeTag>
+				<thingDefCountRange>
+					<min>1</min>
+					<max>3</max>
+				</thingDefCountRange>
+				<countRange>
+					<min>100</min>
+					<max>300</max>
+				</countRange>
+			</li>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/TraderKindDef[defName = "Caravan_Outlander_PirateMerchant"]/stockGenerators</xpath>
+		<value>
+			<li Class="StockGenerator_Tag">
+				<tradeTag>Ammunition</tradeTag>
+				<thingDefCountRange>
+					<min>1</min>
+					<max>2</max>
+				</thingDefCountRange>
+				<countRange>
+					<min>100</min>
+					<max>200</max>
+				</countRange>
+			</li>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/TraderKindDef[defName = "Caravan_Outlander_BulkGoods"]/stockGenerators</xpath>
+		<value>
+			<li Class="StockGenerator_Tag">
+				<tradeTag>Ammunition</tradeTag>
+				<thingDefCountRange>
+					<min>0</min>
+					<max>2</max>
+				</thingDefCountRange>
+				<countRange>
+					<min>50</min>
+					<max>150</max>
+				</countRange>
+			</li>
+		</value>
+	</Operation>	
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/TraderKindDef[defName = "Caravan_Outlander_Exotic"]/stockGenerators</xpath>
+		<value>
+			<li Class="StockGenerator_Tag">
+				<tradeTag>Ammunition</tradeTag>
+				<thingDefCountRange>
+					<min>1</min>
+					<max>2</max>
+				</thingDefCountRange>
+				<countRange>
+					<min>50</min>
+					<max>200</max>
+				</countRange>
+			</li>
+		</value>
+	</Operation>
+ 
+<!--Neolithic-->
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/TraderKindDef[defName = "Base_Neolithic_Standard"]/stockGenerators</xpath>
+		<value>
+			<li Class="StockGenerator_Tag">
+				<tradeTag>AmmunitionPrimitive</tradeTag>
+				<thingDefCountRange>
+					<min>1</min>
+					<max>2</max>
+				</thingDefCountRange>
+				<countRange>
+					<min>100</min>
+					<max>400</max>
+				</countRange>
+			</li>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/TraderKindDef[defName = "Caravan_Neolithic_BulkGoods"]/stockGenerators</xpath>
+		<value>
+			<li Class="StockGenerator_Tag">
+				<tradeTag>AmmunitionPrimitive</tradeTag>
+				<thingDefCountRange>
+					<min>0</min>
+					<max>1</max>
+				</thingDefCountRange>
+				<countRange>
+					<min>100</min>
+					<max>200</max>
+				</countRange>
+			</li>
+		</value>
+	</Operation>	
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/TraderKindDef[defName = "Caravan_Neolithic_WarMerchant"]/stockGenerators</xpath>
+		<value>
+			<li Class="StockGenerator_Tag">
+				<tradeTag>AmmunitionPrimitive</tradeTag>
+				<thingDefCountRange>
+					<min>1</min>
+					<max>2</max>
+				</thingDefCountRange>
+				<countRange>
+					<min>100</min>
+					<max>300</max>
+				</countRange>
+			</li>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/TraderKindDef[defName = "Caravan_Neolithic_Slaver"]/stockGenerators</xpath>
+		<value>
+			<li Class="StockGenerator_Tag">
+				<tradeTag>AmmunitionPrimitive</tradeTag>
+				<thingDefCountRange>
+					<min>0</min>
+					<max>1</max>
+				</thingDefCountRange>
+				<countRange>
+					<min>100</min>
+					<max>200</max>
+				</countRange>
+			</li>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/TraderKindDef[defName = "Caravan_Neolithic_ShamanMerchant"]/stockGenerators</xpath>
+		<value>
+			<li Class="StockGenerator_Tag">
+				<tradeTag>AmmunitionPrimitive</tradeTag>
+				<thingDefCountRange>
+					<min>0</min>
+					<max>1</max>
+				</thingDefCountRange>
+				<countRange>
+					<min>100</min>
+					<max>200</max>
+				</countRange>
+			</li>
+		</value>
+	</Operation>	
+	
+<!--Orbital-->
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/TraderKindDef[defName = "Orbital_BulkGoods"]/stockGenerators</xpath>
+		<value>
+			<li Class="StockGenerator_Tag">
+				<tradeTag>Ammunition</tradeTag>
+				<thingDefCountRange>
+					<min>0</min>
+					<max>2</max>
+				</thingDefCountRange>
+				<countRange>
+					<min>200</min>
+					<max>800</max>
+				</countRange>
+			</li>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/TraderKindDef[defName = "Orbital_CombatSupplier"]/stockGenerators</xpath>
+		<value>
+			<li Class="StockGenerator_Tag">
+				<tradeTag>Ammunition</tradeTag>
+				<thingDefCountRange>
+					<min>1</min>
+					<max>5</max>
+				</thingDefCountRange>
+				<countRange>
+					<min>500</min>
+					<max>2000</max>
+				</countRange>
+			</li>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/TraderKindDef[defName = "Orbital_Exotic"]/stockGenerators</xpath>
+		<value>
+			<li Class="StockGenerator_Tag">
+				<tradeTag>Ammunition</tradeTag>
+				<thingDefCountRange>
+					<min>0</min>
+					<max>2</max>
+				</thingDefCountRange>
+				<countRange>
+					<min>200</min>
+					<max>500</max>
+				</countRange>
+			</li>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/TraderKindDef[defName = "Orbital_PirateMerchant"]/stockGenerators</xpath>
+		<value>
+			<li Class="StockGenerator_Tag">
+				<tradeTag>Ammunition</tradeTag>
+				<thingDefCountRange>
+					<min>0</min>
+					<max>2</max>
+				</thingDefCountRange>
+				<countRange>
+					<min>500</min>
+					<max>1000</max>
+				</countRange>
+			</li>
+		</value>
+	</Operation>
+</Patch> 

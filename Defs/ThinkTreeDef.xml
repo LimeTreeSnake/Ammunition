@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  
+ <ThinkTreeDef>
+    <defName>AmmoFetch</defName>
+    <insertTag>Humanlike_PreMain</insertTag>
+    <insertPriority>100</insertPriority>
+	<thinkRoot Class="ThinkNode_Priority">
+      <subNodes>  
+	  <li Class="Ammunition.ThinkNodeConditional.ThinkNode_ConditionalAmmoFetch">
+	      <subNodes>
+            <li Class="Ammunition.JobGivers.JobGiver_FetchAmmo" />
+          </subNodes>
+        </li>
+	  </subNodes>
+    </thinkRoot>
+  </ThinkTreeDef>
+
+</Defs>

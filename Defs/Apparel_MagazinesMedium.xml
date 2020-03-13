@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 	<!--==================== Medium ======================== -->
-	<ThingDef ParentName="ApparelMakeableBase">
+	<ThingDef ParentName="KitBase">
 		<defName>Apparel_AmmoPackPrimitiveMedium</defName>
-		<label>medium primitive pack</label>
-		<description>A medium pack for carrying primitive ammunition.</description>    
-		<thingClass>Ammunition.Things.Magazine</thingClass>
+		<label>medium primitive kit</label>
+		<description>A medium kit for carrying primitive ammunition.</description>    
+		
 		<graphicData>
 			<texPath>MagPrimitive/AmmoPackPrimitiveMedium</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
@@ -28,10 +28,10 @@
 		</thingCategories>		
 		<apparel>
 			<bodyPartGroups>
-				<li>Waist</li>
+				<li>Shoulders</li>
 			</bodyPartGroups>
 			<layers>
-				<li>Shell</li>
+				<li>Kit</li>
 			</layers>
 			<tags>
 				<li>Neolithic</li>
@@ -46,25 +46,25 @@
 		</recipeMaker>  
 		<comps>			
 			<li Class="Ammunition.Comps.CompProps_Magazine">
-				<AmmoCapacity>24</AmmoCapacity>
+				<AmmoCapacity>32</AmmoCapacity>
 				<AmmoDef>AmmoPrimitive</AmmoDef>
 				<Icon>MagPrimitive/AmmoPackPrimitiveMedium</Icon>
 			</li>
 		</comps>    
 	</ThingDef>
 
-	 <ThingDef ParentName="ApparelMakeableBase">
+	 <ThingDef ParentName="KitBase">
 		<defName>Apparel_AmmoPackIndustrialMedium</defName>
-		<label>medium industrial pack</label>
-		<description>A medium pack for carrying industrial ammunition.</description>
-		<thingClass>Ammunition.Things.Magazine</thingClass>
+		<label>medium industrial kit</label>
+		<description>A medium kit for carrying industrial ammunition.</description>
+		
 		<graphicData>
 			<texPath>MagIndustrial/AmmoPackIndustrialMedium</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
 		</graphicData>
 		<techLevel>Industrial</techLevel>  		
 		<statBases>
-			<Mass>3</Mass>
+			<Mass>2</Mass>
 			<WorkToMake>1500</WorkToMake>
 			<Flammability>0.6</Flammability>
 			<EquipDelay>2</EquipDelay>
@@ -80,10 +80,10 @@
 		</thingCategories>		
 		<apparel>
 			<bodyPartGroups>
-				<li>Waist</li>
+				<li>Shoulders</li>
 			</bodyPartGroups>
 			<layers>
-				<li>Shell</li>
+				<li>Kit</li>
 			</layers>
 			<tags>
 				<li>Industrial</li>
@@ -97,25 +97,25 @@
 		</recipeMaker>
 		<comps>			
 			<li Class="Ammunition.Comps.CompProps_Magazine">
-				<AmmoCapacity>30</AmmoCapacity>
+				<AmmoCapacity>32</AmmoCapacity>
 				<AmmoDef>AmmoIndustrial</AmmoDef>
 				<Icon>MagIndustrial/AmmoPackIndustrialMedium</Icon>
 			</li>
 		</comps>    
 	</ThingDef>	
 
-	<ThingDef ParentName="ApparelMakeableBase">
+	<ThingDef ParentName="KitBase">
 		<defName>Apparel_AmmoPackChargeMedium</defName>
-		<label>medium charge pack</label>
-		<description>A medium pack for carrying charge ammunition.</description>
-		<thingClass>Ammunition.Things.Magazine</thingClass>
+		<label>medium charge kit</label>
+		<description>A medium kit for carrying charge ammunition.</description>
+		
 		<graphicData>
 			<texPath>MagCharge/AmmoPackChargeMedium</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
 		</graphicData>
 		<techLevel>Spacer</techLevel>
 		<statBases>
-			<Mass>3</Mass>
+			<Mass>2</Mass>
 			<WorkToMake>1500</WorkToMake>
 			<Flammability>0.6</Flammability>
 			<EquipDelay>2</EquipDelay>
@@ -131,10 +131,10 @@
 		</thingCategories>		
 		<apparel>
 			<bodyPartGroups>
-				<li>Waist</li>
+				<li>Shoulders</li>
 			</bodyPartGroups>
 			<layers>
-				<li>Shell</li>
+				<li>Kit</li>
 			</layers>
 			<tags>
 				<li>Spacer</li>
@@ -148,25 +148,25 @@
 		</recipeMaker>
 		<comps>			
 			<li Class="Ammunition.Comps.CompProps_Magazine">
-				<AmmoCapacity>60</AmmoCapacity>
+				<AmmoCapacity>32</AmmoCapacity>
 				<AmmoDef>AmmoCharge</AmmoDef>
 				<Icon>MagCharge/AmmoPackChargeMedium</Icon>
 			</li>
 		</comps>    
 	</ThingDef>
 
-	<ThingDef ParentName="ApparelMakeableBase">
+	<ThingDef ParentName="KitBase">
 		<defName>Apparel_AmmoPackBombMedium</defName>
-		<label>medium bomb pack</label>
-		<description>A medium pack for carrying bombs.</description>
-		<thingClass>Ammunition.Things.Magazine</thingClass>
+		<label>medium bomb kit</label>
+		<description>A medium kit for carrying bombs.</description>
+		
 		<graphicData>
 			<texPath>MagBomb/AmmoPackBombMedium</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
 		</graphicData>
 		<techLevel>Industrial</techLevel> 
 		<statBases>
-			<Mass>5</Mass>
+			<Mass>6</Mass>
 			<WorkToMake>1500</WorkToMake>
 			<Flammability>0.6</Flammability>
 			<EquipDelay>2</EquipDelay>
@@ -182,10 +182,10 @@
 		</thingCategories>		
 		<apparel>
 			<bodyPartGroups>
-				<li>Waist</li>
+				<li>Shoulders</li>
 			</bodyPartGroups>
 			<layers>
-				<li>Shell</li>
+				<li>Kit</li>
 			</layers>
 			<tags>
 				<li>Industrial</li>
@@ -199,7 +199,7 @@
 		</recipeMaker>
 		<comps>			
 			<li Class="Ammunition.Comps.CompProps_Magazine">
-				<AmmoCapacity>12</AmmoCapacity>
+				<AmmoCapacity>8</AmmoCapacity>
 				<AmmoDef>AmmoBomb</AmmoDef>
 				<Icon>MagBomb/AmmoPackBombMedium</Icon>
 			</li>

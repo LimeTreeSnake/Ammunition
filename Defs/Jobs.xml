@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
   <JobDef>
-    <defName>JobDriver_FetchAmmo</defName>
+    <defName>FetchAmmo</defName>
     <driverClass>Ammunition.JobDrivers.JobDriver_FetchAmmo</driverClass>
     <reportString>fetching ammunition.</reportString>
     <allowOpportunisticPrefix>true</allowOpportunisticPrefix>

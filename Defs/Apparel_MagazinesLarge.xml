@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 	<!--==================== Large ======================== -->
-	<ThingDef ParentName="ApparelMakeableBase">
+	<ThingDef ParentName="KitBase">
 		<defName>Apparel_AmmoPackPrimitiveLarge</defName>
-		<label>large primitive pack</label>
-		<description>A large pack for carrying primitive ammunition.</description>    
-		<thingClass>Ammunition.Things.Magazine</thingClass>
+		<label>large primitive kit</label>
+		<description>A large kit for carrying primitive ammunition.</description>    
+		
 		<graphicData>
 			<texPath>MagPrimitive/AmmoPackPrimitiveLarge</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
@@ -31,7 +31,7 @@
 				<li>Waist</li>
 			</bodyPartGroups>
 			<layers>
-				<li>Shell</li>
+				<li>Kit</li>
 			</layers>
 			<tags>
 				<li>Neolithic</li>
@@ -46,25 +46,25 @@
 		</recipeMaker>  
 		<comps>			
 			<li Class="Ammunition.Comps.CompProps_Magazine">
-				<AmmoCapacity>42</AmmoCapacity>
+				<AmmoCapacity>64</AmmoCapacity>
 				<AmmoDef>AmmoPrimitive</AmmoDef>
 				<Icon>MagPrimitive/AmmoPackPrimitiveLarge</Icon>
 			</li>
 		</comps>    	
 	</ThingDef>
 
-	 <ThingDef ParentName="ApparelMakeableBase">
+	 <ThingDef ParentName="KitBase">
 		<defName>Apparel_AmmoPackIndustrialLarge</defName>
-		<label>large industrial pack</label>
-		<description>A large pack for carrying industrial ammunition.</description>
-		<thingClass>Ammunition.Things.Magazine</thingClass>
+		<label>large industrial kit</label>
+		<description>A large kit for carrying industrial ammunition.</description>
+		
 		<graphicData>
 			<texPath>MagIndustrial/AmmoPackIndustrialLarge</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
 		</graphicData>
 		<techLevel>Industrial</techLevel>   
 				<statBases>
-			<Mass>6</Mass>
+			<Mass>3</Mass>
 			<WorkToMake>2500</WorkToMake>
 			<Flammability>0.6</Flammability>
 			<EquipDelay>2</EquipDelay>
@@ -83,7 +83,7 @@
 				<li>Waist</li>
 			</bodyPartGroups>
 			<layers>
-				<li>Shell</li>
+				<li>Kit</li>
 			</layers>
 			<tags>
 				<li>Industrial</li>
@@ -97,25 +97,25 @@
 		</recipeMaker>
 		<comps>			
 			<li Class="Ammunition.Comps.CompProps_Magazine">
-				<AmmoCapacity>90</AmmoCapacity>
+				<AmmoCapacity>64</AmmoCapacity>
 				<AmmoDef>AmmoIndustrial</AmmoDef>
 				<Icon>MagIndustrial/AmmoPackIndustrialLarge</Icon>
 			</li>
 		</comps>    
 	</ThingDef>	
 
-	<ThingDef ParentName="ApparelMakeableBase">
+	<ThingDef ParentName="KitBase">
 		<defName>Apparel_AmmoPackChargeLarge</defName>
-		<label>large bomb pack</label>
-		<description>A large pack for carrying charge ammunition.</description>
-		<thingClass>Ammunition.Things.Magazine</thingClass>
+		<label>large bomb kit</label>
+		<description>A large kit for carrying charge ammunition.</description>
+		
 		<graphicData>
 			<texPath>MagCharge/AmmoPackChargeLarge</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
 		</graphicData>
 		<techLevel>Spacer</techLevel>
 		<statBases>
-			<Mass>6</Mass>
+			<Mass>3</Mass>
 			<WorkToMake>2500</WorkToMake>
 			<Flammability>0.6</Flammability>
 			<EquipDelay>2</EquipDelay>
@@ -134,7 +134,7 @@
 				<li>Waist</li>
 			</bodyPartGroups>
 			<layers>
-				<li>Shell</li>
+				<li>Kit</li>
 			</layers>
 			<tags>
 				<li>Spacer</li>
@@ -148,18 +148,18 @@
 		</recipeMaker>
 		<comps>			
 			<li Class="Ammunition.Comps.CompProps_Magazine">
-				<AmmoCapacity>150</AmmoCapacity>
+				<AmmoCapacity>64</AmmoCapacity>
 				<AmmoDef>AmmoCharge</AmmoDef>
 				<Icon>MagCharge/AmmoPackChargeLarge</Icon>
 			</li>
 		</comps>    
 	</ThingDef>
 
-	<ThingDef ParentName="ApparelMakeableBase">
+	<ThingDef ParentName="KitBase">
 		<defName>Apparel_AmmoPackBombLarge</defName>
-		<label>large bomb pack</label>
-		<description>A large pack for carrying bombs.</description>
-		<thingClass>Ammunition.Things.Magazine</thingClass>
+		<label>large bomb kit</label>
+		<description>A large kit for carrying bombs.</description>
+		
 		<graphicData>
 			<texPath>MagBomb/AmmoPackBombLarge</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
@@ -185,7 +185,7 @@
 				<li>Waist</li>
 			</bodyPartGroups>
 			<layers>
-				<li>Shell</li>
+				<li>Kit</li>
 			</layers>
 			<tags>
 				<li>Industrial</li>
@@ -199,7 +199,7 @@
 		</recipeMaker>
 		<comps>			
 			<li Class="Ammunition.Comps.CompProps_Magazine">
-				<AmmoCapacity>20</AmmoCapacity>
+				<AmmoCapacity>16</AmmoCapacity>
 				<AmmoDef>AmmoBomb</AmmoDef>
 				<Icon>MagBomb/AmmoPackBombLarge</Icon>
 			</li>

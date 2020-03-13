@@ -22,13 +22,13 @@
 			<texPath>AmmoPrimitive</texPath>
 			<graphicClass>Graphic_StackCount</graphicClass>
 		</graphicData>
+		<soundInteract>Bow_Recurve</soundInteract>
 		<thingCategories>
 			<li>Ammunition</li>
 		</thingCategories>
 		<techLevel>Neolithic</techLevel>
 		<statBases>
-			<MarketValue>1</MarketValue>
-			<Mass>0.1</Mass>
+			<Mass>2</Mass>
 		</statBases>   
 		<tradeTags>
 			<li>AmmoPrimitive</li>
@@ -49,13 +49,13 @@
 			<texPath>AmmoIndustrial</texPath>
 			<graphicClass>Graphic_StackCount</graphicClass>
 		</graphicData>
+		<soundInteract>Interact_Rifle</soundInteract>
 		<thingCategories>
 			<li>Ammunition</li>
 		</thingCategories>
 		<techLevel>Industrial</techLevel>
 		<statBases>
-			<MarketValue>2</MarketValue>
-			<Mass>0.05</Mass>
+			<Mass>1</Mass>
 		</statBases>
 		<tradeTags>
 			<li>AmmoIndustrial</li>
@@ -86,13 +86,13 @@
 			<texPath>AmmoCharge</texPath>
 			<graphicClass>Graphic_StackCount</graphicClass>
 		</graphicData>
+		<soundInteract>Interact_ChargeRifle</soundInteract>
 		<thingCategories>
 			<li>Ammunition</li>
 		</thingCategories>
 		<techLevel>Spacer</techLevel>
 		<statBases>
-			<MarketValue>5</MarketValue>
-			<Mass>0.05</Mass>
+			<Mass>1</Mass>
 		</statBases>  
 		<tradeTags>
 			<li>AmmoCharge</li>
@@ -123,13 +123,13 @@
 			<texPath>AmmoBomb</texPath>
 			<graphicClass>Graphic_StackCount</graphicClass>
 		</graphicData>
+		<soundInteract>Interact_Grenade</soundInteract>
 		<thingCategories>
 			<li>Ammunition</li>
 		</thingCategories>
 		<techLevel>Industrial</techLevel>
 		<statBases>
-			<MarketValue>5</MarketValue>
-			<Mass>1</Mass>
+			<Mass>3</Mass>
 		</statBases>  
 		<tradeTags>
 			<li>AmmoBomb</li>

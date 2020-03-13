@@ -8,3 +8,23 @@
 2020-03-01
 	No Magazine Message
 	fix for hunting pawns running out of ammo. 
+	
+2020-03-13
+- Renamed ammo packs to kit
+- Ammunition bulk increase.
+- Kit count changes
+- Kit weight changes
+- New body layer for kits called kit
+- Small kits positioned on arms
+- Medium kits positioned on waist
+- Large kits positioned on shoulder
+- Massive kits positioned on torso
+- Pawns fire from inventory first before checking for ammo in mags
+- Sound interaction with ammo
+- Fetching ammo from multiple nearby sources until full
+- Checks if ammo source is reserved by another pawn
+- Pawns should fetch items for the interracted kit. 
+- Desired auto fetch count gizmo for kits. "None, Quarter, Half, Full"
+- Pawns auto fetch ammo for their kits
+- Wood and steel allowed for primitive ammo.
+- Traders sell ammo, only primitive has restriction for primitive ammo.

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 	<!--==================== Small ======================== -->
-	<ThingDef ParentName="ApparelMakeableBase">
+	<ThingDef ParentName="KitBase">
 		<defName>Apparel_AmmoPackPrimitiveSmall</defName>
-		<label>small primitive pack</label>
-		<description>A small pack for carrying primitive ammunition.</description>    
-		<thingClass>Ammunition.Things.Magazine</thingClass>
+		<label>small primitive kit</label>
+		<description>A small kit for carrying primitive ammunition.</description>    
+		
 		<graphicData>
 			<texPath>MagPrimitive/AmmoPackPrimitiveSmall</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
@@ -28,10 +28,10 @@
 		</thingCategories>		
 		<apparel>
 			<bodyPartGroups>
-				<li>Waist</li>
+				<li>Legs</li>
 			</bodyPartGroups>
 			<layers>
-				<li>Shell</li>
+				<li>Kit</li>
 			</layers>
 			<tags>
 				<li>Neolithic</li>
@@ -46,18 +46,18 @@
 		</recipeMaker>  
 		<comps>			
 			<li Class="Ammunition.Comps.CompProps_Magazine">
-				<AmmoCapacity>12</AmmoCapacity>
+				<AmmoCapacity>16</AmmoCapacity>
 				<AmmoDef>AmmoPrimitive</AmmoDef>
 				<Icon>MagPrimitive/AmmoPackPrimitiveSmall</Icon>
 			</li>
 		</comps>
 	</ThingDef>
 
-	 <ThingDef ParentName="ApparelMakeableBase">
+	 <ThingDef ParentName="KitBase">
 		<defName>Apparel_AmmoPackIndustrialSmall</defName>
-		<label>small industrial pack</label>
-		<description>A small pack for carrying industrial ammunition.</description>
-		<thingClass>Ammunition.Things.Magazine</thingClass>
+		<label>small industrial kit</label>
+		<description>A small kit for carrying industrial ammunition.</description>
+		
 		<graphicData>
 			<texPath>MagIndustrial/AmmoPackIndustrialSmall</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
@@ -80,10 +80,10 @@
 		</thingCategories>		
 		<apparel>
 			<bodyPartGroups>
-				<li>Waist</li>
+				<li>Legs</li>
 			</bodyPartGroups>
 			<layers>
-				<li>Shell</li>
+				<li>Kit</li>
 			</layers>
 			<tags>
 				<li>Industrial</li>
@@ -97,18 +97,18 @@
 		</recipeMaker>
 		<comps>			
 			<li Class="Ammunition.Comps.CompProps_Magazine">
-				<AmmoCapacity>14</AmmoCapacity>
+				<AmmoCapacity>16</AmmoCapacity>
 				<AmmoDef>AmmoIndustrial</AmmoDef>
 				<Icon>MagIndustrial/AmmoPackIndustrialSmall</Icon>
 			</li>
 		</comps>
 	</ThingDef>	
 
-	<ThingDef ParentName="ApparelMakeableBase">
+	<ThingDef ParentName="KitBase">
 		<defName>Apparel_AmmoPackChargeSmall</defName>
-		<label>small charge pack</label>
-		<description>A small pack for carrying charge ammunition.</description>
-		<thingClass>Ammunition.Things.Magazine</thingClass>
+		<label>small charge kit</label>
+		<description>A small kit for carrying charge ammunition.</description>
+		
 		<graphicData>
 			<texPath>MagCharge/AmmoPackChargeSmall</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
@@ -131,10 +131,10 @@
 		</thingCategories>		
 		<apparel>
 			<bodyPartGroups>
-				<li>Waist</li>
+				<li>Legs</li>
 			</bodyPartGroups>
 			<layers>
-				<li>Shell</li>
+				<li>Kit</li>
 			</layers>
 			<tags>
 				<li>Spacer</li>
@@ -148,25 +148,25 @@
 		</recipeMaker>
 		<comps>			
 			<li Class="Ammunition.Comps.CompProps_Magazine">
-				<AmmoCapacity>20</AmmoCapacity>
+				<AmmoCapacity>16</AmmoCapacity>
 				<AmmoDef>AmmoCharge</AmmoDef>
 				<Icon>MagCharge/AmmoPackChargeSmall</Icon>
 			</li>
 		</comps>
 	</ThingDef>
 
-	<ThingDef ParentName="ApparelMakeableBase">
+	<ThingDef ParentName="KitBase">
 		<defName>Apparel_AmmoPackBombSmall</defName>
-		<label>small bomb pack</label>
-		<description>A small pack for carrying bombs.</description>
-		<thingClass>Ammunition.Things.Magazine</thingClass>
+		<label>small bomb kit</label>
+		<description>A small kit for carrying bombs.</description>
+		
 		<graphicData>
 			<texPath>MagBomb/AmmoPackBombSmall</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
 		</graphicData>
 		<techLevel>Industrial</techLevel> 
 		<statBases>
-			<Mass>2</Mass>
+			<Mass>3</Mass>
 			<WorkToMake>1000</WorkToMake>
 			<Flammability>0.6</Flammability>
 			<EquipDelay>2</EquipDelay>
@@ -182,10 +182,10 @@
 		</thingCategories>		
 		<apparel>
 			<bodyPartGroups>
-				<li>Waist</li>
+				<li>Legs</li>
 			</bodyPartGroups>
 			<layers>
-				<li>Shell</li>
+				<li>Kit</li>
 			</layers>
 			<tags>
 				<li>Industrial</li>
@@ -199,7 +199,7 @@
 		</recipeMaker>
 		<comps>			
 			<li Class="Ammunition.Comps.CompProps_Magazine">
-				<AmmoCapacity>5</AmmoCapacity>
+				<AmmoCapacity>4</AmmoCapacity>
 				<AmmoDef>AmmoBomb</AmmoDef>
 				<Icon>MagBomb/AmmoPackBombSmall</Icon>
 			</li>

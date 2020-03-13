@@ -46,6 +46,10 @@
 				<li>StoneBlocks</li>
 				<li>Textiles</li>
 			</categories>
+			<thingDefs>
+				<li>Steel</li>
+				<li>WoodLog</li>
+			</thingDefs>
 		</fixedIngredientFilter>
 		<products>
 			<AmmoPrimitive>75</AmmoPrimitive>

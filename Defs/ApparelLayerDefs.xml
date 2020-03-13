@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <ApparelLayerDef>
+    <defName>Kit</defName>
+    <label>ammunition kit</label>
+    <drawOrder>500</drawOrder>
+  </ApparelLayerDef>
+</Defs>
