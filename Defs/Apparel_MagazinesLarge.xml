@@ -4,7 +4,7 @@
 	<ThingDef ParentName="KitBase">
 		<defName>Apparel_AmmoPackPrimitiveLarge</defName>
 		<label>large primitive kit</label>
-		<description>A large kit for carrying primitive ammunition.</description>    
+		<description>A large kit for carrying primitive ammunition. This kit have enough space for 64 uses.</description>    
 		
 		<graphicData>
 			<texPath>MagPrimitive/AmmoPackPrimitiveLarge</texPath>
@@ -56,7 +56,7 @@
 	 <ThingDef ParentName="KitBase">
 		<defName>Apparel_AmmoPackIndustrialLarge</defName>
 		<label>large industrial kit</label>
-		<description>A large kit for carrying industrial ammunition.</description>
+		<description>A large kit for carrying industrial ammunition. This kit have enough space for 64 uses.</description>
 		
 		<graphicData>
 			<texPath>MagIndustrial/AmmoPackIndustrialLarge</texPath>
@@ -107,7 +107,7 @@
 	<ThingDef ParentName="KitBase">
 		<defName>Apparel_AmmoPackChargeLarge</defName>
 		<label>large charge kit</label>
-		<description>A large kit for carrying charge ammunition.</description>
+		<description>A large kit for carrying charge ammunition. This kit have enough space for 64 uses.</description>
 		
 		<graphicData>
 			<texPath>MagCharge/AmmoPackChargeLarge</texPath>
@@ -158,7 +158,7 @@
 	<ThingDef ParentName="KitBase">
 		<defName>Apparel_AmmoPackBombLarge</defName>
 		<label>large bomb kit</label>
-		<description>A large kit for carrying bombs.</description>
+		<description>A large kit for carrying bombs. This kit have enough space for 16 uses.</description>
 		
 		<graphicData>
 			<texPath>MagBomb/AmmoPackBombLarge</texPath>
