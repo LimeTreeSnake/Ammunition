@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>    
+	<Make_AmmoPrimitive.label>Stelle Primitive Munition her</Make_AmmoPrimitive.label>
+	<Make_AmmoPrimitive.description>Stelle Primitive Munition her, indem einige Rohstoffe kombiniert werden.</Make_AmmoPrimitive.description>
+	<Make_AmmoPrimitive.jobString>Stelle Primitive Munition her.</Make_AmmoPrimitive.jobString>
+	   
+	<Make_AmmoIndustrial.label>Stelle Industrie Munition her</Make_AmmoIndustrial.label>
+	<Make_AmmoIndustrial.description>Stelle Industrie Munition her, indem Stahl und Kraftstoff kombiniert werden.</Make_AmmoIndustrial.description>
+	<Make_AmmoIndustrial.jobString>Stelle Industrie Munition her.</Make_AmmoIndustrial.jobString>
+	   
+	<Make_AmmoCharge.label>Stelle Energie Munition her</Make_AmmoCharge.label>
+	<Make_AmmoCharge.description>Stelle Energie Munition her, indem einige Rohstoffe kombiniert werden.</Make_AmmoCharge.description>
+	<Make_AmmoCharge.jobString>Stelle Energie Munition her.</Make_AmmoCharge.jobString>
+	   
+	<Make_AmmoBomb.label>Stelle Sprengstoff Munition her</Make_AmmoBomb.label>
+	<Make_AmmoBomb.description>Stelle Sprengstoff Munition her, indem Kraftstoff und Stahl kombiniert werden.</Make_AmmoBomb.description>
+	<Make_AmmoBomb.jobString>Stelle Sprengstoff Munition her.</Make_AmmoBomb.jobString>
+</LanguageData>

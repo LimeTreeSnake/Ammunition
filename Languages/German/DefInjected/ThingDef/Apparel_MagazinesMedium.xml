@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>  
+  <Apparel_AmmoPackPrimitiveMedium.label>Mittlere Primitive Munitions-Tasche</Apparel_AmmoPackPrimitiveMedium.label>
+  <Apparel_AmmoPackPrimitiveMedium.description>Eine mittlere Tasche zum Tragen von Primitiver Munition.</Apparel_AmmoPackPrimitiveMedium.description>
+  
+  <Apparel_AmmoPackIndustrialMedium.label>Mittlere Industrie Munitions-Tasche</Apparel_AmmoPackIndustrialMedium.label>
+  <Apparel_AmmoPackIndustrialMedium.description>Eine mittlere Tasche zum Tragen von Industrie Munition.</Apparel_AmmoPackIndustrialMedium.description>
+  
+  <Apparel_AmmoPackChargeMedium.label>Mittlere Energie Munitions-Tasche</Apparel_AmmoPackChargeMedium.label>
+  <Apparel_AmmoPackChargeMedium.description>Eine mittlere Tasche zum Tragen von Energie Munition.</Apparel_AmmoPackChargeMedium.description>
+  
+  <Apparel_AmmoPackBombMedium.label>Mittlere Sprengstoff Munitions-Tasche</Apparel_AmmoPackBombMedium.label>
+  <Apparel_AmmoPackBombMedium.description>Eine mittlere Tasche zum Tragen von Sprengstoff.</Apparel_AmmoPackBombMedium.description>   
+</LanguageData>

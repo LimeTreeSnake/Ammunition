@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>  
+  <Apparel_AmmoPackPrimitiveSmall.label>Kleine Primitive Munitions-Tasche</Apparel_AmmoPackPrimitiveSmall.label>
+  <Apparel_AmmoPackPrimitiveSmall.description>Eine kleine Tasche zum Tragen Primitiver Munition.</Apparel_AmmoPackPrimitiveSmall.description>
+  
+  <Apparel_AmmoPackIndustrialSmall.label>Kleine Industrie Munitions-Tasche</Apparel_AmmoPackIndustrialSmall.label>
+  <Apparel_AmmoPackIndustrialSmall.description>Eine kleine Tasche zum Tragen von Industrie Munition.</Apparel_AmmoPackIndustrialSmall.description>
+  
+  <Apparel_AmmoPackChargeSmall.label>Kleine Energie Munitions-Tasche</Apparel_AmmoPackChargeSmall.label>
+  <Apparel_AmmoPackChargeSmall.description>Eine kleine Tasche zum Tragen von Energie Munition.</Apparel_AmmoPackChargeSmall.description>
+  
+  <Apparel_AmmoPackBombSmall.label>Kleine Sprengstoff Munitions-Tasche</Apparel_AmmoPackBombSmall.label>
+  <Apparel_AmmoPackBombSmall.description>Eine kleine Tasche zum Tragen von Sprengstoff.</Apparel_AmmoPackBombSmall.description>   
+</LanguageData>

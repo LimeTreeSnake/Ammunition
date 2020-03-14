@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>  
+  <AmmoPrimitive.label>Primitive Munition</AmmoPrimitive.label>
+  <AmmoPrimitive.description>Schnell gemachte Munition aus einer vergangenen Zeit.</AmmoPrimitive.description>
+  
+  <AmmoIndustrial.label>Industrie Munition</AmmoIndustrial.label>
+  <AmmoIndustrial.description>Munition, die eine explosive Zündkapsel verwendet, die Projektile mit unglaublicher Geschwindigkeit abfeuert.</AmmoIndustrial.description>
+  
+  <AmmoCharge.label>Energie Munition</AmmoCharge.label>
+  <AmmoCharge.description>Eine Waffenladung, die genug Kraft enthält, um tödlichen Schaden zu verursachen.</AmmoCharge.description>
+  
+  <AmmoBomb.label>Sprengstoff Munition</AmmoBomb.label>
+  <AmmoBomb.description>Jeder mag Explosionen. Es verursacht schwere Explosionen für alle Ihre Bedürfnisse. Sehr empfindlich, daher mit Vorsicht genießen.</AmmoBomb.description>   
+</LanguageData>

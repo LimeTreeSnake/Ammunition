@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+	<AmmunitionAssociation>Ammunition association</AmmunitionAssociation>
+	<Filter>Filter</Filter>
+	<Exclude>Exclude</Exclude>
+	<Reload>Magazin Nachladen.</Reload>
+	<OutOfAmmo>{PAWN_nameDef} Hat keine Munition mehr!</OutOfAmmo>
+	<NoMag>{PAWN_nameDef} Hat keine Tasche für {0}!</NoMag>
+	<ClearAmmo>Entladen Munition.</ClearAmmo>
+	<ClearAmmoDesc>Lass die Munition aus der Tasche fallen.</ClearAmmoDesc>
+	<AmmoFetchPercent>Zu welchem Prozentsatz sollte ein Kolonist versuchen, selbst neue Munition zu holen.</AmmoFetchPercent>
+	<GaugeEmpty>Keine</GaugeEmpty>
+	<GaugeQuarter>25%</GaugeQuarter>
+	<GaugeHalf>50%</GaugeHalf>
+	<GaugeThreeQuarter>75%</GaugeThreeQuarter>
+	<GaugeFull>Voll</GaugeFull>	
+	<GaugeDesc>Geringste Munitions-Anzahl.</GaugeDesc>	
+</LanguageData>

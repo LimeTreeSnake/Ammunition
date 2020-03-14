@@ -106,7 +106,7 @@
 
 	<ThingDef ParentName="KitBase">
 		<defName>Apparel_AmmoPackChargeLarge</defName>
-		<label>large bomb kit</label>
+		<label>large charge kit</label>
 		<description>A large kit for carrying charge ammunition.</description>
 		
 		<graphicData>

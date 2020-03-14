@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>  
+  <Apparel_AmmoPackPrimitiveMassive.label>Massive Primitive Munitions-Tasche</Apparel_AmmoPackPrimitiveMassive.label>
+  <Apparel_AmmoPackPrimitiveMassive.description>Eine massive Tasche zum Tragen Primitiver Munition.</Apparel_AmmoPackPrimitiveMassive.description>
+  
+  <Apparel_AmmoPackIndustrialMassive.label>Massive Industrie Munitions-Tasche</Apparel_AmmoPackIndustrialMassive.label>
+  <Apparel_AmmoPackIndustrialMassive.description>Eine massive Tasche zum Tragen von Industrie munition.</Apparel_AmmoPackIndustrialMassive.description>
+  
+  <Apparel_AmmoPackChargeMassive.label>Massive Energie Munitions-Tasche</Apparel_AmmoPackChargeMassive.label>
+  <Apparel_AmmoPackChargeMassive.description>Eine massive Tasche zum Tragen von Energie Munition.</Apparel_AmmoPackChargeMassive.description>
+  
+  <Apparel_AmmoPackBombMassive.label>Massive Sprengstoff Munitions-Tasche</Apparel_AmmoPackBombMassive.label>
+  <Apparel_AmmoPackBombMassive.description>Eine massive Tasche zum Tragen von Sprengstoff.</Apparel_AmmoPackBombMassive.description>   
+</LanguageData>

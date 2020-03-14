@@ -28,3 +28,9 @@
 - Pawns auto fetch ammo for their kits
 - Wood and steel allowed for primitive ammo.
 - Traders sell ammo, only primitive has restriction for primitive ammo.
+
+2020-03-14
+- Rimsenal Compund bow and Throwing axes uses primitive ammo.
+Language Fix:
+- Renamed large charge kit to its proper name.
+- Added german translation kudos Igel.tv/Olli

@@ -36,8 +36,10 @@
 		<comps>
 			<li Class="Ammunition.Comps.CompProps_Ammunition">
 				<defs> 
+					<li>Gun_ThrowingAxes</li> 
+					<li>Bow_Compound</li>
 				</defs> 
-			</li> 
+			</li>   
 		</comps>  
 	</ThingDef>
 
