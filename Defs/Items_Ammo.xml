@@ -9,9 +9,13 @@
 			<DeteriorationRate>1.0</DeteriorationRate>
 		</statBases>
 		<tickerType>Normal</tickerType>
+        <tradeability>All</tradeability>	
 		<tradeTags>
 			<li>Ammunition</li>
 		</tradeTags>
+		<thingCategories>
+			<li>Ammunition</li>
+		</thingCategories>
 	</ThingDef>
 
 	<ThingDef Name="AmmoPrimitive" ParentName="AmmunitionBase" >
@@ -23,13 +27,11 @@
 			<graphicClass>Graphic_StackCount</graphicClass>
 		</graphicData>
 		<soundInteract>Bow_Recurve</soundInteract>
-		<thingCategories>
-			<li>Ammunition</li>
-		</thingCategories>
 		<techLevel>Neolithic</techLevel>
 		<statBases>
-			<Mass>2</Mass>
-		</statBases>   
+			<MarketValue>0.5</MarketValue>
+			<Mass>1</Mass>
+		</statBases>
 		<tradeTags>
 			<li>AmmoPrimitive</li>
 		</tradeTags>    
@@ -38,6 +40,7 @@
 				<defs> 
 					<li>Gun_ThrowingAxes</li> 
 					<li>Bow_Compound</li>
+				    <li>VWE_Bow_Compound</li>
 				</defs> 
 			</li>   
 		</comps>  
@@ -52,12 +55,10 @@
 			<graphicClass>Graphic_StackCount</graphicClass>
 		</graphicData>
 		<soundInteract>Interact_Rifle</soundInteract>
-		<thingCategories>
-			<li>Ammunition</li>
-		</thingCategories>
 		<techLevel>Industrial</techLevel>
 		<statBases>
-			<Mass>1</Mass>
+			<MarketValue>1</MarketValue>
+			<Mass>0.5</Mass>
 		</statBases>
 		<tradeTags>
 			<li>AmmoIndustrial</li>
@@ -89,12 +90,10 @@
 			<graphicClass>Graphic_StackCount</graphicClass>
 		</graphicData>
 		<soundInteract>Interact_ChargeRifle</soundInteract>
-		<thingCategories>
-			<li>Ammunition</li>
-		</thingCategories>
 		<techLevel>Spacer</techLevel>
 		<statBases>
-			<Mass>1</Mass>
+			<MarketValue>4</MarketValue>
+			<Mass>0.5</Mass>
 		</statBases>  
 		<tradeTags>
 			<li>AmmoCharge</li>
@@ -126,12 +125,10 @@
 			<graphicClass>Graphic_StackCount</graphicClass>
 		</graphicData>
 		<soundInteract>Interact_Grenade</soundInteract>
-		<thingCategories>
-			<li>Ammunition</li>
-		</thingCategories>
 		<techLevel>Industrial</techLevel>
 		<statBases>
-			<Mass>3</Mass>
+			<MarketValue>2</MarketValue>
+			<Mass>2</Mass>
 		</statBases>  
 		<tradeTags>
 			<li>AmmoBomb</li>
@@ -151,17 +148,12 @@
 				<defs> 
 					<li>weapon_grenadefrag</li> 
 					<li>weapon_grenademolotov</li>
-					<li>weapon_grenadeemp</li>  
+					<li>weapon_grenadeemp</li>    
+					<li>VWE_SmokeGrenade</li> 
+                    <li>VWE_ToxicGrenade</li>
+                    <li>VWE_FlashGrenade</li>
 				</defs> 
 			</li>   
 		</comps>   
 	</ThingDef> 
-
-	<!--==================== ThingCategoryDef ======================== -->
-	<ThingCategoryDef>
-		<defName>Ammunition</defName>
-		<label>ammunition</label>
-		<parent>Manufactured</parent>
-		<iconPath>AmmoIndustrial/AmmoIndustrial_c</iconPath>
-	</ThingCategoryDef>
 </Defs>

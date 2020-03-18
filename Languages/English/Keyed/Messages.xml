@@ -2,17 +2,17 @@
 <LanguageData>
 	<AmmunitionAssociation>Ammunition association</AmmunitionAssociation>
 	<Filter>Filter</Filter>
-	<Exclude>Exclude</Exclude>
+	<ExcludeWeapon>Exclude Weapon</ExcludeWeapon>
 	<Reload>Full reload</Reload>
-	<OutOfAmmo>{PAWN_nameDef} has run out of ammo!</OutOfAmmo>
+	<OutOfAmmo>{PAWN_nameDef} has run out of {0}!</OutOfAmmo>
 	<NoMag>{PAWN_nameDef} has no magazine for {0}!</NoMag>
 	<ClearAmmo>Unload kit</ClearAmmo>
-	<ClearAmmoDesc>Drops the ammo from the clip</ClearAmmoDesc>
+	<ClearAmmoDesc>Drop all ammo from the clip.</ClearAmmoDesc>
 	<AmmoFetchPercent>At which percent a pawn should try to fetch new ammo by themself.</AmmoFetchPercent>
 	<GaugeEmpty>None</GaugeEmpty>
 	<GaugeQuarter>25%</GaugeQuarter>
 	<GaugeHalf>50%</GaugeHalf>
 	<GaugeThreeQuarter>75%</GaugeThreeQuarter>
 	<GaugeFull>Full</GaugeFull>	
-	<GaugeDesc>Least desired ammo count</GaugeDesc>	
+	<GaugeDesc>Desired amount of ammo to have in kit.</GaugeDesc>	
 </LanguageData>

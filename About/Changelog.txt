@@ -1,14 +1,22 @@
-2020-02-28 - 1.1.0 - First build of 1.1
-	Hotfix: Fixed world Generation.
-	
-2020-02-29 - 1.1.1
-	Pawns don't drop items if not on map.
-	Harmony is now required.
+2020-03-18
+- Check ammo def upon loading game, no longer store it in settings. (This until easy changeable ammo.)
+- Ammo, mass, value, recipé, kit changes.
+	Basically, things weigh less.
+	Costs less.
+	Streamlined capacity for kits. I.E arrows 20->40->60->80
+- Masks for art Kudos Meltup!
+- Apparel are based on ApparelMakeableBase again.
+- Pawns spawn with at least with 25% cap on ammo.
+- Mechanoids do not need ammo.
+- Trader patches, Kudos Meltup!
 
-2020-03-01
-	No Magazine Message
-	fix for hunting pawns running out of ammo. 
-	
+2020-03-14
+- Rimsenal Compund bow and Throwing axes uses primitive ammo.
+- Added ammo count in description for kits.
+Language Fix:
+- Renamed large charge kit to its proper name.
+- Added german translation kudos Igel.tv/Olli
+
 2020-03-13
 - Renamed ammo packs to kit
 - Ammunition bulk increase.
@@ -29,10 +37,14 @@
 - Wood and steel allowed for primitive ammo.
 - Traders sell ammo, only primitive has restriction for primitive ammo.
 
-2020-03-14
-- Rimsenal Compund bow and Throwing axes uses primitive ammo.
-- Added ammo count in description for kits.
-Language Fix:
-- Renamed large charge kit to its proper name.
-- Added german translation kudos Igel.tv/Olli
-
+2020-03-01
+	No Magazine Message
+	fix for hunting pawns running out of ammo. 
+	
+2020-02-29 - 1.1.1
+	Pawns don't drop items if not on map.
+	Harmony is now required.
+	
+2020-02-28 - 1.1.0 - First build of 1.1
+	Hotfix: Fixed world Generation.
+	

@@ -2,9 +2,9 @@
 <LanguageData>
 	<AmmunitionAssociation>Ammunition association</AmmunitionAssociation>
 	<Filter>Filter</Filter>
-	<Exclude>Exclude</Exclude>
+	<ExcludeWeapon>Exclude</ExcludeWeapon>
 	<Reload>Magazin Nachladen.</Reload>
-	<OutOfAmmo>{PAWN_nameDef} Hat keine Munition mehr!</OutOfAmmo>
+	<OutOfAmmo>{PAWN_nameDef} Hat keine {0} mehr!</OutOfAmmo>
 	<NoMag>{PAWN_nameDef} Hat keine Tasche für {0}!</NoMag>
 	<ClearAmmo>Entladen Munition.</ClearAmmo>
 	<ClearAmmoDesc>Lass die Munition aus der Tasche fallen.</ClearAmmoDesc>

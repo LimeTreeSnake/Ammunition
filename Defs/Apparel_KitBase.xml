@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
-	<ThingDef Name="KitBase" ParentName="ApparelBase" Abstract="True">	
+	<ThingDef Name="KitBase" ParentName="ApparelMakeableBase" Abstract="True">	
 		<thingClass>Ammunition.Things.Magazine</thingClass>
 	</ThingDef>
 	

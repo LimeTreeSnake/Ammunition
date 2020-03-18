@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+
+	<!-- These resources get assigned to traders -->
+	<Operation Class="PatchOperationSequence">
+		<success>Always</success>
+		<operations>
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/TraderKindDef[defName = "Caravan_Neolithic_WarMerchant"]/stockGenerators</xpath>
+				<value>
+				    <li Class="StockGenerator_SingleDef">
+						<thingDef>AmmoPrimitive</thingDef>
+						<countRange>200~300</countRange>
+					</li>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/TraderKindDef[defName = "Caravan_Outlander_CombatSupplier"]/stockGenerators</xpath>
+				<value>
+				    <li Class="StockGenerator_SingleDef">
+						<thingDef>AmmoIndustrial</thingDef>
+						<countRange>300~400</countRange>
+					</li>
+					<li Class="StockGenerator_SingleDef">
+						<thingDef>AmmoBomb</thingDef>
+						<countRange>40~70</countRange>
+					</li>
+				</value>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/TraderKindDef[defName = "Caravan_Outlander_PirateMerchant"]/stockGenerators</xpath>
+				<value>
+					<li Class="StockGenerator_SingleDef">
+						<thingDef>AmmoBomb</thingDef>
+						<countRange>20~30</countRange>
+					</li>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/TraderKindDef[defName = "Orbital_CombatSupplier"]/stockGenerators</xpath>
+				<value>
+					<li Class="StockGenerator_SingleDef">
+						<thingDef>AmmoIndustrial</thingDef>
+						<countRange>500~800</countRange>
+					</li>
+					<li Class="StockGenerator_SingleDef">
+						<thingDef>AmmoBomb</thingDef>
+						<countRange>50~100</countRange>
+					</li>
+				    <li Class="StockGenerator_SingleDef">
+						<thingDef>AmmoCharge</thingDef>
+						<countRange>200~400</countRange>
+					</li>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/TraderKindDef[defName = "Visitor_Neolithic_Standard"]/stockGenerators</xpath>
+				<value>
+				    <li Class="StockGenerator_SingleDef">
+						<thingDef>AmmoPrimitive</thingDef>
+						<countRange>20~40</countRange>
+					</li>
+				</value>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/TraderKindDef[defName = "Visitor_Outlander_Standard"]/stockGenerators</xpath>
+				<value>
+				    <li Class="StockGenerator_SingleDef">
+						<thingDef>AmmoIndustrial</thingDef>
+						<countRange>20~50</countRange>
+					</li>
+				</value>
+			</li>
+			
+		</operations>
+	</Operation>
+
+</Patch>

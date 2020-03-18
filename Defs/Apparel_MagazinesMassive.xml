@@ -4,11 +4,11 @@
 	<ThingDef ParentName="KitBase">
 		<defName>Apparel_AmmoPackPrimitiveMassive</defName>
 		<label>massive primitive kit</label>
-		<description>A massive kit for carrying primitive ammunition. This kit have enough space for 128 uses.</description>    
-		
+		<description>A massive pack for carrying primitive ammunition. It has enough space for 80 ammo.</description>    
 		<graphicData>
 			<texPath>MagPrimitive/AmmoPackPrimitiveMassive</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
+			<shaderType>CutoutComplex</shaderType>
 		</graphicData>
 		<techLevel>Neolithic</techLevel>
 		<statBases>
@@ -17,14 +17,14 @@
 			<Flammability>0.6</Flammability>
 			<EquipDelay>2</EquipDelay>
 		</statBases>		 
-		<costStuffCount>100</costStuffCount>
+		<costStuffCount>60</costStuffCount>
 		<stuffCategories>
 			<li>Fabric</li>
 			<li>Leathery</li>
 		</stuffCategories>   
-		<tradeability>Sellable</tradeability>
+		<tradeability>All</tradeability>
 		<thingCategories>
-			<li>Apparel</li>
+			<li>AmmoPacks</li>
 		</thingCategories>		
 		<apparel>
 			<bodyPartGroups>
@@ -46,7 +46,7 @@
 		</recipeMaker>  
 		<comps>			
 			<li Class="Ammunition.Comps.CompProps_Magazine">
-				<AmmoCapacity>128</AmmoCapacity>
+				<AmmoCapacity>80</AmmoCapacity>
 				<AmmoDef>AmmoPrimitive</AmmoDef>
 				<Icon>MagPrimitive/AmmoPackPrimitiveMassive</Icon>
 			</li>
@@ -56,27 +56,28 @@
 	 <ThingDef ParentName="KitBase">
 		<defName>Apparel_AmmoPackIndustrialMassive</defName>
 		<label>massive industrial kit</label>
-		<description>A massive kit for carrying industrial ammunition. This kit have enough space for 128 uses.</description>
+		<description>A massive kit for carrying industrial ammunition. It has enough space for 100 ammo.</description>
 		
 		<graphicData>
 			<texPath>MagIndustrial/AmmoPackIndustrialMassive</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
+			<shaderType>CutoutComplex</shaderType>
 		</graphicData>
 		<techLevel>Industrial</techLevel>   
 		<statBases>
-			<Mass>4</Mass>
+			<Mass>7</Mass>
 			<WorkToMake>4000</WorkToMake>
 			<Flammability>0.6</Flammability>
 			<EquipDelay>2</EquipDelay>
 		</statBases>		 
-		<costStuffCount>100</costStuffCount>
+		<costStuffCount>60</costStuffCount>
 		<stuffCategories>
 			<li>Fabric</li>
 			<li>Leathery</li>
 		</stuffCategories>   
-		<tradeability>Sellable</tradeability>
+		<tradeability>All</tradeability>
 		<thingCategories>
-			<li>Apparel</li>
+			<li>AmmoPacks</li>
 		</thingCategories>		
 		<apparel>
 			<bodyPartGroups>
@@ -97,7 +98,7 @@
 		</recipeMaker>
 		<comps>			
 			<li Class="Ammunition.Comps.CompProps_Magazine">
-				<AmmoCapacity>128</AmmoCapacity>
+				<AmmoCapacity>100</AmmoCapacity>
 				<AmmoDef>AmmoIndustrial</AmmoDef>
 				<Icon>MagIndustrial/AmmoPackIndustrialMassive</Icon>
 			</li>
@@ -106,12 +107,12 @@
 
 	<ThingDef ParentName="KitBase">
 		<defName>Apparel_AmmoPackChargeMassive</defName>
-		<label>massive bomb kit</label>
-		<description>A massive kit for carrying charge ammunition. This kit have enough space for 128 uses.</description>
-		
+		<label>massive charge kit</label>
+		<description>A massive kit for carrying charge ammunition. It has enough space for 120 ammo.</description>
 		<graphicData>
 			<texPath>MagCharge/AmmoPackChargeMassive</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
+			<shaderType>CutoutComplex</shaderType>
 		</graphicData>
 		<techLevel>Spacer</techLevel>
 		<statBases>
@@ -120,14 +121,14 @@
 			<Flammability>0.6</Flammability>
 			<EquipDelay>2</EquipDelay>
 		</statBases>		 
-		<costStuffCount>100</costStuffCount>
+		<costStuffCount>60</costStuffCount>
 		<stuffCategories>
 			<li>Fabric</li>
 			<li>Leathery</li>
 		</stuffCategories>   
-		<tradeability>Sellable</tradeability>
+		<tradeability>All</tradeability>
 		<thingCategories>
-			<li>Apparel</li>
+			<li>AmmoPacks</li>
 		</thingCategories>		
 		<apparel>
 			<bodyPartGroups>
@@ -148,7 +149,7 @@
 		</recipeMaker>
 		<comps>			
 			<li Class="Ammunition.Comps.CompProps_Magazine">
-				<AmmoCapacity>128</AmmoCapacity>
+				<AmmoCapacity>120</AmmoCapacity>
 				<AmmoDef>AmmoCharge</AmmoDef>
 				<Icon>MagCharge/AmmoPackChargeMassive</Icon>
 			</li>
@@ -158,11 +159,11 @@
 	<ThingDef ParentName="KitBase">
 		<defName>Apparel_AmmoPackBombMassive</defName>
 		<label>massive bomb kit</label>
-		<description>A massive kit for carrying bombs. This kit have enough space for 32 uses.</description>
-		
+		<description>A massive kit for carrying bombs. This kit have enough space for 24 uses.</description>
 		<graphicData>
 			<texPath>MagBomb/AmmoPackBombMassive</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
+			<shaderType>CutoutComplex</shaderType>
 		</graphicData>
 		<techLevel>Industrial</techLevel> 
 		<statBases>
@@ -171,14 +172,14 @@
 			<Flammability>0.6</Flammability>
 			<EquipDelay>2</EquipDelay>
 		</statBases>		 
-		<costStuffCount>100</costStuffCount>
+		<costStuffCount>60</costStuffCount>
 		<stuffCategories>
 			<li>Fabric</li>
 			<li>Leathery</li>
 		</stuffCategories>   
-		<tradeability>Sellable</tradeability>
+		<tradeability>All</tradeability>
 		<thingCategories>
-			<li>Apparel</li>
+			<li>AmmoPacks</li>
 		</thingCategories>		
 		<apparel>
 			<bodyPartGroups>
@@ -199,7 +200,7 @@
 		</recipeMaker>
 		<comps>			
 			<li Class="Ammunition.Comps.CompProps_Magazine">
-				<AmmoCapacity>32</AmmoCapacity>
+				<AmmoCapacity>24</AmmoCapacity>
 				<AmmoDef>AmmoBomb</AmmoDef>
 				<Icon>MagBomb/AmmoPackBombMassive</Icon>
 			</li>

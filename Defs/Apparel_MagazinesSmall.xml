@@ -4,11 +4,11 @@
 	<ThingDef ParentName="KitBase">
 		<defName>Apparel_AmmoPackPrimitiveSmall</defName>
 		<label>small primitive kit</label>
-		<description>A small kit for carrying primitive ammunition. This kit have enough space for 16 uses.</description>    
-		
+		<description>A small kit for carrying primitive ammunition. It has enough space for 20 ammo.</description>    
 		<graphicData>
 			<texPath>MagPrimitive/AmmoPackPrimitiveSmall</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
+			<shaderType>CutoutComplex</shaderType>
 		</graphicData>
 		<techLevel>Neolithic</techLevel>
 		<statBases>
@@ -17,14 +17,14 @@
 			<Flammability>0.6</Flammability>
 			<EquipDelay>2</EquipDelay>
 		</statBases>		 
-		<costStuffCount>25</costStuffCount>
+		<costStuffCount>15</costStuffCount>
 		<stuffCategories>
 			<li>Fabric</li>
 			<li>Leathery</li>
 		</stuffCategories>   
-		<tradeability>Sellable</tradeability>
+		<tradeability>All</tradeability>
 		<thingCategories>
-			<li>Apparel</li>
+			<li>AmmoPacks</li>
 		</thingCategories>		
 		<apparel>
 			<bodyPartGroups>
@@ -46,7 +46,7 @@
 		</recipeMaker>  
 		<comps>			
 			<li Class="Ammunition.Comps.CompProps_Magazine">
-				<AmmoCapacity>16</AmmoCapacity>
+				<AmmoCapacity>20</AmmoCapacity>
 				<AmmoDef>AmmoPrimitive</AmmoDef>
 				<Icon>MagPrimitive/AmmoPackPrimitiveSmall</Icon>
 			</li>
@@ -56,11 +56,11 @@
 	 <ThingDef ParentName="KitBase">
 		<defName>Apparel_AmmoPackIndustrialSmall</defName>
 		<label>small industrial kit</label>
-		<description>A small kit for carrying industrial ammunition. This kit have enough space for 16 uses.</description>
-		
+		<description>A small kit for carrying industrial ammunition. It has enough space for 25 ammo.</description>
 		<graphicData>
 			<texPath>MagIndustrial/AmmoPackIndustrialSmall</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
+			<shaderType>CutoutComplex</shaderType>
 		</graphicData>
 		<techLevel>Industrial</techLevel>   
 		<statBases>
@@ -69,14 +69,14 @@
 			<Flammability>0.6</Flammability>
 			<EquipDelay>2</EquipDelay>
 		</statBases>		 
-		<costStuffCount>25</costStuffCount>
+		<costStuffCount>15</costStuffCount>
 		<stuffCategories>
 			<li>Fabric</li>
 			<li>Leathery</li>
 		</stuffCategories>   
-		<tradeability>Sellable</tradeability>
+		<tradeability>All</tradeability>
 		<thingCategories>
-			<li>Apparel</li>
+			<li>AmmoPacks</li>
 		</thingCategories>		
 		<apparel>
 			<bodyPartGroups>
@@ -97,7 +97,7 @@
 		</recipeMaker>
 		<comps>			
 			<li Class="Ammunition.Comps.CompProps_Magazine">
-				<AmmoCapacity>16</AmmoCapacity>
+				<AmmoCapacity>25</AmmoCapacity>
 				<AmmoDef>AmmoIndustrial</AmmoDef>
 				<Icon>MagIndustrial/AmmoPackIndustrialSmall</Icon>
 			</li>
@@ -107,11 +107,11 @@
 	<ThingDef ParentName="KitBase">
 		<defName>Apparel_AmmoPackChargeSmall</defName>
 		<label>small charge kit</label>
-		<description>A small kit for carrying charge ammunition. This kit have enough space for 16 uses.</description>
-		
+		<description>A small kit for carrying charge ammunition. It has enough space for 30 ammo.</description>
 		<graphicData>
 			<texPath>MagCharge/AmmoPackChargeSmall</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
+			<shaderType>CutoutComplex</shaderType>
 		</graphicData>
 		<techLevel>Spacer</techLevel>
 		<statBases>
@@ -120,14 +120,14 @@
 			<Flammability>0.6</Flammability>
 			<EquipDelay>2</EquipDelay>
 		</statBases>		 
-		<costStuffCount>25</costStuffCount>
+		<costStuffCount>15</costStuffCount>
 		<stuffCategories>
 			<li>Fabric</li>
 			<li>Leathery</li>
 		</stuffCategories>   
-		<tradeability>Sellable</tradeability>
+		<tradeability>All</tradeability>
 		<thingCategories>
-			<li>Apparel</li>
+			<li>AmmoPacks</li>
 		</thingCategories>		
 		<apparel>
 			<bodyPartGroups>
@@ -148,7 +148,7 @@
 		</recipeMaker>
 		<comps>			
 			<li Class="Ammunition.Comps.CompProps_Magazine">
-				<AmmoCapacity>16</AmmoCapacity>
+				<AmmoCapacity>30</AmmoCapacity>
 				<AmmoDef>AmmoCharge</AmmoDef>
 				<Icon>MagCharge/AmmoPackChargeSmall</Icon>
 			</li>
@@ -158,11 +158,11 @@
 	<ThingDef ParentName="KitBase">
 		<defName>Apparel_AmmoPackBombSmall</defName>
 		<label>small bomb kit</label>
-		<description>A small kit for carrying bombs. This kit have enough space for 4 uses.</description>
-		
+		<description>A small kit for carrying bombs. It has enough space for 6 ammo.</description>
 		<graphicData>
 			<texPath>MagBomb/AmmoPackBombSmall</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
+			<shaderType>CutoutComplex</shaderType>
 		</graphicData>
 		<techLevel>Industrial</techLevel> 
 		<statBases>
@@ -171,14 +171,14 @@
 			<Flammability>0.6</Flammability>
 			<EquipDelay>2</EquipDelay>
 		</statBases>		 
-		<costStuffCount>25</costStuffCount>
+		<costStuffCount>15</costStuffCount>
 		<stuffCategories>
 			<li>Fabric</li>
 			<li>Leathery</li>
 		</stuffCategories>   
-		<tradeability>Sellable</tradeability>
+		<tradeability>All</tradeability>
 		<thingCategories>
-			<li>Apparel</li>
+			<li>AmmoPacks</li>
 		</thingCategories>		
 		<apparel>
 			<bodyPartGroups>
@@ -199,7 +199,7 @@
 		</recipeMaker>
 		<comps>			
 			<li Class="Ammunition.Comps.CompProps_Magazine">
-				<AmmoCapacity>4</AmmoCapacity>
+				<AmmoCapacity>6</AmmoCapacity>
 				<AmmoDef>AmmoBomb</AmmoDef>
 				<Icon>MagBomb/AmmoPackBombSmall</Icon>
 			</li>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+
+	<!-- These resources get assigned to traders -->
+	<Operation Class="PatchOperationSequence">
+		<success>Always</success>
+		<operations>
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/TraderKindDef[defName = "Base_Neolithic_Standard"]/stockGenerators</xpath>
+				<value>
+				    <li Class="StockGenerator_SingleDef">
+						<thingDef>AmmoPrimitive</thingDef>
+						<countRange>150~300</countRange>
+					</li>
+				</value>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/TraderKindDef[defName = "Base_Outlander_Standard"]/stockGenerators</xpath>
+				<value>
+				    <li Class="StockGenerator_SingleDef">
+						<thingDef>AmmoIndustrial</thingDef>
+						<countRange>200~400</countRange>
+					</li>
+					<li Class="StockGenerator_SingleDef">
+						<thingDef>AmmoBomb</thingDef>
+						<countRange>30~60</countRange>
+					</li>
+				    <li Class="StockGenerator_SingleDef">
+						<thingDef>AmmoCharge</thingDef>
+						<countRange>-100~150</countRange>
+					</li>
+				</value>
+			</li>
+		</operations>
+	</Operation>
+
+</Patch>

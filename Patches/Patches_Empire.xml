@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+
+    <!--Test that Royal traders exist and then assign resources -->
+	<Operation Class="PatchOperationSequence">
+	<success>Always</success>
+		<operations>
+		<li Class="PatchOperationTest">
+			<xpath>Defs/TraderKindDef[defName = "Base_Empire_Standard"]</xpath>
+				<success>Normal</success>
+		</li>
+		<li Class="PatchOperationAdd">
+			<xpath>/Defs/TraderKindDef[defName = "Base_Empire_Standard"]/stockGenerators</xpath>
+			<value>
+				<li Class="StockGenerator_SingleDef">
+					<thingDef>AmmoBomb</thingDef>
+					<countRange>50~100</countRange>
+				</li>
+				<li Class="StockGenerator_SingleDef">
+					<thingDef>AmmoCharge</thingDef>
+					<countRange>300~600</countRange>
+			    </li>
+			</value>
+		</li>
+		</operations>
+	</Operation>
+	
+	<Operation Class="PatchOperationSequence">
+	<success>Always</success>
+		<operations>
+		<li Class="PatchOperationTest">
+			<xpath>Defs/TraderKindDef[defName = "Empire_Caravan_TraderGeneral"]</xpath>
+				<success>Normal</success>
+		</li>
+		<li Class="PatchOperationAdd">
+			<xpath>/Defs/TraderKindDef[defName = "Empire_Caravan_TraderGeneral"]/stockGenerators</xpath>
+			<value>
+				<li Class="StockGenerator_SingleDef">
+					<thingDef>AmmoBomb</thingDef>
+					<countRange>20~40</countRange>
+				</li>
+				<li Class="StockGenerator_SingleDef">
+					<thingDef>AmmoCharge</thingDef>
+					<countRange>150~300</countRange>
+			    </li>
+			</value>
+		</li>
+		</operations>
+	</Operation>
+	
+	<Operation Class="PatchOperationSequence">
+	<success>Always</success>
+		<operations>
+		<li Class="PatchOperationTest">
+			<xpath>Defs/TraderKindDef[defName = "Orbital_Empire"]</xpath>
+				<success>Normal</success>
+		</li>
+		<li Class="PatchOperationAdd">
+			<xpath>/Defs/TraderKindDef[defName = "Orbital_Empire"]/stockGenerators</xpath>
+			<value>
+				<li Class="StockGenerator_SingleDef">
+					<thingDef>AmmoBomb</thingDef>
+					<countRange>50~100</countRange>
+				</li>
+				<li Class="StockGenerator_SingleDef">
+					<thingDef>AmmoCharge</thingDef>
+					<countRange>300~600</countRange>
+			    </li>
+			</value>
+		</li>
+		</operations>
+	</Operation>
+
+</Patch>
