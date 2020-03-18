@@ -9,6 +9,10 @@
 - Pawns spawn with at least with 25% cap on ammo.
 - Mechanoids do not need ammo.
 - Trader patches, Kudos Meltup!
+- Industrial ammo requires Machining instead of Gunsmithing
+- Charge ammo requires Fabrication instead of MultiAnalyzer
+- Bomb ammo requires Machining instead of MultiAnalyzer (Failed there whops)
+- Renamed kit to pack.
 
 2020-03-14
 - Rimsenal Compund bow and Throwing axes uses primitive ammo.

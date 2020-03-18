@@ -3,7 +3,6 @@
   <ThingCategoryDef>
     <defName>AmmoPacks</defName>
     <label>ammo packs</label>
-    <!--<parent>Manufactured</parent>-->
     <parent>Apparel</parent>
     <iconPath>MagIndustrial/AmmoPackIndustrialMassive</iconPath>
     <resourceReadoutRoot>true</resourceReadoutRoot>

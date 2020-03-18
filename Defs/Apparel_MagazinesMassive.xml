@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 	<!--==================== Massive ======================== -->
-	<ThingDef ParentName="KitBase">
+	<ThingDef ParentName="PackBase">
 		<defName>Apparel_AmmoPackPrimitiveMassive</defName>
-		<label>massive primitive kit</label>
+		<label>massive primitive pack</label>
 		<description>A massive pack for carrying primitive ammunition. It has enough space for 80 ammo.</description>    
 		<graphicData>
 			<texPath>MagPrimitive/AmmoPackPrimitiveMassive</texPath>
@@ -31,7 +31,7 @@
 				<li>Torso</li>
 			</bodyPartGroups>
 			<layers>
-				<li>Kit</li>
+				<li>Pack</li>
 			</layers>
 			<tags>
 				<li>Neolithic</li>
@@ -53,10 +53,10 @@
 		</comps>    
 	</ThingDef>
 
-	 <ThingDef ParentName="KitBase">
+	 <ThingDef ParentName="PackBase">
 		<defName>Apparel_AmmoPackIndustrialMassive</defName>
-		<label>massive industrial kit</label>
-		<description>A massive kit for carrying industrial ammunition. It has enough space for 100 ammo.</description>
+		<label>massive industrial pack</label>
+		<description>A massive pack for carrying industrial ammunition. It has enough space for 100 ammo.</description>
 		
 		<graphicData>
 			<texPath>MagIndustrial/AmmoPackIndustrialMassive</texPath>
@@ -84,7 +84,7 @@
 				<li>Torso</li>
 			</bodyPartGroups>
 			<layers>
-				<li>Kit</li>
+				<li>Pack</li>
 			</layers>
 			<tags>
 				<li>Industrial</li>
@@ -105,10 +105,10 @@
 		</comps>    
 	</ThingDef>	
 
-	<ThingDef ParentName="KitBase">
+	<ThingDef ParentName="PackBase">
 		<defName>Apparel_AmmoPackChargeMassive</defName>
-		<label>massive charge kit</label>
-		<description>A massive kit for carrying charge ammunition. It has enough space for 120 ammo.</description>
+		<label>massive charge pack</label>
+		<description>A massive pack for carrying charge ammunition. It has enough space for 120 ammo.</description>
 		<graphicData>
 			<texPath>MagCharge/AmmoPackChargeMassive</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
@@ -135,7 +135,7 @@
 				<li>Torso</li>
 			</bodyPartGroups>
 			<layers>
-				<li>Kit</li>
+				<li>Pack</li>
 			</layers>
 			<tags>
 				<li>Spacer</li>
@@ -156,10 +156,10 @@
 		</comps>
 	</ThingDef>
 
-	<ThingDef ParentName="KitBase">
+	<ThingDef ParentName="PackBase">
 		<defName>Apparel_AmmoPackBombMassive</defName>
-		<label>massive bomb kit</label>
-		<description>A massive kit for carrying bombs. This kit have enough space for 24 uses.</description>
+		<label>massive bomb pack</label>
+		<description>A massive pack for carrying bombs. It has enough space for 24 ammo.</description>
 		<graphicData>
 			<texPath>MagBomb/AmmoPackBombMassive</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
@@ -186,7 +186,7 @@
 				<li>Torso</li>
 			</bodyPartGroups>
 			<layers>
-				<li>Kit</li>
+				<li>Pack</li>
 			</layers>
 			<tags>
 				<li>Industrial</li>

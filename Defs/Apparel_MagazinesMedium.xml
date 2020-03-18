@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 	<!--==================== Medium ======================== -->
-	<ThingDef ParentName="KitBase">
+	<ThingDef ParentName="PackBase">
 		<defName>Apparel_AmmoPackPrimitiveMedium</defName>
-		<label>medium primitive kit</label>
-		<description>A medium kit for carrying primitive ammunition. This kit have enough space for 40 uses.</description>    
+		<label>medium primitive pack</label>
+		<description>A medium pack for carrying primitive ammunition. It has enough space for 40 ammo.</description>    
 		<graphicData>
 			<texPath>MagPrimitive/AmmoPackPrimitiveMedium</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
@@ -31,7 +31,7 @@
 				<li>Shoulders</li>
 			</bodyPartGroups>
 			<layers>
-				<li>Kit</li>
+				<li>Pack</li>
 			</layers>
 			<tags>
 				<li>Neolithic</li>
@@ -53,10 +53,10 @@
 		</comps>    
 	</ThingDef>
 
-	 <ThingDef ParentName="KitBase">
+	 <ThingDef ParentName="PackBase">
 		<defName>Apparel_AmmoPackIndustrialMedium</defName>
-		<label>medium industrial kit</label>
-		<description>A medium kit for carrying industrial ammunition. It has enough space for 50 ammo.</description>
+		<label>medium industrial pack</label>
+		<description>A medium pack for carrying industrial ammunition. It has enough space for 50 ammo.</description>
 		<graphicData>
 			<texPath>MagIndustrial/AmmoPackIndustrialMedium</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
@@ -83,7 +83,7 @@
 				<li>Shoulders</li>
 			</bodyPartGroups>
 			<layers>
-				<li>Kit</li>
+				<li>Pack</li>
 			</layers>
 			<tags>
 				<li>Industrial</li>
@@ -104,10 +104,10 @@
 		</comps>    
 	</ThingDef>	
 
-	<ThingDef ParentName="KitBase">
+	<ThingDef ParentName="PackBase">
 		<defName>Apparel_AmmoPackChargeMedium</defName>
-		<label>medium charge kit</label>
-		<description>A medium kit for carrying industrial ammunition. It has enough space for 60 ammo.</description>
+		<label>medium charge pack</label>
+		<description>A medium pack for carrying industrial ammunition. It has enough space for 60 ammo.</description>
 		<graphicData>
 			<texPath>MagCharge/AmmoPackChargeMedium</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
@@ -134,7 +134,7 @@
 				<li>Shoulders</li>
 			</bodyPartGroups>
 			<layers>
-				<li>Kit</li>
+				<li>Pack</li>
 			</layers>
 			<tags>
 				<li>Spacer</li>
@@ -155,10 +155,10 @@
 		</comps>    
 	</ThingDef>
 
-	<ThingDef ParentName="KitBase">
+	<ThingDef ParentName="PackBase">
 		<defName>Apparel_AmmoPackBombMedium</defName>
-		<label>medium bomb kit</label>
-		<description>A medium kit for carrying bombs. This kit have enough space for 12 uses.</description>
+		<label>medium bomb pack</label>
+		<description>A medium pack for carrying bombs. It has enough space for 12 ammo.</description>
 		<graphicData>
 			<texPath>MagBomb/AmmoPackBombMedium</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
@@ -185,7 +185,7 @@
 				<li>Shoulders</li>
 			</bodyPartGroups>
 			<layers>
-				<li>Kit</li>
+				<li>Pack</li>
 			</layers>
 			<tags>
 				<li>Industrial</li>

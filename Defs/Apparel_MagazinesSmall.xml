@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 	<!--==================== Small ======================== -->
-	<ThingDef ParentName="KitBase">
+	<ThingDef ParentName="PackBase">
 		<defName>Apparel_AmmoPackPrimitiveSmall</defName>
-		<label>small primitive kit</label>
-		<description>A small kit for carrying primitive ammunition. It has enough space for 20 ammo.</description>    
+		<label>small primitive pack</label>
+		<description>A small pack for carrying primitive ammunition. It has enough space for 20 ammo.</description>    
 		<graphicData>
 			<texPath>MagPrimitive/AmmoPackPrimitiveSmall</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
@@ -31,7 +31,7 @@
 				<li>Legs</li>
 			</bodyPartGroups>
 			<layers>
-				<li>Kit</li>
+				<li>Pack</li>
 			</layers>
 			<tags>
 				<li>Neolithic</li>
@@ -53,10 +53,10 @@
 		</comps>
 	</ThingDef>
 
-	 <ThingDef ParentName="KitBase">
+	 <ThingDef ParentName="PackBase">
 		<defName>Apparel_AmmoPackIndustrialSmall</defName>
-		<label>small industrial kit</label>
-		<description>A small kit for carrying industrial ammunition. It has enough space for 25 ammo.</description>
+		<label>small industrial pack</label>
+		<description>A small pack for carrying industrial ammunition. It has enough space for 25 ammo.</description>
 		<graphicData>
 			<texPath>MagIndustrial/AmmoPackIndustrialSmall</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
@@ -83,7 +83,7 @@
 				<li>Legs</li>
 			</bodyPartGroups>
 			<layers>
-				<li>Kit</li>
+				<li>Pack</li>
 			</layers>
 			<tags>
 				<li>Industrial</li>
@@ -104,10 +104,10 @@
 		</comps>
 	</ThingDef>	
 
-	<ThingDef ParentName="KitBase">
+	<ThingDef ParentName="PackBase">
 		<defName>Apparel_AmmoPackChargeSmall</defName>
-		<label>small charge kit</label>
-		<description>A small kit for carrying charge ammunition. It has enough space for 30 ammo.</description>
+		<label>small charge pack</label>
+		<description>A small pack for carrying charge ammunition. It has enough space for 30 ammo.</description>
 		<graphicData>
 			<texPath>MagCharge/AmmoPackChargeSmall</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
@@ -134,7 +134,7 @@
 				<li>Legs</li>
 			</bodyPartGroups>
 			<layers>
-				<li>Kit</li>
+				<li>Pack</li>
 			</layers>
 			<tags>
 				<li>Spacer</li>
@@ -155,10 +155,10 @@
 		</comps>
 	</ThingDef>
 
-	<ThingDef ParentName="KitBase">
+	<ThingDef ParentName="PackBase">
 		<defName>Apparel_AmmoPackBombSmall</defName>
-		<label>small bomb kit</label>
-		<description>A small kit for carrying bombs. It has enough space for 6 ammo.</description>
+		<label>small bomb pack</label>
+		<description>A small pack for carrying bombs. It has enough space for 6 ammo.</description>
 		<graphicData>
 			<texPath>MagBomb/AmmoPackBombSmall</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
@@ -185,7 +185,7 @@
 				<li>Legs</li>
 			</bodyPartGroups>
 			<layers>
-				<li>Kit</li>
+				<li>Pack</li>
 			</layers>
 			<tags>
 				<li>Industrial</li>

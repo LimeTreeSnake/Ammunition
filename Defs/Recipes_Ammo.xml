@@ -69,7 +69,7 @@
 		<recipeUsers>
 			<li>TableMachining</li>
 		</recipeUsers>
-		<researchPrerequisite>Gunsmithing</researchPrerequisite>
+		<researchPrerequisite>Machining</researchPrerequisite>
 		<allowMixingIngredients>false</allowMixingIngredients>
 		<skillRequirements>
 			<Crafting>6</Crafting>
@@ -116,7 +116,7 @@
 		<recipeUsers>
 			<li>TableMachining</li>
 		</recipeUsers>
-		<researchPrerequisite>MultiAnalyzer</researchPrerequisite>
+		<researchPrerequisite>Fabrication</researchPrerequisite>
 		<allowMixingIngredients>false</allowMixingIngredients>
 		<skillRequirements>
 			<Intellectual>8</Intellectual>
@@ -172,7 +172,7 @@
 		<recipeUsers>
 			<li>TableMachining</li>
 		</recipeUsers>
-		<researchPrerequisite>MultiAnalyzer</researchPrerequisite>
+		<researchPrerequisite>Machining</researchPrerequisite>
 		<allowMixingIngredients>false</allowMixingIngredients>
 		<skillRequirements>
 			<Intellectual>4</Intellectual>
