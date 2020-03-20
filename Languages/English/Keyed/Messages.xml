@@ -6,6 +6,9 @@
 	<Reload>Full reload</Reload>
 	<OutOfAmmo>{PAWN_nameDef} has run out of {0}!</OutOfAmmo>
 	<NoMag>{PAWN_nameDef} has no magazine for {0}!</NoMag>
+	<CheckAmmo>{PAWN_nameDef}'s weapon {0} needs {1}.</CheckAmmo>
+	<NoAmmo>This weapon does not need any ammunition.</NoAmmo>
+	<CheckWeapon>Check Ammo ({0}).</CheckWeapon>
 	<ClearAmmo>Unload kit</ClearAmmo>
 	<ClearAmmoDesc>Drop all ammo from the clip.</ClearAmmoDesc>
 	<AmmoFetchPercent>At which percent a pawn should try to fetch new ammo by themself.</AmmoFetchPercent>

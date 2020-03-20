@@ -1,3 +1,9 @@
+2020-03-20
+- Equipping multiple different packs firing issue fixed.
+- Renamed bomb to explosive.
+- Right clicking pawn floatmenu to check equipped weapon's, if applicable needed ammo.
+- Ammunition is dropped out of packs when unequipped.
+
 2020-03-18
 - Check ammo def upon loading game, no longer store it in settings. (This until easy changeable ammo.)
 - Ammo, mass, value, recipé, kit changes.

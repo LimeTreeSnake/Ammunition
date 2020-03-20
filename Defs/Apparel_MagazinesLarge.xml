@@ -157,8 +157,8 @@
 
 	<ThingDef ParentName="PackBase">
 		<defName>Apparel_AmmoPackBombLarge</defName>
-		<label>large bomb pack</label>
-		<description>A large pack for carrying bombs. It has enough space for 18 bombs.</description>
+		<label>large explosive pack</label>
+		<description>A large pack for carrying explosive. It has enough space for 18 bombs.</description>
 		<graphicData>
 			<texPath>MagBomb/AmmoPackBombLarge</texPath>
 			<graphicClass>Graphic_Single</graphicClass>

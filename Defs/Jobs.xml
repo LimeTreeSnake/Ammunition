@@ -6,4 +6,10 @@
     <reportString>fetching ammunition.</reportString>
     <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
   </JobDef>
+    <JobDef>
+    <defName>CheckAmmo</defName>
+    <driverClass>Ammunition.JobDrivers.JobDriver_CheckAmmo</driverClass>
+    <reportString>checking weapon.</reportString>
+    <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
+  </JobDef>
 </Defs>

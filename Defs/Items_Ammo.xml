@@ -118,7 +118,7 @@
 
 	<ThingDef Name="AmmoBomb" ParentName="AmmunitionBase">
 		<defName>AmmoBomb</defName>
-		<label>bomb ammo</label>
+		<label>explosive ammo</label>
 		<description>Everyone likes explosions and this thing here is not any different. It causes serious explosions for all your needs. Highly volatile, thus handle with caution.</description>
 		<graphicData>
 			<texPath>AmmoBomb</texPath>

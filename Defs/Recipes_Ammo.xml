@@ -161,9 +161,9 @@
 
 	<RecipeDef>
 		<defName>Make_AmmoBomb</defName>
-		<label>make bombs</label>
-		<description>Make bombs by refining chemfuel and steel .</description>
-		<jobString>Making bombs.</jobString>
+		<label>make explosive</label>
+		<description>Make explosives by refining chemfuel and steel .</description>
+		<jobString>Making explosives.</jobString>
 		<workAmount>4000</workAmount>
 		<workSkill>Intellectual</workSkill>
 		<workSpeedStat>GeneralLaborSpeed</workSpeedStat>

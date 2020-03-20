@@ -6,6 +6,9 @@
 	<Reload>Magazin Nachladen.</Reload>
 	<OutOfAmmo>{PAWN_nameDef} Hat keine {0} mehr!</OutOfAmmo>
 	<NoMag>{PAWN_nameDef} Hat keine Tasche für {0}!</NoMag>
+	<CheckAmmo>{PAWN_nameDef}'s Waffe {0} braucht {1}.</CheckAmmo>
+    <NoAmmo>Diese Waffe braucht keine Munition.</NoAmmo>
+    <CheckWeapon>Überprüfe Munition ({0}).</CheckWeapon>
 	<ClearAmmo>Entladen Munition.</ClearAmmo>
 	<ClearAmmoDesc>Lass die Munition aus der Tasche fallen.</ClearAmmoDesc>
 	<AmmoFetchPercent>Zu welchem Prozentsatz sollte ein Kolonist versuchen, selbst neue Munition zu holen.</AmmoFetchPercent>
